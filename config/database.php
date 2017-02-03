@@ -14,6 +14,9 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'mysql'),
+    'charset' => 'utf8mb4',
+    'collation' => 'utf8mb4_unicode_ci',
+    'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
 
     /*
     |--------------------------------------------------------------------------
@@ -50,7 +53,7 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
-            'engine' => null,
+            'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
         ],
 
         'pgsql' => [
