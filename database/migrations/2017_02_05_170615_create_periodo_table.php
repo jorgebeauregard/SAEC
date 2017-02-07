@@ -15,7 +15,7 @@ class CreatePeriodoTable extends Migration
     {
         Schema::create('periodo', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('nomnbre',60);
+            $table->String('nombre',60);
             $table->timestamps();
         });
     }
