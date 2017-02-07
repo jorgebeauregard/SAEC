@@ -15,8 +15,13 @@ class CreateRespuestasProfesorTable extends Migration
     {
         Schema::create('respuestas_profesor', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-        });
+            $table->foreign('id_actividad')->references('id')->on('actividad')->onDelete('Cascade');
+            $table->foreign('id_profesor')->references('id')->on('profesor')->onDelete('Cascade');
+            $table->foreign('id_evaluado')->references('id')->on('alumno')->onDelete('Cascade');
+            $table->foreign('id_comportamiento')->references('id')->on('comportamiento')->onDelete('Cascade');
+            $table->tinyint('nota');
+            $table->String('comentario', 255)->nullable();
+        }
     }
 
     /**
