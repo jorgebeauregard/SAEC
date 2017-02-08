@@ -16,6 +16,7 @@ class CreateComportamientoTable extends Migration
         Schema::create('comportamiento', function (Blueprint $table) {
             $table->increments('id');
             $table->String('pregunta',250);
+            $table->String('descripcion',250);
             $table->timestamps();
         });
     }
