@@ -15,13 +15,17 @@ class CreateRespuestasAlumnoTable extends Migration
     {
         Schema::create('respuestas_alumno', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('id_actividad')->references('id')->on('actividad')->onDelete('Cascade');
-            $table->foreign('id_evaluador')->references('id')->on('alumno')->onDelete('Cascade');
-            $table->foreign('id_evaluado')->references('id')->on('alumno')->onDelete('Cascade');
-            $table->foreign('id_comportamiento')->references('id')->on('comportamiento')->onDelete('Cascade');
-            $table->tinyint('nota');
+            $table->integer('id_actividad')->unsigned();
+            $table->integer('id_evaluador')->unsigned();
+            $table->integer('id_evaluado')->unsigned();
+            $table->integer('id_comportamiento')->unsigned();
+            $table->foreign('id_actividad')->references('id')->on('actividad')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_evaluador')->references('id')->on('alumno')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_evaluado')->references('id')->on('alumno')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_comportamiento')->references('id')->on('comportamiento')->onDelete('cascade')->onUpdate('cascade');
+            $table->tinyInteger('nota');
             $table->String('comentario', 255)->nullable();
-        }
+        });
     }
 
     /**

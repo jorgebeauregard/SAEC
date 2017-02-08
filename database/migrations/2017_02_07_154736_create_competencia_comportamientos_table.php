@@ -15,9 +15,11 @@ class CreateCompetenciaComportamientosTable extends Migration
     {
         Schema::create('competencia_comportamientos', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('id_competencia')->references('id')->on('competencia')->onDelete('Cascade');
-            $table->foreign('id_comportamiento')->references('id')->on('comportamiento')->onDelete('Cascade');
-        }
+            $table->integer('id_competencia')->unsigned();
+            $table->integer('id_comportamiento')->unsigned();
+            $table->foreign('id_competencia')->references('id')->on('competencia')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_comportamiento')->references('id')->on('comportamiento')->onDelete('cascade')->onUpdate('cascade');
+        });
     }
 
     /**

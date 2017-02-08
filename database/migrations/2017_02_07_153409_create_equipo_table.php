@@ -17,7 +17,7 @@ class CreateEquipoTable extends Migration
             $table->increments('id');
             $table->integer('numero_equipo')->unsigned();
             $table->integer('id_actividad')->unsigned();
-            $table->foreign('id_actidad')->references('id')->on('Actividad')->onDelete('Cascade');
+            $table->foreign('id_actividad')->references('id')->on('actividad')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
