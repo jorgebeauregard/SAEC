@@ -24,7 +24,7 @@ class CreateAlumnoTable extends Migration
             $table->foreign('id_campus')->references('id')->on('campus')->onDelete('cascade')->onUpdate('cascade');
             $table->tinyInteger('genero'); 
             $table->foreign('id_plan')->references('id')->on('campus')->onDelete('cascade')->onUpdate('cascade');     
-            $table->String('contraseña',30);  
+            $table->String('contrasena',30);  
             $table->timestamps();                        
         });
     }
