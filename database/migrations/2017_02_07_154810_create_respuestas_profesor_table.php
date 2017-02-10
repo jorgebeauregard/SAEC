@@ -25,6 +25,7 @@ class CreateRespuestasProfesorTable extends Migration
             $table->foreign('id_comportamiento')->references('id')->on('comportamiento')->onDelete('cascade')->onUpdate('cascade');
             $table->tinyInteger('nota');
             $table->String('comentario', 255)->nullable();
+            $table->timestamps();
         });
     }
 

@@ -19,6 +19,7 @@ class CreateCompetenciaComportamientosTable extends Migration
             $table->integer('id_comportamiento')->unsigned();
             $table->foreign('id_competencia')->references('id')->on('competencia')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_comportamiento')->references('id')->on('comportamiento')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 
