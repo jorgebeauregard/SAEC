@@ -28,7 +28,7 @@ class seeder_profesor extends Seeder
     	]);
 
         DB::table('profesor')->insert([
-        	'nomina' => 'L012345678',
+        	'nomina' => 'L012345680',
             'nombre' => 'Daniel',
             'apellido' => 'Perez',
             'correo' => 'danperez@itesm.mx',
