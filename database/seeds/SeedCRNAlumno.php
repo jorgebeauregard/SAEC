@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class seeder_crn_alumno extends Seeder
+class SeedCRNAlumno extends Seeder
 {
     /**
      * Run the database seeds.
