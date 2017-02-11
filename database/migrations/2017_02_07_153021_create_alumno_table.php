@@ -18,7 +18,7 @@ class CreateAlumnoTable extends Migration
             $table->String('matricula',10);
             $table->String('nombre',60);
             $table->String('apellido',60);
-            $table->float('prom_anterior',2,2);
+            $table->decimal('prom_anterior',3,2);
             $table->integer('id_campus')->unsigned();
             $table->integer('id_plan')->unsigned();
             $table->foreign('id_campus')->references('id')->on('campus')->onDelete('cascade')->onUpdate('cascade');

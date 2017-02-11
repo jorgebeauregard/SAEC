@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call(seeder_plan::class);
         $this->call(seeder_campus::class);
         $this->call(seeder_periodo::class);
+        $this->call(seeder_profesor::class);
         $this->call(seeder_competencia::class);
         $this->call(seeder_crn::class);
-        $this->call(seeder_comportamiento::class);
-        $this->call(seeder_profesor::class);
+        $this->call(seeder_comportamiento::class);        
         $this->call(seeder_alumno::class);
         $this->call(seeder_crn_alumno::class);
     }
