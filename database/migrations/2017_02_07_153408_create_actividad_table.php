@@ -19,6 +19,7 @@ class CreateActividadTable extends Migration
             $table->String('descripcion', 255);
             $table->integer('id_crn')->unsigned();
             $table->foreign('id_crn')->references('id')->on('crn')->onDelete('cascade')->onUpdate('cascade');
+            $table->datetime('limite');
             $table->timestamps();
         });
     }

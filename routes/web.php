@@ -19,6 +19,12 @@ Route::group(['middleware'=>'auth'], function() {
         return view('/home');
     });
 
+    Route::resource('actividades', 'ActividadesController');
+
+    Route::resource('calificaciones', 'CalificacionesController');
+
+    Route::resource('perfil', 'PerfilController');
+
     Auth::routes();
 
     Route::get('logout', function(){
