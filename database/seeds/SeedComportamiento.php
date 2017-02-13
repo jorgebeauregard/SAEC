@@ -12,8 +12,8 @@ class SeedComportamiento extends Seeder
     public function run()
     {
         DB::table('comportamiento')->insert([
-        	'pregunta'=>'¿Sabe trabajar en equipo?',
-        	'descripcion'=>'Colabora y...',
+        	'pregunta'=>'¿Es capaz de asignar trabajos a los companeros?',
+        	'descripcion'=>'Toma el control y...',
         ]);
 
         DB::table('comportamiento')->insert([
@@ -25,5 +25,6 @@ class SeedComportamiento extends Seeder
         	'pregunta'=>'¿Trabajó?',
         	'descripcion'=>'¿Hizo algo o no?',
         ]);
+
     }
 }

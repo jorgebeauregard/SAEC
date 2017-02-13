@@ -28,5 +28,11 @@ class SeedCRNAlumno extends Seeder
         	'id_alumno'=>2,
         	'faltas'=>0,
         ]);
+
+        DB::table('crn_alumno')->insert([
+            'id_crn'=>4,
+            'id_alumno'=>1,
+            'faltas'=>0,
+        ]);
     }
 }

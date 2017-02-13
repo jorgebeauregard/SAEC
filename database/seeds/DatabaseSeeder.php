@@ -22,5 +22,12 @@ class DatabaseSeeder extends Seeder
         $this->call(SeedComportamiento::class);        
         $this->call(SeedAlumno::class);
         $this->call(SeedCRNAlumno::class);
+        $this->call(SeedActividad::class);
+        $this->call(SeedEquipo::class);
+        $this->call(SeedCompetenciaComportamientos::class);
+        $this->call(SeedEquipoAlumnos::class);
+        $this->call(SeedRespuestasAlumno::class);
+        $this->call(SeedRespuestasProfesor::class);
+        
     }
 }
