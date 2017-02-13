@@ -13,17 +13,17 @@ class SeedMateria extends Seeder
     {
         DB::table('materia')->insert([
         	'clave' => 'MA1001',
-        	'nombre' => 'Matematicas 1' 
+        	'nombre' => 'Matematicas 1',
     	]);
 
         DB::table('materia')->insert([
         	'clave' => 'TI1001',
-        	'nombre' => 'Fundamentos de programación' 
+        	'nombre' => 'Fundamentos de programación', 
     	]);
 
         DB::table('materia')->insert([
         	'clave' => 'FI1001',
-        	'nombre' => 'Fisica 1' 
+        	'nombre' => 'Fisica 1',
     	]);
     }
 }

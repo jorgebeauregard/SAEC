@@ -16,7 +16,7 @@ class SeedProfesor extends Seeder
             'nombre' => 'Abel',
             'apellido' => 'Flores',
             'correo' => 'aflores@itesm.mx',
-            'contrasena' => 'contrasena'
+            'contrasena' => 'contrasena',
     	]);
 
         DB::table('profesor')->insert([
@@ -24,7 +24,7 @@ class SeedProfesor extends Seeder
             'nombre' => 'Alberto',
             'apellido' => 'Oliart',
             'correo' => 'aoliarts@itesm.mx',
-            'contrasena' => 'contrasena'
+            'contrasena' => 'contrasena',
     	]);
 
         DB::table('profesor')->insert([
@@ -32,7 +32,7 @@ class SeedProfesor extends Seeder
             'nombre' => 'Daniel',
             'apellido' => 'Perez',
             'correo' => 'danperez@itesm.mx',
-            'contrasena' => 'contrasena'
+            'contrasena' => 'contrasena',
     	]);
 
     }

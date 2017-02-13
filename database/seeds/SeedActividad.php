@@ -15,18 +15,21 @@ class SeedActividad extends Seeder
         	'nombre' => 'Colaborativo 1 Parcial 2',
         	'descripcion' => 'El alumno formara equipos para resolver los ejercicios de funciones inversas y logaritmos',
         	'id_crn' => 1,
+        	'limite' => '2014-05-12 16:50',
         ]);
 
         DB::table('actividad')->insert([
         	'nombre' => 'Actividad Individual 3 Parcial 1',
         	'descripcion' => 'El alumno hara un programa que obtenga los numeros primos de n a m usando un metodo recursivo que acceda a una criba para calcularlos',
         	'id_crn' => 3,
+        	'limite' => '2016-08-08 08:20',
         ]);
 
         DB::table('actividad')->insert([
         	'nombre' => 'Tarea 1 Parcial 1',
         	'descripcion' => 'El alumno obtendra el torque y la inercia rotacional de marte mientras se desplaza a una distancia definida de la galaxia andromeda usando formulas de cinematica, despreciando la resistencia al aire',
         	'id_crn' => 4,
+        	'limite' => '2004-04-01 12:35',
         ]);
     }
 }
