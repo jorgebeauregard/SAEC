@@ -27,6 +27,14 @@ class CreateAlumnoTable extends Migration
             $table->String('contrasena',30);  
             $table->timestamps();                        
         });
+
+        Schema::create('crn_alumno', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('alumno_id');
+            $table->integer('crn_id');
+            $table->integer('faltas');
+            $table->timestamps();
+        });        
     }
 
     /**
@@ -37,5 +45,7 @@ class CreateAlumnoTable extends Migration
     public function down()
     {
         Schema::dropIfExists('alumno');
+        Schema::dropIfExists('crn_alumno');
+        
     }
 }

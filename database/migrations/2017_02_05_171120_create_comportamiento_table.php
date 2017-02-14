@@ -19,7 +19,16 @@ class CreateComportamientoTable extends Migration
             $table->String('descripcion',250);
             $table->timestamps();
         });
+
+        Schema::create('competencia_comportamiento', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('competencia_id');
+            $table->integer('comportamiento_id');
+            $table->timestamps();
+        });
+
     }
+
 
     /**
      * Reverse the migrations.
@@ -29,5 +38,6 @@ class CreateComportamientoTable extends Migration
     public function down()
     {
         Schema::dropIfExists('comportamiento');
+        Schema::dropIfExists('competencia_comportamiento');
     }
 }
