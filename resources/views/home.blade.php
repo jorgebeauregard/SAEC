@@ -1,5 +1,11 @@
 @extends('layouts.sidebar')
 
+@section('title')
+    <div>
+        <i class= ""></i> Dashboard
+    </div>
+@endsection
+
 @section('description', 'Has ingresado exitosamente')
 
 @section('content')

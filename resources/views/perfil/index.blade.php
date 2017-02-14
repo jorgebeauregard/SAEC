@@ -2,7 +2,7 @@
 
 @section('title')
     <div>
-        <i class= "fa fa-credit-card"></i> Perfil
+        <i class= ""></i> Perfil
     </div>
 
 @endsection

@@ -2,7 +2,7 @@
 
 @section('title')
     <div>
-        <i class= "fa fa-credit-card"></i> Calificaciones
+        <i class= ""></i> Calificaciones
     </div>
 
 @endsection
