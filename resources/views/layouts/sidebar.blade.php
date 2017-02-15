@@ -30,7 +30,9 @@
 	<div class="wrapper">
 
 	    <div class="sidebar" data-color="blue" data-image="../img/img1.jpg">
+
 			<!--
+			#0033A0
 		        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
 		        Tip 2: you can also add an image using data-image tag
@@ -52,7 +54,7 @@
 	                <li class= "{{strpos(Request::url(), 'actividades') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('actividades.index') }}">
 	                        <i class="material-icons">library_books</i>
-	                        <p>Avticidades</p>
+	                        <p>Actividades</p>
 	                    </a>
 	                </li>
 	                <li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
