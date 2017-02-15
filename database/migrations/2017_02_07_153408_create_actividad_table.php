@@ -22,6 +22,17 @@ class CreateActividadTable extends Migration
             $table->datetime('limite');
             $table->timestamps();
         });
+
+        Schema::create('respuestas_profesor', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('id_actividad');
+            $table->integer('id_profesor');
+            $table->integer('id_evaluado');
+            $table->integer('id_comportamiento');
+            $table->tinyInteger('nota');
+            $table->String('comentario', 255)->nullable();
+            $table->timestamps();
+        });
     }
 
     /**

@@ -20,6 +20,13 @@ class CreateEquipoTable extends Migration
             $table->foreign('id_actividad')->references('id')->on('actividad')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
+
+        Schema::create('equipo_alumno', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('equipo_id')->unsigned();
+            $table->integer('alumno_id')->unsigned();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -30,5 +37,6 @@ class CreateEquipoTable extends Migration
     public function down()
     {
         Schema::dropIfExists('equipo');
+        Schema::dropIfExists('equipo_alumno');
     }
 }
