@@ -25,9 +25,7 @@
 							<div class="card">
 								<div class="card-content">
 									<h4 class="title">Actividad colaborativa de Integraci&oacuten por Partes</h4>
-									{{-- {!! Form::open( ['route' => ['actividades.mate']] ) !!} --}}
-									<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span> Por completar.</p>
-									{{-- {!! Form::close() !!} --}}
+									<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="{{ route('actividades/mate') }}"> Por completar.</a></p>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
@@ -78,7 +76,7 @@
 							<div class="card">
 								<div class="card-content">
 									<h4 class="title">Actividad 1 (Encriptaci&oacuten por medio de matrices)</h4>
-									<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="{{ route('/home') }}"> Por completar.</a></p>
+									<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="{{ route('actividades/algebra') }}"> Por completar.</a></p>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
