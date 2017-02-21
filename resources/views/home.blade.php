@@ -20,6 +20,8 @@
 								</div>
 								<div class="card-content">
 									<p class="category">Materia</p>
+									<br>
+									<br>
 									<h3 class="title">Matem&aacuteticas 2</h3>
 								</div>
 								<div class="card-footer">
@@ -36,11 +38,13 @@
 								</div>
 								<div class="card-content">
 									<p class="category">Materia</p>
+									<br>
+									<br>
 									<h3 class="title">&Aacutelgebra Lineal</h3>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">check_circle</i> Actividades completas
+										<i class="material-icons text-success">check_circle</i> Actividades completas
 									</div>
 								</div>
 							</div>
@@ -52,11 +56,13 @@
 								</div>
 								<div class="card-content">
 									<p class="category">Materia</p>
+									<br>
+									<br>
 									<h3 class="title">Bases de Datos</h3>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">check_circle</i> Actividades completas
+										<i class="material-icons text-success">check_circle</i> Actividades completas
 									</div>
 								</div>
 							</div>
@@ -68,11 +74,13 @@
 								</div>
 								<div class="card-content">
 									<p class="category">Materia</p>
+									<br>
+									<br>
 									<h3 class="title">Din&aacutemica</h3>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">check_circle</i> Actividades completas
+										<i class="material-icons text-success">check_circle</i> Actividades completas
 									</div>
 								</div>
 							</div>
