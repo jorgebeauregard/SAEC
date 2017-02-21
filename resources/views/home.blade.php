@@ -2,7 +2,7 @@
 
 @section('title')
     <div>
-        <i class= ""></i> Dashboard
+        <i class= ""></i> Materias
     </div>
 @endsection
 
@@ -15,37 +15,69 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-6 col-sm-6">
 							<div class="card card-stats">
-								<div class="card-header" data-background-color="orange">
-									<i class="material-icons">content_copy</i>
+								<div class="card-header" data-background-color="blue">
+									<i class="material-icons">insert_chart</i>
 								</div>
 								<div class="card-content">
-									<p class="category">Used Space</p>
-									<h3 class="title">49/50<small>GB</small></h3>
+									<p class="category">Materia</p>
+									<h3 class="title">Matem&aacuteticas 2</h3>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>
+										<i class="material-icons text-danger">warning</i> <a href="{{ route('actividades.index') }}">Actividad pendiente</a>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-sm-6">
 							<div class="card card-stats">
-								<div class="card-header" data-background-color="green">
-									<i class="material-icons">store</i>
+								<div class="card-header" data-background-color="tecorange">
+									<i class="material-icons">border_all</i>
 								</div>
 								<div class="card-content">
-									<p class="category">Revenue</p>
-									<h3 class="title">$34,245</h3>
+									<p class="category">Materia</p>
+									<h3 class="title">&Aacutelgebra Lineal</h3>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">date_range</i> Last 24 Hours
+										<i class="material-icons">check_circle</i> Actividades completas
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="card card-stats">
+								<div class="card-header" data-background-color="blue">
+									<i class="material-icons">developer_board</i>
+								</div>
+								<div class="card-content">
+									<p class="category">Materia</p>
+									<h3 class="title">Bases de Datos</h3>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										<i class="material-icons">check_circle</i> Actividades completas
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="card card-stats">
+								<div class="card-header" data-background-color="tecorange">
+									<i class="material-icons">cached</i>
+								</div>
+								<div class="card-content">
+									<p class="category">Materia</p>
+									<h3 class="title">Din&aacutemica</h3>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										<i class="material-icons">check_circle</i> Actividades completas
+									</div>
+								</div>
+							</div>
+						</div>
+<!-- 						<div class="col-lg-3 col-md-6 col-sm-6">
 							<div class="card card-stats">
 								<div class="card-header" data-background-color="red">
 									<i class="material-icons">info_outline</i>
@@ -77,46 +109,46 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-12">
 							<div class="card">
-								<div class="card-header card-chart" data-background-color="green">
-									<div class="ct-chart" id="dailySalesChart"></div>
-								</div>
-								<div class="card-content">
-									<h4 class="title">Daily Sales</h4>
-									<p class="category"><span class="text-success"><i class="fa fa-long-arrow-up"></i> 55%  </span> increase in today sales.</p>
-								</div>
-								<div class="card-footer">
-									<div class="stats">
-										<i class="material-icons">access_time</i> updated 4 minutes ago
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-4">
-							<div class="card">
-								<div class="card-header card-chart" data-background-color="orange">
+								<div class="card-header card-chart" data-background-color="tecblue">
 									<div class="ct-chart" id="emailsSubscriptionChart"></div>
 								</div>
 								<div class="card-content">
-									<h4 class="title">Email Subscriptions</h4>
-									<p class="category">Last Campaign Performance</p>
+									<h4 class="title">Actividades Completadas</h4>
+									<p class="category"><span class="text-success"><i class="fa fa-long-arrow-up"></i> 90%  </span> Actividades completadas.</p>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">access_time</i> campaign sent 2 days ago
+										<i class="material-icons">access_time</i> Tienes l&iacutemite de 2 d&iacuteas
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header card-chart" data-background-color="tecorange">
+									<div class="ct-chart" id="completedTasksChart"></div>
+								</div>
+								<div class="card-content">
+									<h4 class="title">Actividades por completar</h4>
+									<p class="category"><span class="text-danger"><i class="fa fa-long-arrow-down"></i> 10%  </span> Actividades por completar.</p>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										<i class="material-icons">access_time</i> Tienes l&iacutemite de 2 d&iacuteas
 									</div>
 								</div>
 
 							</div>
 						</div>
 
-						<div class="col-md-4">
+					<!-- <div class="col-md-4">
 							<div class="card">
 								<div class="card-header card-chart" data-background-color="red">
 									<div class="ct-chart" id="completedTasksChart"></div>
@@ -131,11 +163,12 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 
+					<!-- TABLA DE CHECKMARKS
 					<div class="row">
-						<div class="col-lg-6 col-md-12">
+						 <div class="col-lg-6 col-md-12">
 							<div class="card card-nav-tabs">
 								<div class="card-header" data-background-color="purple">
 									<div class="nav-tabs-navigation">
@@ -353,8 +386,9 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
+						<!-- TABLA CON FORMATO
 						<div class="col-lg-6 col-md-12">
 							<div class="card">
 	                            <div class="card-header" data-background-color="orange">
@@ -398,7 +432,7 @@
 	                                </table>
 	                            </div>
 	                        </div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
