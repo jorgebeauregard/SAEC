@@ -15,12 +15,12 @@ class CreateCrnTable extends Migration
     {
         Schema::create('crn', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_materia')->unsigned();
-            $table->integer('id_periodo')->unsigned();
-            $table->integer('id_profesor')->unsigned();
-            $table->foreign('id_materia')->references('id')->on('materia')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_periodo')->references('id')->on('periodo')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_profesor')->references('id')->on('profesor')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('materia_id')->unsigned();
+            $table->integer('periodo_id')->unsigned();
+            $table->integer('profesor_id')->unsigned();
+            $table->foreign('materia_id')->references('id')->on('materia')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('periodo_id')->references('id')->on('periodo')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('profesor_id')->references('id')->on('profesor')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('grupo');
             $table->timestamps();
         });

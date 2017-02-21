@@ -17,7 +17,7 @@ class CreateActividadTable extends Migration
             $table->increments('id');
             $table->String('nombre', 60);
             $table->String('descripcion', 255);
-            $table->integer('id_crn')->unsigned();
+            $table->integer('crn_id')->unsigned();
             $table->foreign('id_crn')->references('id')->on('crn')->onDelete('cascade')->onUpdate('cascade');
             $table->datetime('limite');
             $table->timestamps();
@@ -25,10 +25,21 @@ class CreateActividadTable extends Migration
 
         Schema::create('respuestas_profesor', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_actividad');
-            $table->integer('id_profesor');
-            $table->integer('id_evaluado');
-            $table->integer('id_comportamiento');
+            $table->integer('actividad_id');
+            $table->integer('profesor_id');
+            $table->integer('alumno_id');
+            $table->integer('comportamiento_id');
+            $table->tinyInteger('nota');
+            $table->String('comentario', 255)->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('respuestas_alumno', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('actividad_id');
+            $table->integer('evaluador_id');
+            $table->integer('evaluado_id');
+            $table->integer('comportamiento_id');
             $table->tinyInteger('nota');
             $table->String('comentario', 255)->nullable();
             $table->timestamps();
