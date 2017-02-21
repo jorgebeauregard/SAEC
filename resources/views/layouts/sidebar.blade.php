@@ -29,7 +29,7 @@
 
 	<div class="wrapper">
 
-	    <div class="sidebar" data-color="blue" data-image="../img/img1.jpg">
+	    <div class="sidebar" data-color="tecblue" data-image="../img/img1.jpg">
 
 			<!--
 			#0033A0
@@ -48,7 +48,7 @@
 	                <li class= "{{strpos(Request::url(), 'home') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('/home') }}"">
 	                        <i class="material-icons">dashboard</i>
-	                        <p>Dashboard</p>
+	                        <p>Materias</p>
 	                    </a>
 	                </li>
 	                <li class= "{{strpos(Request::url(), 'actividades') ? 'active' : 'inactive' }}">
