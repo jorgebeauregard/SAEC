@@ -46,7 +46,7 @@
 	    	<div class="sidebar-wrapper">
 	            <ul class="nav">
 	                <li class= "{{strpos(Request::url(), 'home') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('/home') }}"">
+	                    <a href="{{ route('/home') }}">
 	                        <i class="material-icons">dashboard</i>
 	                        <p>Materias</p>
 	                    </a>
@@ -88,7 +88,7 @@
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li>
-								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+								<a href="{{ route('/home') }}">
 									<i class="material-icons">dashboard</i>
 									<p class="hidden-lg hidden-md">Dashboard</p>
 								</a>
@@ -100,23 +100,22 @@
 									<p class="hidden-lg hidden-md">Notifications</p>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Responde Actividad 3 de Estructuras de datos</a></li>
-									<li><a href="#">El l&iacutemite de la Actividad de Bases de datos es pronto</a></li>
+									<li><a href="{{ route('actividades.index') }}">1 Actividad pendiente de matem&aacuteticas</a></li>
+									<li><a href="{{ route('actividades.index') }}">1 Actividad pendiente de &Aacutelgebra lineal</a></li>
 								</ul>
 							</li>
 							<li>
 								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-	 							   <i class="material-icons">person</i>
+	 							   <i class="material-icons">power_settings_new</i>
 	 							   <p class="hidden-lg hidden-md">Profile</p>
 		 						</a>
 		 						<ul class="dropdown-menu">
-									<li><a href="#">Config</a></li>
-									<li><a href="{{ route('logout') }}">LogOut</a></li>
+									<li><a href="{{ route('logout') }}">Log out</a></li>
 								</ul>
 							</li>
 						</ul>
 
-						<form class="navbar-form navbar-right" role="search">
+						<!-- <form class="navbar-form navbar-right" role="search">
 							<div class="form-group  is-empty">
 								<input type="text" class="form-control" placeholder="Search">
 								<span class="material-input"></span>
@@ -124,7 +123,7 @@
 							<button type="submit" class="btn btn-white btn-round btn-just-icon">
 								<i class="material-icons">search</i><div class="ripple-container"></div>
 							</button>
-						</form>
+						</form> -->
 					</div>
 				</div>
 			</nav>

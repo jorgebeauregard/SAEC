@@ -21,11 +21,22 @@ class ActividadesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /*
+    public function mate()
+    {
+        return view('actividades.mate');
+    }
+
+    public function algebra()
+    {
+        return view('actividades.algebra');
+    }
+
     public function create()
     {
         //
     }
-
+    */
     /**
      * Store a newly created resource in storage.
      *
