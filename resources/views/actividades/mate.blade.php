@@ -280,7 +280,7 @@
                             </table>
                         </div>
                     </div>
-                    <a class = "btn btn-primary pull-right" href="{{ route('/home') }}">Terminar</a>
+                    <a class = "btn btn-primary pull-right" href="{{ route('actividades.index') }}">Terminar</a>
                 </div>  
 
 			</div>
