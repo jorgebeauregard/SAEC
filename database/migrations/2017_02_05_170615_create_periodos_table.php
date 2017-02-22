@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompetenciaTable extends Migration
+class CreatePeriodosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateCompetenciaTable extends Migration
      */
     public function up()
     {
-        Schema::create('competencia', function (Blueprint $table) {
+        Schema::create('periodos', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('nombre',60);
-            $table->String('descripcion',250);
+            $table->string('nombre',60);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateCompetenciaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('competencia');
+        Schema::dropIfExists('periodos');
     }
 }

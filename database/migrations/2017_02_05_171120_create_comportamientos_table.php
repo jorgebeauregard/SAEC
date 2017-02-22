@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComportamientoTable extends Migration
+class CreateComportamientosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateComportamientoTable extends Migration
      */
     public function up()
     {
-        Schema::create('comportamiento', function (Blueprint $table) {
+        Schema::create('comportamientos', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('pregunta',250);
-            $table->String('descripcion',250);
+            $table->string('pregunta',250);
+            $table->string('descripcion',250);
             $table->timestamps();
         });
 
-        Schema::create('competencia_comportamiento', function (Blueprint $table) {
+        Schema::create('competencias_comportamientos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('competencia_id');
             $table->integer('comportamiento_id');
@@ -37,7 +37,7 @@ class CreateComportamientoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comportamiento');
-        Schema::dropIfExists('competencia_comportamiento');
+        Schema::dropIfExists('comportamientos');
+        Schema::dropIfExists('competencias_comportamientos');
     }
 }

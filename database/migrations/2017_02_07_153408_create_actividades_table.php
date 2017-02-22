@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActividadTable extends Migration
+class CreateActividadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,35 +13,35 @@ class CreateActividadTable extends Migration
      */
     public function up()
     {
-        Schema::create('actividad', function (Blueprint $table) {
+        Schema::create('actividades', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('nombre', 60);
-            $table->String('descripcion', 255);
+            $table->string('nombre', 60);
+            $table->string('descripcion', 255);
             $table->integer('crn_id')->unsigned();
-            $table->foreign('id_crn')->references('id')->on('crn')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('crn_id')->references('id')->on('crns')->onDelete('cascade')->onUpdate('cascade');
             $table->datetime('limite');
             $table->timestamps();
         });
 
-        Schema::create('respuestas_profesor', function (Blueprint $table) {
+        Schema::create('respuestas_profesores', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('actividad_id');
             $table->integer('profesor_id');
             $table->integer('alumno_id');
             $table->integer('comportamiento_id');
             $table->tinyInteger('nota');
-            $table->String('comentario', 255)->nullable();
+            $table->string('comentario', 255)->nullable();
             $table->timestamps();
         });
 
-        Schema::create('respuestas_alumno', function (Blueprint $table) {
+        Schema::create('respuestas_alumnos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('actividad_id');
             $table->integer('evaluador_id');
             $table->integer('evaluado_id');
             $table->integer('comportamiento_id');
             $table->tinyInteger('nota');
-            $table->String('comentario', 255)->nullable();
+            $table->string('comentario', 255)->nullable();
             $table->timestamps();
         });
     }
@@ -53,6 +53,8 @@ class CreateActividadTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividad');
+        Schema::dropIfExists('actividades');
+        Schema::dropIfExists('respuestas_profesores');
+        Schema::dropIfExists('respuestas_alumnos');
     }
 }

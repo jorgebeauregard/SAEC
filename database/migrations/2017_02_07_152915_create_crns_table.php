@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCrnTable extends Migration
+class CreateCrnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,18 @@ class CreateCrnTable extends Migration
      */
     public function up()
     {
-        Schema::create('crn', function (Blueprint $table) {
+        Schema::create('crns', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('materia_id')->unsigned();
             $table->integer('periodo_id')->unsigned();
             $table->integer('profesor_id')->unsigned();
-            $table->foreign('materia_id')->references('id')->on('materia')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('periodo_id')->references('id')->on('periodo')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('profesor_id')->references('id')->on('profesor')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('grupo');
             $table->timestamps();
+            
+            $table->foreign('materia_id')->references('id')->on('materias')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('periodo_id')->references('id')->on('periodos')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('profesor_id')->references('id')->on('profesores')->onDelete('cascade')->onUpdate('cascade');
+           
         });
     }
 
@@ -33,6 +35,6 @@ class CreateCrnTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crn');
+        Schema::dropIfExists('crns');
     }
 }

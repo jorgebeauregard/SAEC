@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCampusTable extends Migration
+class CreateCampiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateCampusTable extends Migration
      */
     public function up()
     {
-        Schema::create('campus', function (Blueprint $table) {
+        Schema::create('campi', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('nombre',60);
+            $table->string('nombre',60);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateCampusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('campus');
+        Schema::dropIfExists('campi');
     }
 }

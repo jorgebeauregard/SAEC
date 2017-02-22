@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEquipoTable extends Migration
+class CreateEquiposTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateEquipoTable extends Migration
      */
     public function up()
     {
-        Schema::create('equipo', function (Blueprint $table) {
+        Schema::create('equipos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('numero_equipo')->unsigned();
-            $table->integer('id_actividad')->unsigned();
-            $table->foreign('id_actividad')->references('id')->on('actividad')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('actividad_id')->unsigned();
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
 
-        Schema::create('equipo_alumno', function (Blueprint $table) {
+        Schema::create('equipos_alumnos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('equipo_id')->unsigned();
             $table->integer('alumno_id')->unsigned();
@@ -36,7 +36,7 @@ class CreateEquipoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipo');
-        Schema::dropIfExists('equipo_alumno');
+        Schema::dropIfExists('equipos');
+        Schema::dropIfExists('equipos_alumnos');
     }
 }

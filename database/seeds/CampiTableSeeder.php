@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SeedCampus extends Seeder
+class CampiTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,15 +11,15 @@ class SeedCampus extends Seeder
      */
     public function run()
     {
-        DB::table('campus')->insert([
+        DB::table('campi')->insert([
         	'nombre' => 'Puebla',
     	]);
 
-        DB::table('campus')->insert([
+        DB::table('campi')->insert([
         	'nombre' => 'Ciudad de Mexico',
     	]);
 
-        DB::table('campus')->insert([
+        DB::table('campi')->insert([
         	'nombre' => 'Monterrey',
     	]);
     }

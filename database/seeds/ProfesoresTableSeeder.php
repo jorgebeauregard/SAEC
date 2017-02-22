@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SeedProfesor extends Seeder
+class ProfesoresTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class SeedProfesor extends Seeder
      */
     public function run()
     {
-        DB::table('profesor')->insert([
+        DB::table('profesores')->insert([
         	'nomina' => 'L012345678',
             'nombre' => 'Abel',
             'apellido' => 'Flores',
@@ -19,7 +19,7 @@ class SeedProfesor extends Seeder
             'contrasena' => 'contrasena',
     	]);
 
-        DB::table('profesor')->insert([
+        DB::table('profesores')->insert([
         	'nomina' => 'L012345679',
             'nombre' => 'Alberto',
             'apellido' => 'Oliart',
@@ -27,7 +27,7 @@ class SeedProfesor extends Seeder
             'contrasena' => 'contrasena',
     	]);
 
-        DB::table('profesor')->insert([
+        DB::table('profesores')->insert([
         	'nomina' => 'L012345680',
             'nombre' => 'Daniel',
             'apellido' => 'Perez',

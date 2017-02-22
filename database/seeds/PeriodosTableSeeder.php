@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SeedPeriodo extends Seeder
+class PeriodosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,15 +11,15 @@ class SeedPeriodo extends Seeder
      */
     public function run()
     {
-    	DB::table('periodo')->insert([
+    	DB::table('periodos')->insert([
         	'nombre'=>'E 16',
         ]);
 
-        DB::table('periodo')->insert([
+        DB::table('periodos')->insert([
         	'nombre'=>'A 16',
         ]);
 
-        DB::table('periodo')->insert([
+        DB::table('periodos')->insert([
         	'nombre'=>'E 17',
         ]);
     }
