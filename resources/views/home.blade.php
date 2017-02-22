@@ -26,7 +26,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons text-danger">warning</i> <a href="{{ route('actividades.index') }}">Actividad pendiente</a>
+										<i class="material-icons text-danger">warning</i> <a href="{{ route('actividades.index') }}">Coevaluaci&oacuten pendiente</a>
 									</div>
 								</div>
 							</div>
@@ -44,7 +44,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons text-success">check_circle</i> Actividades completas
+										<i class="material-icons text-danger">warning</i> <a href="{{ route('actividades.index') }}">Coevaluaci&oacuten pendiente</a>
 									</div>
 								</div>
 							</div>
@@ -62,7 +62,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons text-success">check_circle</i> Actividades completas
+										<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
 									</div>
 								</div>
 							</div>
@@ -80,7 +80,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons text-success">check_circle</i> Actividades completas
+										<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
 									</div>
 								</div>
 							</div>
