@@ -145,7 +145,144 @@
                             </table>
                         </div>
                     </div>
-				</div>									
+				</div>
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="blue">
+                            <h4 class="title">¿Fomentó el pensamiento crítico en torno a la actividad?</h4>
+                            <p class="category">Sus opiniones y puntos de vista estaban fundados en conocimiento obtenido de fuentes fiables.</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <th>Name</th>
+                                    <th>Sí</th>
+                                    <th>No</th>
+                                    <th>No puedo responder</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Guillerno Jimenez</td>
+                                        <td><input type="radio" name="nota13" value="si"></td>
+                                        <td><input type="radio" name="nota13" value="no"> </td>
+                                        <td><input type="radio" name="nota13" value="null"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>María Gómez</td>
+                                          <td><input type="radio" name="nota14" value="si"></td>
+                                          <td><input type="radio" name="nota14" value="no"> </td>
+                                          <td><input type="radio" name="nota14" value="null"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alejandra Delgado</td>
+                                          <td><input type="radio" name="nota15" value="si"></td>
+                                          <td><input type="radio" name="nota15" value="no"> </td>
+                                          <td><input type="radio" name="nota15" value="null"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jorge Pérez</td>
+                                          <td><input type="radio" name="nota16" value="si"></td>
+                                          <td><input type="radio" name="nota16" value="no"> </td>
+                                          <td><input type="radio" name="nota16" value="null"> </td>
+                                    </tr>                                         
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="blue">
+                            <h4 class="title">¿Mostró respeto a sus compañeros en todo momento?</h4>
+                            <p class="category">Es decir, no se excluyó o denigró de ninguna forma a alguno de sus compañeros.</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <th>Name</th>
+                                    <th>Sí</th>
+                                    <th>No</th>
+                                    <th>No puedo responder</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Guillerno Jimenez</td>
+                                        <td><input type="radio" name="nota17" value="si"></td>
+                                        <td><input type="radio" name="nota17" value="no"> </td>
+                                        <td><input type="radio" name="nota17" value="null"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>María Gómez</td>
+                                          <td><input type="radio" name="nota18" value="si"></td>
+                                          <td><input type="radio" name="nota18" value="no"> </td>
+                                          <td><input type="radio" name="nota18" value="null"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alejandra Delgado</td>
+                                          <td><input type="radio" name="nota19" value="si"></td>
+                                          <td><input type="radio" name="nota19" value="no"> </td>
+                                          <td><input type="radio" name="nota19" value="null"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jorge Pérez</td>
+                                          <td><input type="radio" name="nota20" value="si"></td>
+                                          <td><input type="radio" name="nota20" value="no"> </td>
+                                          <td><input type="radio" name="nota20" value="null"> </td>
+                                    </tr>                                         
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="blue">
+                            <h4 class="title">¿Fue cordial con sus compañeros?</h4>
+                            <p class="category">Fue amable con sus compañeros y buscó crear un ambiente agradable.</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <th>Name</th>
+                                    <th>Sí</th>
+                                    <th>No</th>
+                                    <th>No puedo responder</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Guillerno Jimenez</td>
+                                        <td><input type="radio" name="nota21" value="si"></td>
+                                        <td><input type="radio" name="nota21" value="no"> </td>
+                                        <td><input type="radio" name="nota21" value="null"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>María Gómez</td>
+                                          <td><input type="radio" name="nota22" value="si"></td>
+                                          <td><input type="radio" name="nota22" value="no"> </td>
+                                          <td><input type="radio" name="nota22" value="null"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alejandra Delgado</td>
+                                          <td><input type="radio" name="nota23" value="si"></td>
+                                          <td><input type="radio" name="nota23" value="no"> </td>
+                                          <td><input type="radio" name="nota23" value="null"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jorge Pérez</td>
+                                          <td><input type="radio" name="nota24" value="si"></td>
+                                          <td><input type="radio" name="nota24" value="no"> </td>
+                                          <td><input type="radio" name="nota24" value="null"> </td>
+                                    </tr>                                         
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <a class = "btn btn-primary pull-right" href="{{ route('/home') }}">Terminar</a>
+                </div>  
+
 			</div>
 
 @endsection
