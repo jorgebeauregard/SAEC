@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'github' => [
+        'client_id' => 'LaravelTest1',
+        'client_secret' => '123qweasd',
+        'redirect' => 'https://github.com/LaravelTest1',
+    ],
+
 ];

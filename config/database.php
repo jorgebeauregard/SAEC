@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'postgres'),
     'charset' => 'utf8mb4',
     'collation' => 'utf8mb4_unicode_ci',
     'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
