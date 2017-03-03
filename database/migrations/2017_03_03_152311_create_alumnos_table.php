@@ -19,9 +19,9 @@ class CreateAlumnosTable extends Migration
             $table->string('nombre', 60);
             $table->string('apellidos', 60);
             $table->decimal('prom_anterior', 5,2);
-            $table->integer('campus_id');
+            $table->integer('campus_id')->unsigned();
             $table->tinyInteger('genero');
-            $table->integer('plan_id');
+            $table->integer('plan_id')->unsigned();
             $table->string('contrasena', 30);
             $table->timestamps();
             
@@ -31,8 +31,8 @@ class CreateAlumnosTable extends Migration
 
         Schema::create('actividades_alumnos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('actividad_id');
-            $table->integer('alumno_id');
+            $table->integer('actividad_id')->unsigned();
+            $table->integer('alumno_id')->unsigned();
             $table->boolean('completada');
             $table->timestamps();
 

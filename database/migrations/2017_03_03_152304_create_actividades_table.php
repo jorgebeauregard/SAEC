@@ -17,17 +17,17 @@ class CreateActividadesTable extends Migration
             $table->increments('id');
             $table->string('nombre', 60);
             $table->string('descripcion', 255);
-            $table->integer('profesor_id');
+            $table->integer('profesor_id')->unsigned();
             $table->dateTime('fecha_limite');
             $table->timestamps();
             
-            $table->foreign('profesor_id')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('profesor_id')->references('id')->on('profesores')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('actividades_competencias', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('actividad_id');
-            $table->integer('competencia_id');
+            $table->integer('actividad_id')->unsigned();
+            $table->integer('competencia_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('actividad_id')->references('id')->on('actividades')->onUpdate('cascade')->onDelete('cascade');

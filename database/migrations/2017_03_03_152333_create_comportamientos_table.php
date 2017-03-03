@@ -17,7 +17,7 @@ class CreateComportamientosTable extends Migration
             $table->increments('id');
             $table->string('pregunta', 250);
             $table->string('descripcion', 250);
-            $table->integer('competencia_id');
+            $table->integer('competencia_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('competencia_id')->references('id')->on('competencias')->onUpdate('cascade')->onDelete('cascade');
@@ -26,10 +26,10 @@ class CreateComportamientosTable extends Migration
         Schema::create('alumnos_respuestas', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('actividad_id');
-            $table->integer('evaluador_id');
-            $table->integer('evaluado_id');
-            $table->integer('comportamiento_id');
+            $table->integer('actividad_id')->unsigned();
+            $table->integer('evaluador_id')->unsigned();
+            $table->integer('evaluado_id')->unsigned();
+            $table->integer('comportamiento_id')->unsigned();
             $table->tinyInteger('nota');
             $table->text('comentario');
 
@@ -42,10 +42,10 @@ class CreateComportamientosTable extends Migration
         Schema::create('profesores_respuestas', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('actividad_id');
-            $table->integer('profesor_id');
-            $table->integer('evaluado_id');
-            $table->integer('comportamiento_id');
+            $table->integer('actividad_id')->unsigned();
+            $table->integer('profesor_id')->unsigned();
+            $table->integer('evaluado_id')->unsigned();
+            $table->integer('comportamiento_id')->unsigned();
             $table->tinyInteger('nota');
             $table->text('comentario');
 
