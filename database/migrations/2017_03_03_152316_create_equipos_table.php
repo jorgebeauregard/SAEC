@@ -15,7 +15,10 @@ class CreateEquiposTable extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('numero_equipo');
+            $table->integer('actividad_id');
             $table->timestamps();
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

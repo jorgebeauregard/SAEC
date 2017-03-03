@@ -15,7 +15,18 @@ class CreateAlumnosTable extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('matricula', 10);
+            $table->string('nombre', 60);
+            $table->string('apellidos', 60);
+            $table->decimal('prom_anterior', 5,2);
+            $table->integer('campus_id');
+            $table->tinyInteger('genero');
+            $table->integer('plan_id');
+            $table->string('contraseña', 30);
             $table->timestamps();
+            
+            $table->foreign('campus_id')->references('id')->on('campi')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('plan_id')->references('id')->on('planes')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

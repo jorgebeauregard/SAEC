@@ -15,7 +15,12 @@ class CreateActividadesTable extends Migration
     {
         Schema::create('actividades', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre', 60);
+            $table->string('descripcion', 255);
+            $table->integer('profesor_id');
+            $table->dateTime('fecha_limite');
             $table->timestamps();
+            $table->foreign('profesor_id')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
