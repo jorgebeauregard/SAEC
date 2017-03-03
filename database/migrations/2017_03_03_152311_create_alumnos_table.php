@@ -22,7 +22,7 @@ class CreateAlumnosTable extends Migration
             $table->integer('campus_id');
             $table->tinyInteger('genero');
             $table->integer('plan_id');
-            $table->string('contraseña', 30);
+            $table->string('contrasena', 30);
             $table->timestamps();
             
             $table->foreign('campus_id')->references('id')->on('campi')->onUpdate('cascade')->onDelete('cascade');
@@ -49,5 +49,6 @@ class CreateAlumnosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('alumnos');
+        Schema::dropIfExists('actividades_alumnos');
     }
 }

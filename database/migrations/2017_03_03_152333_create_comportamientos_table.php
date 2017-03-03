@@ -22,6 +22,40 @@ class CreateComportamientosTable extends Migration
 
             $table->foreign('competencia_id')->references('id')->on('competencias')->onUpdate('cascade')->onDelete('cascade');
         });
+
+        Schema::create('alumnos_respuestas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
+            $table->integer('actividad_id');
+            $table->integer('evaluador_id');
+            $table->integer('evaluado_id');
+            $table->integer('comportamiento_id');
+            $table->tinyInteger('nota');
+            $table->text('comentario');
+
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('evaluador_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('evaluado_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('comportamiento_id')->references('id')->on('comportamientos')->onUpdate('cascade')->onDelete('cascade');
+        });
+
+        Schema::create('profesores_respuestas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
+            $table->integer('actividad_id');
+            $table->integer('profesor_id');
+            $table->integer('evaluado_id');
+            $table->integer('comportamiento_id');
+            $table->tinyInteger('nota');
+            $table->text('comentario');
+
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('profesor_id')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('evaluado_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('comportamiento_id')->references('id')->on('comportamientos')->onUpdate('cascade')->onDelete('cascade');
+
+        });
+
     }
 
     /**
@@ -32,5 +66,13 @@ class CreateComportamientosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('comportamientos');
+        Schema::dropIfExists('alumnos_respuestas');
+        Schema::dropIfExists('profesores_respuestas');
     }
 }
+
+
+/*
+alumno_respuesta
+porofesores_respusta
+*/

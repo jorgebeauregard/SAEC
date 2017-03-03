@@ -19,7 +19,7 @@ class CreateProfesoresTable extends Migration
             $table->string('nombre',60);
             $table->string('apellido',60);
             $table->string('correo',60);
-            $table->string('contraseña',60);
+            $table->string('contrasena',60);
             $table->timestamps();
         });
     }

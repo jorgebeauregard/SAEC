@@ -20,6 +20,7 @@ class CreateActividadesTable extends Migration
             $table->integer('profesor_id');
             $table->dateTime('fecha_limite');
             $table->timestamps();
+            
             $table->foreign('profesor_id')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
         });
 
@@ -42,5 +43,7 @@ class CreateActividadesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('actividades');
+        Schema::dropIfExists('actividades_competencias');
+
     }
 }
