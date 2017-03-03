@@ -15,7 +15,15 @@ class CreateCrnsTable extends Migration
     {
         Schema::create('crns', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('materia_id');
+            $table->integer('periodo_id');
+            $table->integer('profesor_id');
+            $table->integer('grupo');
             $table->timestamps();
+
+            $table->foreign('materia_id')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('periodo_id')->references('id')->on('periodos')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('profesor_id')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
