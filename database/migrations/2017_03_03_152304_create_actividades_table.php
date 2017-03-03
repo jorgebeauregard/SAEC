@@ -22,6 +22,16 @@ class CreateActividadesTable extends Migration
             $table->timestamps();
             $table->foreign('profesor_id')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
         });
+
+        Schema::create('actividades_competencias', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('actividad_id');
+            $table->integer('competencias_id');
+            $table->timestamps();
+
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('competencias_id')->references('id')->on('competencias')->onUpdate('cascade')->onDelete('cascade');
+        });
     }
 
     /**

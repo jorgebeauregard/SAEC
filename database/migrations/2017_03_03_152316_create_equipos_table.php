@@ -22,6 +22,16 @@ class CreateEquiposTable extends Migration
         });
     }
 
+    Schema::create('alumnos_equipos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('equipos_id');
+            $table->integer('alumno_id');
+            $table->timestamps();
+
+            $table->foreign('equipos_id')->references('id')->on('equipos')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
+        });
+
     /**
      * Reverse the migrations.
      *
