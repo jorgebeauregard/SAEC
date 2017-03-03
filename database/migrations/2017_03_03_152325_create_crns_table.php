@@ -28,11 +28,11 @@ class CreateCrnsTable extends Migration
 
         Schema::create('alumnos_crns', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('crns_id');
+            $table->integer('crn_id');
             $table->integer('alumno_id');
             $table->timestamps();
 
-            $table->foreign('crns_id')->references('id')->on('crns')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('crn_id')->references('id')->on('crns')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('alumno_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
         });
     }
