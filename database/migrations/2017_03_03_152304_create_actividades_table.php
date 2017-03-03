@@ -42,8 +42,7 @@ class CreateActividadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividades');
         Schema::dropIfExists('actividades_competencias');
-
+        Schema::dropIfExists('actividades');
     }
 }

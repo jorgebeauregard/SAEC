@@ -44,7 +44,8 @@ class CreateCrnsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crns');
         Schema::dropIfExists('alumnos_crns');
+        Schema::dropIfExists('crns');
+
     }
 }
