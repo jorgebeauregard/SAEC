@@ -28,6 +28,17 @@ class CreateAlumnosTable extends Migration
             $table->foreign('campus_id')->references('id')->on('campi')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('plan_id')->references('id')->on('planes')->onUpdate('cascade')->onDelete('cascade');
         });
+
+        Schema::create('actividades_alumnos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('actividad_id');
+            $table->integer('alumno_id');
+            $table->boolean('completada');
+            $table->timestamps();
+
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
+        });
     }
 
     /**
