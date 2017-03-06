@@ -17,7 +17,7 @@ class CreateAlumnosTable extends Migration
             $table->increments('id');
             $table->string('matricula', 10);
             $table->string('nombre', 60);
-            $table->string('apellidos', 60);
+            $table->string('apellido', 60);
             $table->decimal('prom_anterior', 5,2);
             $table->integer('campus_id')->unsigned();
             $table->tinyInteger('genero');

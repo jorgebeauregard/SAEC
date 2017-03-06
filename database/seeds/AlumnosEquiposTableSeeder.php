@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EquiposAlumnosTableSeeder extends Seeder
+class AlumnosEquiposTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,57 +11,57 @@ class EquiposAlumnosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 1,
         	'alumno_id' => 1,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 1,
         	'alumno_id' => 2,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 2,
         	'alumno_id' => 2,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 2,
         	'alumno_id' => 3,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 3,
         	'alumno_id' => 1,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 3,
         	'alumno_id' => 2,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 3,
         	'alumno_id' => 3,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 4,
         	'alumno_id' => 1,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 4,
         	'alumno_id' => 3,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 5,
         	'alumno_id' => 1,
         ]);
 
-        DB::table('equipos_alumnos')->insert([
+        DB::table('alumnos_equipos')->insert([
         	'equipo_id' => 5,
         	'alumno_id' => 2,
         ]);
