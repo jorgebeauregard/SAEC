@@ -6,7 +6,7 @@ use App\ProfesorRespuesta;
 use App\Profesor;
 use App\Alumno;
 use App\Competencia;
-use App\AlumnoRepuesta;
+use App\AlumnoRespuesta;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,6 +29,6 @@ class Actividad extends Model
     } 
 
     public function alumno_respuestas(){
-    	return $this->hasMany(AlumnoRepuesta::class);
+    	return $this->hasMany(AlumnoRespuesta::class);
     }                     
 }
