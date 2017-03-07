@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PlanesTableSeeder extends Seeder
+class PlansTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,17 +11,17 @@ class PlanesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('planes')->insert([
+        DB::table('plans')->insert([
         	'nombre'=>'ITC11',
         	'descripcion'=>'Ingenieria en Tecnologias Computacionales',
         ]);
 
-        DB::table('planes')->insert([
+        DB::table('plans')->insert([
         	'nombre'=>'ISD11',
         	'descripcion'=>'Ingenieria en Sistemas Digitales y Robotica',
         ]);
 
-        DB::table('planes')->insert([
+        DB::table('plans')->insert([
         	'nombre'=>'LAD11',
         	'descripcion'=>'Licenciatura en Animacion Digital',
         ]);

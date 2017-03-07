@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActividadesTable extends Migration
+class CreateActividadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateActividadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('actividades', function (Blueprint $table) {
+        Schema::create('actividads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 60);
             $table->string('descripcion', 255);
@@ -21,16 +21,16 @@ class CreateActividadesTable extends Migration
             $table->dateTime('fecha_limite');
             $table->timestamps();
             
-            $table->foreign('profesor_id')->references('id')->on('profesores')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('profesor_id')->references('id')->on('profesors')->onDelete('cascade')->onUpdate('cascade');
         });
 
-        Schema::create('actividades_competencias', function (Blueprint $table) {
+        Schema::create('actividad_competencia', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('actividad_id')->unsigned();
             $table->integer('competencia_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('actividad_id')->references('id')->on('actividades')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('actividad_id')->references('id')->on('actividads')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('competencia_id')->references('id')->on('competencias')->onUpdate('cascade')->onDelete('cascade');
         });
     }
@@ -42,7 +42,7 @@ class CreateActividadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividades_competencias');
-        Schema::dropIfExists('actividades');
+        Schema::dropIfExists('actividads_competencias');
+        Schema::dropIfExists('actividads');
     }
 }

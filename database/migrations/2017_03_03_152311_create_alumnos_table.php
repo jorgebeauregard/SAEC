@@ -25,9 +25,11 @@ class CreateAlumnosTable extends Migration
             $table->string('contrasena', 30);
             $table->timestamps();
             
-            $table->foreign('campus_id')->references('id')->on('campi')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('plan_id')->references('id')->on('planes')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('campus_id')->references('id')->on('campuses')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('plan_id')->references('id')->on('plans')->onUpdate('cascade')->onDelete('cascade');
         });
+    }
+
     /**
      * Reverse the migrations.
      *
@@ -35,7 +37,6 @@ class CreateAlumnosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividades_alumnos');
         Schema::dropIfExists('alumnos');
     }
 }

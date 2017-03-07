@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class AlumnosEquiposTableSeeder extends Seeder
+class AlumnoEquipoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,57 +11,57 @@ class AlumnosEquiposTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 1,
         	'alumno_id' => 1,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 1,
         	'alumno_id' => 2,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 2,
         	'alumno_id' => 2,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 2,
         	'alumno_id' => 3,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 3,
         	'alumno_id' => 1,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 3,
         	'alumno_id' => 2,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 3,
         	'alumno_id' => 3,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 4,
         	'alumno_id' => 1,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 4,
         	'alumno_id' => 3,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 5,
         	'alumno_id' => 1,
         ]);
 
-        DB::table('alumnos_equipos')->insert([
+        DB::table('alumno_equipo')->insert([
         	'equipo_id' => 5,
         	'alumno_id' => 2,
         ]);

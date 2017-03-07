@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CompetenciasComportamientosTableSeeder extends Seeder
+class CompetenciaComportamientoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,17 +11,17 @@ class CompetenciasComportamientosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('competencias_comportamientos')->insert([
+        DB::table('competencia_comportamiento')->insert([
             'competencia_id' => 3,
             'comportamiento_id' => 2,
         ]);
 
-        DB::table('competencias_comportamientos')->insert([
+        DB::table('competencia_comportamiento')->insert([
             'competencia_id' => 2,
             'comportamiento_id' => 3,
         ]);
 
-        DB::table('competencias_comportamientos')->insert([
+        DB::table('competencia_comportamiento')->insert([
             'competencia_id' => 1,
             'comportamiento_id' => 1,
         ]);

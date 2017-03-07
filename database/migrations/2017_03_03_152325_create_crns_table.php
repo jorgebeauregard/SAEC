@@ -23,10 +23,10 @@ class CreateCrnsTable extends Migration
 
             $table->foreign('materia_id')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('periodo_id')->references('id')->on('periodos')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('profesor_id')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('profesor_id')->references('id')->on('profesors')->onUpdate('cascade')->onDelete('cascade');
         });
 
-        Schema::create('alumnos_crns', function (Blueprint $table) {
+        Schema::create('alumno_crn', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('crn_id')->unsigned();
             $table->integer('alumno_id')->unsigned();
@@ -44,7 +44,7 @@ class CreateCrnsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumnos_crns');
+        Schema::dropIfExists('alumno_crn');
         Schema::dropIfExists('crns');
 
     }

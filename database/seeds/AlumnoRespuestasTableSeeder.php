@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class AlumnosRespuestasTableSeeder extends Seeder
+class AlumnoRespuestasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class AlumnosRespuestasTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('alumnos_respuestas')->insert([
+        DB::table('alumno_respuestas')->insert([
         	'actividad_id' => 1,
         	'evaluador_id' => 1,
         	'evaluado_id' => 3,
@@ -20,7 +20,7 @@ class AlumnosRespuestasTableSeeder extends Seeder
         	'comentario' => 'No trabaja pero consiguio las respuestas de internet',
         ]);
 
-        DB::table('alumnos_respuestas')->insert([
+        DB::table('alumno_respuestas')->insert([
         	'actividad_id' => 1,
         	'evaluador_id' => 3,
         	'evaluado_id' => 1,
@@ -29,7 +29,7 @@ class AlumnosRespuestasTableSeeder extends Seeder
         	'comentario' => 'Me dijo que consiguiera las respuestas de la mitad de la tarea y eso hice',
         ]);
 
-        DB::table('alumnos_respuestas')->insert([
+        DB::table('alumno_respuestas')->insert([
         	'actividad_id' => 2,
         	'evaluador_id' => 1,
         	'evaluado_id' => 2,
@@ -38,7 +38,7 @@ class AlumnosRespuestasTableSeeder extends Seeder
         	'comentario' => 'Propuso ir a la empresa de su hermano para conseguir ayuda de su amigo programador',
         ]);
 
-        DB::table('alumnos_respuestas')->insert([
+        DB::table('alumno_respuestas')->insert([
         	'actividad_id' => 2,
         	'evaluador_id' => 2,
         	'evaluado_id' => 1,
@@ -47,7 +47,7 @@ class AlumnosRespuestasTableSeeder extends Seeder
         	'comentario' => 'Tuve que pedirle ayuda a mi hermano porque no propuso ideas para resolver el problema y hacer el programa',
         ]);
 
-        DB::table('alumnos_respuestas')->insert([
+        DB::table('alumno_respuestas')->insert([
         	'actividad_id' => 3,
         	'evaluador_id' => 1,
         	'evaluado_id' => 2,
@@ -56,7 +56,7 @@ class AlumnosRespuestasTableSeeder extends Seeder
         	'comentario' => 'Buen lider',
         ]);
 
-        DB::table('alumnos_respuestas')->insert([
+        DB::table('alumno_respuestas')->insert([
         	'actividad_id' => 3,
         	'evaluador_id' => 2,
         	'evaluado_id' => 1,

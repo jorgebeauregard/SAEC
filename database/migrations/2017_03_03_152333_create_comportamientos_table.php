@@ -22,40 +22,6 @@ class CreateComportamientosTable extends Migration
 
             $table->foreign('competencia_id')->references('id')->on('competencias')->onUpdate('cascade')->onDelete('cascade');
         });
-
-        Schema::create('alumnos_respuestas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-            $table->integer('actividad_id')->unsigned();
-            $table->integer('evaluador_id')->unsigned();
-            $table->integer('evaluado_id')->unsigned();
-            $table->integer('comportamiento_id')->unsigned();
-            $table->tinyInteger('nota');
-            $table->text('comentario');
-
-            $table->foreign('actividad_id')->references('id')->on('actividades')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('evaluador_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('evaluado_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('comportamiento_id')->references('id')->on('comportamientos')->onUpdate('cascade')->onDelete('cascade');
-        });
-
-        Schema::create('profesores_respuestas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-            $table->integer('actividad_id')->unsigned();
-            $table->integer('profesor_id')->unsigned();
-            $table->integer('evaluado_id')->unsigned();
-            $table->integer('comportamiento_id')->unsigned();
-            $table->tinyInteger('nota');
-            $table->text('comentario');
-
-            $table->foreign('actividad_id')->references('id')->on('actividades')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('profesor_id')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('evaluado_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('comportamiento_id')->references('id')->on('comportamientos')->onUpdate('cascade')->onDelete('cascade');
-
-        });
-
     }
 
     /**
@@ -65,7 +31,7 @@ class CreateComportamientosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profesores_respuestas');
+        Schema::dropIfExists('profesors_respuestas');
         Schema::dropIfExists('alumnos_respuestas');
         Schema::dropIfExists('comportamientos');
 
