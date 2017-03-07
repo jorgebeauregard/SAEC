@@ -28,6 +28,7 @@ class CreateAlumnosTable extends Migration
             $table->foreign('campus_id')->references('id')->on('campi')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('plan_id')->references('id')->on('planes')->onUpdate('cascade')->onDelete('cascade');
         });
+    }
     /**
      * Reverse the migrations.
      *
