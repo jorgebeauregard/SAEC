@@ -6,6 +6,7 @@ use App\ProfesorRespuesta;
 use App\Profesor;
 use App\Alumno;
 use App\Competencia;
+use App\AlumnoRepuesta;
 
 use Illuminate\Database\Eloquent\Model;
 
