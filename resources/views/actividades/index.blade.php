@@ -16,7 +16,7 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content" data-background-color="blue">
-									<h3 class="title">Matem&aacuteticas</h4>
+									<h3 class="title">Matem&aacute;ticas</h4>
 								</div>
 							</div>
 						</div>
@@ -24,12 +24,12 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content">
-									<h4 class="title">Actividad colaborativa de Integraci&oacuten por Partes</h4>
+									<h4 class="title">Actividad colaborativa de Integraci&oacute;n por Partes</h4>
 									<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="{{ route('actividades/mate') }}"> Por completar.</a></p>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">access_time</i> Acaba en 2 d&iacuteas
+										<i class="material-icons">access_time</i> Acaba en 2 d&iacute;as
 									</div>
 								</div>
 
@@ -44,7 +44,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">alarm_on</i> No hay l&iacutemite
+										<i class="material-icons">alarm_on</i> No hay l&iacute;mite
 									</div>
 								</div>
 							</div>
@@ -58,7 +58,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">alarm_on</i> No hay l&iacutemite
+										<i class="material-icons">alarm_on</i> No hay l&iacute;mite
 									</div>
 								</div>
 							</div>
@@ -68,19 +68,19 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content" data-background-color="orange">
-									<h3 class="title">&Aacutelgebra lineal</h4>
+									<h3 class="title">&Aacute;lgebra lineal</h4>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content">
-									<h4 class="title">Actividad 1 (Encriptaci&oacuten por medio de matrices)</h4>
+									<h4 class="title">Actividad 1 (Encriptaci&oacute;n por medio de matrices)</h4>
 									<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="{{ route('actividades/algebra') }}"> Por completar.</a></p>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">access_time</i> Acaba en 2 d&iacuteas
+										<i class="material-icons">access_time</i> Acaba en 2 d&iacute;as
 									</div>
 								</div>
 							</div>
@@ -93,7 +93,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">alarm_on</i> No hay l&iacutemite
+										<i class="material-icons">alarm_on</i> No hay l&iacute;mite
 									</div>
 								</div>
 							</div>
@@ -106,7 +106,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">alarm_on</i> No hay l&iacutemite
+										<i class="material-icons">alarm_on</i> No hay l&iacute;mite
 									</div>
 								</div>
 							</div>
@@ -122,12 +122,12 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content">
-									<h4 class="title">Tarea 1 - Normalizaci&oacuten</h4>
+									<h4 class="title">Tarea 1 - Normalizaci&oacute;n</h4>
 									<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="{{ route('/home') }}"> Por completar.</a></p>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">access_time</i> Acaba en 2 d&iacuteas
+										<i class="material-icons">access_time</i> Acaba en 2 d&iacute;as
 									</div>
 								</div>
 							</div>
@@ -140,7 +140,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">alarm_on</i> No hay l&iacutemite
+										<i class="material-icons">alarm_on</i> No hay l&iacute;mite
 									</div>
 								</div>
 							</div>
@@ -153,7 +153,7 @@
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">alarm_on</i> No hay l&iacutemite
+										<i class="material-icons">alarm_on</i> No hay l&iacute;mite
 									</div>
 								</div>
 							</div>
@@ -162,19 +162,19 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content" data-background-color="orange">
-									<h3 class="title">Din&aacutemica</h4>
+									<h3 class="title">Din&aacute;mica</h4>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content">
-									<h4 class="title">Cuerpos r&iacutegidos en movimiento (Actividad colaborativa)</h4>
+									<h4 class="title">Cuerpos r&iacute;gidos en movimiento (Actividad colaborativa)</h4>
 									<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="{{ route('/home') }}"> Por completar.</a></p>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">access_time</i> Acaba en 2 d&iacuteas
+										<i class="material-icons">access_time</i> Acaba en 2 d&iacute;as
 									</div>
 								</div>
 							</div>
@@ -182,12 +182,12 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content">
-									<h4 class="title">Resolver el problema 4 estableciendo sus condiciones cinem&aacuteticas y cin&eacuteticas (Problema retador)</h4>
+									<h4 class="title">Resolver el problema 4 estableciendo sus condiciones cinem&aacute;ticas y cin&eacute;ticas (Problema retador)</h4>
 									<p class="category"><span class="text-success"><i class="fa fa-check"></i>   </span> Actividad completada.</p>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">alarm_on</i> No hay l&iacutemite
+										<i class="material-icons">alarm_on</i> No hay l&iacute;mite
 									</div>
 								</div>
 							</div>
@@ -195,12 +195,12 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content">
-									<h4 class="title">Rotaci&oacute y traslaci&oacutenpura (Actividad colaborativa)</h4>
+									<h4 class="title">Rotaci&oacute; y traslaci&oacute;npura (Actividad colaborativa)</h4>
 									<p class="category"><span class="text-success"><i class="fa fa-check"></i>   </span> Actividad completada.</p>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
-										<i class="material-icons">alarm_on</i> No hay l&iacutemite
+										<i class="material-icons">alarm_on</i> No hay l&iacute;mite
 									</div>
 								</div>
 							</div>
