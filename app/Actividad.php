@@ -30,5 +30,9 @@ class Actividad extends Model
 
     public function alumno_respuestas(){
     	return $this->hasMany(AlumnoRespuesta::class);
-    }                     
+    }
+
+    public function alumnos(){
+    	return $this->belongsToMany(Alumno::class);
+    }              
 }

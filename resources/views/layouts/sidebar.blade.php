@@ -45,22 +45,16 @@
 			</div>
 	    	<div class="sidebar-wrapper">
 	            <ul class="nav">
-	                <li class= "{{strpos(Request::url(), 'home') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('/home') }}">
-	                        <i class="material-icons">dashboard</i>
-	                        <p>Materias</p>
+					<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
+	                    <a href="{{ route('calificaciones.index') }}">
+	                        <i class="material-icons">content_paste</i>
+	                        <p>Desempeño</p>
 	                    </a>
 	                </li>
 	                <li class= "{{strpos(Request::url(), 'actividades') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('actividades.index') }}">
 	                        <i class="material-icons">library_books</i>
 	                        <p>Actividades</p>
-	                    </a>
-	                </li>
-	                <li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('calificaciones.index') }}">
-	                        <i class="material-icons">content_paste</i>
-	                        <p>Calificaciones</p>
 	                    </a>
 	                </li>
 	                <li class= "{{strpos(Request::url(), 'perfil') ? 'active' : 'inactive' }}">

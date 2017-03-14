@@ -7,6 +7,7 @@ use App\Equipo;
 use App\AlumnoRespuesta;
 use App\ProfesorRespuesta;
 use App\Crn;
+use App\Actividad;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -34,6 +35,10 @@ class Alumno extends Model
 
 	public function crns(){
 		return $this->belongsToMany(Crn::class);
+	}	
+
+	public function actividades(){
+		return $this->belongsToMany(Actividad::class);
 	}	
 
 }

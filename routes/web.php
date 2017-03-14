@@ -16,11 +16,9 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 
 Route::group(['middleware'=>'auth'], function() {
 
-    Route::get('/home', 'HomeController@index')->name('/home');
+    Route::get('/home', 'HomeController@index');
 
-    Route::get('/', function () {
-        return view('/home');
-    });
+    Route::get('/', 'ActividadesController@index')->name('/home');
 
     Route::resource('actividades', 'ActividadesController');
 

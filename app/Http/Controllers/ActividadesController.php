@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Actividad;
+use App\Alumno;
 
 class ActividadesController extends Controller
 {
@@ -13,7 +15,9 @@ class ActividadesController extends Controller
      */
     public function index()
     {
-        return view('actividades.index');
+        $actividades = Alumno::first()->actividades;
+        
+        return view('actividades.index', compact('actividades'));
     }
 
     public function mate()

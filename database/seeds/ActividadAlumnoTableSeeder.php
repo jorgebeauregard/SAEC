@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EquiposTableSeeder extends Seeder
+class ActividadAlumnoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,19 +11,19 @@ class EquiposTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('equipos')->insert([
-        	'numero_equipo' => 1,
+        DB::table('actividad_alumno')->insert([
         	'actividad_id' => 1,
+        	'alumno_id' => 1,
         ]);
 
-        DB::table('equipos')->insert([
-        	'numero_equipo' => 3,
+        DB::table('actividad_alumno')->insert([
         	'actividad_id' => 2,
+        	'alumno_id' => 1,
         ]);
 
-        DB::table('equipos')->insert([
-        	'numero_equipo' => 4,
+        DB::table('actividad_alumno')->insert([
         	'actividad_id' => 3,
+        	'alumno_id' => 1,
         ]);
     }
 }
