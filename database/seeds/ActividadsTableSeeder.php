@@ -31,5 +31,19 @@ class ActividadsTableSeeder extends Seeder
         	'profesor_id' => 3,
         	'fecha_limite' => '2004-04-01 12:35',
         ]);
+
+        DB::table('actividads')->insert([
+        	'nombre' => 'Entrega final de proyecto',
+        	'descripcion' => 'Utilizando los temas vistos en clase, mejorar de alguna forma la casa del sordo',
+        	'profesor_id' => 4,
+        	'fecha_limite' => '2004-03-05 06:25',
+        ]);
+
+        DB::table('actividads')->insert([
+        	'nombre' => 'Primer entrega de proyecto',
+        	'descripcion' => 'El alumno entregará un modelo relacional de la base de datos de su proyecto final',
+        	'profesor_id' => 5,
+        	'fecha_limite' => '2004-12-08 11:11',
+        ]);
     }
 }
