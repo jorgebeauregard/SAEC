@@ -35,5 +35,22 @@ class ProfesorsTableSeeder extends Seeder
             'contrasena' => 'contrasena',
     	]);
 
+
+         DB::table('profesors')->insert([
+        	'nomina' => 'L012345681',
+            'nombre' => 'Aida',
+            'apellido' => 'Salazar',
+            'correo' => 'aida.sc@itesm.mx',
+            'contrasena' => 'contrasena',
+    	]);
+
+        DB::table('profesors')->insert([
+        	'nomina' => 'L012345682',
+            'nombre' => 'David',
+            'apellido' => 'Sol',
+            'correo' => 'dsol@itesm.mx',
+            'contrasena' => 'contrasena',
+    	]);
+
     }
 }
