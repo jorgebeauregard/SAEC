@@ -28,30 +28,16 @@
 						</div>
 						<div class="card-footer">
 							<div class="stats">
+							@if($actividades[sizeof($actividades)-$i]->finalizada==0)
 								<i class="material-icons text-danger">warning</i> <a href="{{ route('actividades.index') }}">Coevaluaci&oacuten pendiente</a>
+							@else
+								<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
+							@endif
 							</div>
 						</div>
 					</div>
 				</div>
 			<?php } ?>
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<div class="card card-stats">
-					<div class="card-header" data-background-color="blue">
-						<i class="material-icons">developer_board</i>
-					</div>
-					<div class="card-content">
-						<p class="category">Materia</p>
-						<br>
-						<br>
-						<h3 class="title">Bases de Datos</h3>
-					</div>
-					<div class="card-footer">
-						<div class="stats">
-							<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
-						</div>
-					</div>
-				</div>
-			</div>
 
 		</div> <!--end row -->
 
@@ -64,33 +50,23 @@
 					</div>
 				</div>
 
-				<div class="col-md-12">
-					<div class="card">
-						<div class="card-content">
-							<h4 class="title">Actividad colaborativa de Integraci&oacute;n por Partes</h4>
-							<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="{{ route('actividades/mate') }}"> Por completar.</a></p>
-						</div>
-						<div class="card-footer">
-							<div class="stats">
-								<i class="material-icons">access_time</i> Acaba en 2 d&iacute;as
+				@foreach($actividades as $actividad)
+					@if($actividad->finalizada==1)
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-content">
+									<h4 class="title">{{$actividad->nombre}}</h4>
+										<p class="category"><span class="text-success"><i class="fa fa-check"></i>   </span> Actividad completada.</p>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-				</div> <!--end col md 12 -->
-
-				<div class="col-md-12">
-					<div class="card">
-						<div class="card-content">
-							<h4 class="title">Actividad colaborativa de Sumas de Riemann</h4>
-							<p class="category"><span class="text-success"><i class="fa fa-check"></i>   </span> Actividad completada.</p>
-						</div>
-						<div class="card-footer">
-							<div class="stats">
-								<i class="material-icons">alarm_on</i> No hay l&iacute;mite
-							</div>
-						</div>
-					</div>
-				</div> <!--end col md 12 -->
+						</div> <!--end col md 12 -->
+					@endif
+				@endforeach
 
 			</div><!--end col md 6 -->
 
@@ -103,33 +79,24 @@
 					</div>
 				</div>
 
-				<div class="col-md-12">
-					<div class="card">
-						<div class="card-content">
-							<h4 class="title">Actividad colaborativa de Integraci&oacute;n por Partes</h4>
-							<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="{{ route('actividades/mate') }}"> Por completar.</a></p>
-						</div>
-						<div class="card-footer">
-							<div class="stats">
-								<i class="material-icons">access_time</i> Acaba en 2 d&iacute;as
+				@foreach($actividades as $actividad)
+					@if($actividad->finalizada==0)
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-content">
+								<h4 class="title">{{$actividad->nombre}}</h4>
+								<p class="category"><span class="text-danger"><i class="fa fa-times"></i></span><a href="/actividades/{{$actividad->id}}"> Por completar.</a></p>
+							</div>
+							<div class="card-footer">
+								<div class="stats">
+									<i class="material-icons">access_time</i> Acaba en 2 d&iacute;as
+								</div>
 							</div>
 						</div>
-					</div>
-				</div> <!--end col md 12 -->
+					</div> <!--end col md 12 -->
+					 @endif
+				@endforeach
 
-				<div class="col-md-12">
-					<div class="card">
-						<div class="card-content">
-							<h4 class="title">Actividad colaborativa de Sumas de Riemann</h4>
-							<p class="category"><span class="text-success"><i class="fa fa-check"></i>   </span> Actividad completada.</p>
-						</div>
-						<div class="card-footer">
-							<div class="stats">
-								<i class="material-icons">alarm_on</i> No hay l&iacute;mite
-							</div>
-						</div>
-					</div>
-				</div> <!--end col md 12 -->
 
 			</div><!--end col md 6 -->
 
