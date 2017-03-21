@@ -14,7 +14,7 @@
 	<div class="container-fluid">
 
 		<div class="row">
-			@foreach($actividades as $actividad)
+			<?php for($i=1; $i<4; $i++){ ?>
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="card card-stats">
 						<div class="card-header" data-background-color="blue">
@@ -24,7 +24,7 @@
 							<p class="category">Actividad</p>
 							<br>
 							<br>
-							<h3 class="title">{{ $actividad->nombre }}</h3>
+							<h3 class="title"> <?php echo($actividades[sizeof($actividades)-$i]->nombre) ?></h3>
 						</div>
 						<div class="card-footer">
 							<div class="stats">
@@ -33,7 +33,7 @@
 						</div>
 					</div>
 				</div>
-			@endforeach
+			<?php } ?>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="card card-stats">
 					<div class="card-header" data-background-color="blue">
