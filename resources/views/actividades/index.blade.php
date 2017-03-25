@@ -29,7 +29,7 @@
 						<div class="card-footer">
 							<div class="stats">
 							@if($actividades[sizeof($actividades)-$i]->finalizada==0)
-								<i class="material-icons text-danger">warning</i> <a href="{{ route('actividades.index') }}">Coevaluaci&oacuten pendiente</a>
+								<i class="material-icons text-danger">warning</i> <a href="/actividades/{{$actividades[sizeof($actividades)-$i]->id}}">Coevaluaci&oacuten pendiente</a>
 							@else
 								<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
 							@endif
