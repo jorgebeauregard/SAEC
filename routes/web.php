@@ -18,11 +18,11 @@ Route::group(['middleware'=>'auth'], function() {
 
     Route::get('/home', 'HomeController@index');
 
-    Route::get('/', 'ActividadesController@index')->name('/home');
+    Route::get('/', 'ActividadController@index')->name('/home');
 
-    Route::resource('/actividades', 'ActividadesController');
+    Route::resource('/actividades', 'ActividadController');
 
-    Route::get('/actividades/{actividad_id}', 'ActividadesController@show');
+    Route::get('/actividades/{actividad}', 'ActividadController@show');
 
     Route::resource('/calificaciones', 'CalificacionesController');
 
