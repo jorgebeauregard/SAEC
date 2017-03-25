@@ -25,5 +25,15 @@ class ActividadCompetenciaTableSeeder extends Seeder
         	'actividad_id' => 3,
             'competencia_id' => 3,
     	]);
+
+        DB::table('actividad_competencia')->insert([
+        	'actividad_id' => 4,
+            'competencia_id' => 3,
+    	]);
+
+        DB::table('actividad_competencia')->insert([
+        	'actividad_id' => 5,
+            'competencia_id' => 1,
+    	]);
     }
 }
