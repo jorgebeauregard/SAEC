@@ -46,7 +46,7 @@
 	    	<div class="sidebar-wrapper">
 	            <ul class="nav">
 					<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('desempeno.index') }}">
+	                    <a href="{{ route('calificaciones.index') }}">
 	                        <i class="material-icons">content_paste</i>
 	                        <p>Desempeño</p>
 	                    </a>

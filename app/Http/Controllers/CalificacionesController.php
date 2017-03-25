@@ -13,7 +13,7 @@ class CalificacionesController extends Controller
      */
     public function index()
     {
-        return view('desempeno.index');
+        return view('calificaciones.index');
     }
 
     /**
