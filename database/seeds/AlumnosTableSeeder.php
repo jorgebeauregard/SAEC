@@ -169,7 +169,7 @@ class AlumnosTableSeeder extends Seeder
         	'matricula' => 'A01321244',
             'nombre' => 'Jimmy',
             'apellido' => 'Magil',
-            'prom_anterior' => 82.69
+            'prom_anterior' => 82.69,
             'campus_id' => 1,
             'plan_id' => 1,
             'genero' => 1,
