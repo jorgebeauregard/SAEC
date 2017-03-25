@@ -2,7 +2,7 @@
 
 @section('title')
     <div>
-        <i class= ""></i> Materias
+        <i class= ""></i> Actividades
     </div>
 @endsection
 
