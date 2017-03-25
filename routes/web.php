@@ -20,13 +20,11 @@ Route::group(['middleware'=>'auth'], function() {
 
     Route::get('/', 'ActividadesController@index')->name('/home');
 
-    Route::resource('actividades', 'ActividadesController');
+    Route::resource('/actividades', 'ActividadesController');
 
-    Route::get('/mate', 'ActividadesController@mate')->name('actividades/mate');
+    Route::get('/actividades/{actividad_id}', 'ActividadesController@show');
 
-    Route::get('/algebra', 'ActividadesController@algebra')->name('actividades/algebra');
-
-    Route::resource('calificaciones', 'CalificacionesController');
+    Route::resource('/calificaciones', 'CalificacionesController');
 
     Route::resource('perfil', 'PerfilController');
 

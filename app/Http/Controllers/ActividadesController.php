@@ -20,14 +20,12 @@ class ActividadesController extends Controller
         return view('actividades.index', compact('actividades'));
     }
 
-    public function mate()
+    public function show(Actividad $actividad)
     {
-        return view('actividades.mate');
-    }
-
-    public function algebra()
-    {
-        return view('actividades.algebra');
+        if($actividad->vista)
+            return view('actividades.show_competence', compact('actividad'));
+        else
+            return view('actividades.show_student', compact('actividad'));
     }
 
     public function create()
@@ -58,17 +56,7 @@ class ActividadesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
         //
