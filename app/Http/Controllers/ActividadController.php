@@ -24,7 +24,6 @@ class ActividadController extends Controller
     {
     	$actividad = Actividad::find($id);
     	$competencias = $actividad->competencias;
-    	$alumnos = $actividad->alumnos;
 
         if($actividad->vista)
             return view('actividades.show_competence', compact('actividad','competencias'));

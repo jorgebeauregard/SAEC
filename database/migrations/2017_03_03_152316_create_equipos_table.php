@@ -36,7 +36,7 @@ class CreateEquiposTable extends Migration
             $table->increments('id');
             $table->integer('actividad_id')->unsigned();
             $table->integer('alumno_id')->unsigned();
-            $table->boolean('completada');
+            $table->boolean('completada')->default(FALSE);
             $table->integer('equipo_id')->unsigned();
 
             $table->timestamps();

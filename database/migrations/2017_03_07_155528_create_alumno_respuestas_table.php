@@ -27,18 +27,6 @@ class CreateAlumnoRespuestasTable extends Migration
             $table->foreign('evaluado_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('comportamiento_id')->references('id')->on('comportamientos')->onUpdate('cascade')->onDelete('cascade');
         });
-
-        Schema::create('actividad_alumno', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('actividad_id')->unsigned();
-            $table->integer('alumno_id')->unsigned();
-            $table->boolean('finalizada')->default(FALSE);
-            $table->timestamps();
-
-            $table->foreign('actividad_id')->references('id')->on('actividads')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('alumno_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
-        });
-
     }
 
     /**

@@ -12,7 +12,8 @@
 @section('content')
 
 			<div class="content">
-        
+    <form method="POST" action="/register/{{$actividad->id}}">
+    {{ csrf_field() }}
       @foreach($competencias as $competencia)
         @foreach($competencia->comportamientos as $comportamiento)
             <div class="col-lg-12 col-md-12">
@@ -34,8 +35,8 @@
                                 <tr>
                                     <td>{{$alumno->nombre}}</td>
                                     <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value="si"></td>
-                                    <td><input type="radio" name="nota" value="no"> </td>
-                                    <td><input type="radio" name="nota" value="null"> </td>
+                                    <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value="no"> </td>
+                                    <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value="null"> </td>
                                 </tr>
                                 @endforeach                                       
                             </tbody>
@@ -45,6 +46,7 @@
             </div>
         @endforeach
     @endforeach
+    </form>
 			</div>
 
 @endsection
