@@ -31,7 +31,7 @@
                       <tbody>
                         @foreach($alumnos as $alumno)
                           <tr>
-                          	<td>Guillerno Jimenez</td>
+                          	<td>{{$alumno->nombre}}</td>
                           	<td><input type="radio" name="nota" value="si"></td>
                     				<td><input type="radio" name="nota" value="no"> </td>
                     				<td><input type="radio" name="nota" value="null"> </td>
@@ -41,7 +41,7 @@
               </div>
             </div>
 				</div>
-        @endforeach
+          @endforeach
         @endforeach
 			</div>
 

@@ -19,7 +19,7 @@ class CreateActividadsTable extends Migration
             $table->string('descripcion', 255);
             $table->integer('profesor_id')->unsigned();
             $table->dateTime('fecha_limite');
-            $table->boolean('vista');
+            $table->boolean('vista')->default(false);
             $table->timestamps();
             
             $table->foreign('profesor_id')->references('id')->on('profesors')->onDelete('cascade')->onUpdate('cascade');
