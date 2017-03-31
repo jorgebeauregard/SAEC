@@ -58,5 +58,6 @@ class CreateEquiposTable extends Migration
     {
         Schema::dropIfExists('alumno_equipo');
         Schema::dropIfExists('equipos');
+        Schema::dropIfExists('actividad_alumno');
     }
 }

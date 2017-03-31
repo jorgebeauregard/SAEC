@@ -8,8 +8,10 @@ use App\AlumnoRespuesta;
 use App\ProfesorRespuesta;
 use App\Crn;
 use App\Actividad;
+use App\ActividadAlumno;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Alumno extends Model
 {
@@ -38,7 +40,14 @@ class Alumno extends Model
 	}	
 
 	public function actividades(){
-		return $this->belongsToMany(Actividad::class);
+		return $this->belongsToMany(Actividad::class)->withPivot('completada', 'equipo_id');
 	}	
 
+	public function getActividadEquipo($actividad_id){
+		return DB:: table('actividad_alumno')->select('equipo_id')->where('alumno_id', '=', $this->id)->where('actividad_id', '=', $actividad_id)->value('equipo_id');
+	}
+
+	public function getActividadCompletada($actividad_id){
+		return DB:: table('actividad_alumno')->select('equipo_id')->where('alumno_id', '=', $this->id)->where('actividad_id', '=', $actividad_id)->value('completada');
+	}
 }

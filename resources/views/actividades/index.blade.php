@@ -14,7 +14,8 @@
 	<div class="container-fluid">
 
 		<div class="row">
-			<?php for($i=1; $i<4; $i++){ ?>
+			<?php for($i=1; $i<5; $i++){ ?>
+				@if(sizeof($actividades)-$i >= 0)
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="card card-stats">
 						<div class="card-header" data-background-color="blue">
@@ -37,6 +38,7 @@
 						</div>
 					</div>
 				</div>
+				@endif
 			<?php } ?>
 
 		</div> <!--end row -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Actividad;
 use App\Alumno;
+use App\Equipo;
 
 class ActividadController extends Controller
 {
@@ -22,13 +23,15 @@ class ActividadController extends Controller
 
     public function show($id)
     {
+        $login = Alumno::first();
     	$actividad = Actividad::find($id);
     	$competencias = $actividad->competencias;
-
+        $alumnos = Equipo::find($login->getActividadEquipo($id))->alumnos;
+        
         if($actividad->vista)
-            return view('actividades.show_competence', compact('actividad','competencias'));
+            return view('actividades.show_competence', compact('actividad','competencias', 'alumnos'));
         else
-            return view('actividades.show_competence', compact('actividad','competencias'));
+            return view('actividades.show_competence', compact('actividad','competencias', 'alumnos'));
     }
 
     public function create()
