@@ -12,7 +12,5 @@ class AlumnoRespuestasTableSeeder extends Seeder
     public function run()
     {
         
-
-        
     }
 }
