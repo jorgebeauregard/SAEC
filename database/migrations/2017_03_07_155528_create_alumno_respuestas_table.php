@@ -21,7 +21,6 @@ class CreateAlumnoRespuestasTable extends Migration
             $table->integer('evaluado_id')->unsigned();
             $table->integer('comportamiento_id')->unsigned();
             $table->tinyInteger('nota');
-            $table->text('comentario');
 
             $table->foreign('actividad_id')->references('id')->on('actividads')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('evaluador_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');

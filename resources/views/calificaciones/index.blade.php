@@ -10,6 +10,59 @@
 @section('description', 'Esta es la pagina de compras')
 @section('content')
 	<div class="content">
+
+		<div class = "chart">
+				<div id="chartContainer" style="height: 400px; width: 100%;"></div>
+				<script type="text/javascript">
+					window.onload = function () {
+						var chart = new CanvasJS.Chart("chartContainer",
+						{
+							title: {
+								text: "Tu desempeno"
+							},
+							axisX: {
+								title: "Eje X",
+								maximum: 100,
+								minimum: 0
+							},
+							axisY: {
+								title: "Eje Y",
+								maximum: 100,
+								minimum: 0
+								
+								
+							},
+
+							legend: {
+								verticalAlign: "bottom",
+								horizontalAlign: "left"
+							},
+							data: [
+							{
+								type: "bubble",
+								legendText: " ",
+								showInLegend: true,
+								legendMarkerType: "circle",
+								toolTipContent: "<strong>{name}</strong> <br/> Hardcodea Eje X: {x}<br/> Hardcodea Eje Y: {y}<br/> Hardcodea Eje Z: {z}",
+								dataPoints: [
+									{ x: 78.1, y: 70.00, z: 306.77, name: "Liderazgo" },
+									{ x: 15.5, y: 82.15, z: 237.414, name: "Honestidad" },
+									{ x: 72.5, y: 90.86, z: 500.24, name: "Sex appeal" },
+								
+								]
+							}
+							]
+						});
+
+						chart.render();
+					}
+				</script>
+				<script src="../js/canvasjs.min.js"></script>	
+			</div>
+
+
+
+
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
 				<div class="card card-nav-tabs">
