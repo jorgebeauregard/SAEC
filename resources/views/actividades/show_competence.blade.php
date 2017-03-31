@@ -11,8 +11,8 @@
 
 @section('content')
 
-			<div class="content">
-    <form method="POST" action="/register/{{$actividad->id}}">
+<div class="content">
+    <form method="POST" action="/actividades/{{$actividad->id}}">
     {{ csrf_field() }}
       @foreach($competencias as $competencia)
         @foreach($competencia->comportamientos as $comportamiento)
@@ -46,7 +46,10 @@
             </div>
         @endforeach
     @endforeach
+    <div class="form-group">
+               <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
     </form>
-			</div>
+</div>
 
 @endsection
