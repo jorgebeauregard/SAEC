@@ -17,9 +17,10 @@ class ActividadController extends Controller
      */
     public function index()
     {
-        $actividades = Alumno::first()->actividades;
+        $logged = Alumno::first();
+        $actividades = $logged->actividades->sortBy('fecha_limite')->all();
         
-        return view('actividades.index', compact('actividades'));
+        return view('actividades.index', compact('logged', 'actividades'));
     }
 
     public function show($id)
@@ -30,9 +31,9 @@ class ActividadController extends Controller
         $alumnos = Equipo::find($logged->getActividadEquipo($id))->alumnos;
         
         if($actividad->vista)
-            return view('actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+            return view('actividades.show_student', compact('actividad','competencias', 'alumnos'));
         else
-            return view('actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+            return view('actividades.show_student', compact('actividad','competencias', 'alumnos'));
     }
 
     public function create()
@@ -55,7 +56,7 @@ class ActividadController extends Controller
     public function store(Request $request, $actividad_id)
     {
         $logged = Alumno::first();
-    	$actividad = Actividad::find($id);
+    	$actividad = Actividad::find($actividad_id);
         $competencias = $actividad->competencias;
         $alumnos = Equipo::find($logged->getActividadEquipo($id))->alumnos;
 
@@ -68,12 +69,11 @@ class ActividadController extends Controller
                         'evaluador_id' => $logged->id,
                         'evaluado_id' => $alumno->id,
                         'comportamiento_id' => $comportamiento->id,
-                        'nota' => $request($name);
+                        'nota' => $request($name)
                     ]);
                 }
             }
         }
-
     }
 
     /**

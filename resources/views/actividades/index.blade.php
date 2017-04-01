@@ -14,8 +14,8 @@
 	<div class="container-fluid">
 
 		<div class="row">
-			<?php for($i=1; $i<5; $i++){ ?>
-				@if(sizeof($actividades)-$i >= 0)
+			<?php for($i=0; $i<4; $i++){ ?>
+				@if($i < sizeof($actividades))
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="card card-stats">
 						<div class="card-header" data-background-color="blue">
@@ -25,12 +25,12 @@
 							<p class="category">Actividad</p>
 							<br>
 							<br>
-							<h3 class="title"> <?php echo($actividades[sizeof($actividades)-$i]->nombre) ?></h3>
+							<h3 class="title"> <?php echo($actividades[$i]->nombre) ?></h3>
 						</div>
 						<div class="card-footer">
 							<div class="stats">
-							@if($actividades[sizeof($actividades)-$i]->finalizada==0)
-								<i class="material-icons text-danger">warning</i> <a href="/actividades/{{$actividades[sizeof($actividades)-$i]->id}}">Coevaluaci&oacuten pendiente</a>
+							@if( $logged->actividades->find($actividades[$i]->id)->pivot->completada == 0)
+								<i class="material-icons text-danger">warning</i> <a href="/actividades/{{$actividades[$i]->id}}">Coevaluaci&oacuten pendiente</a>
 							@else
 								<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
 							@endif
@@ -52,8 +52,8 @@
 					</div>
 				</div>
 
-				@foreach($actividades as $actividad)
-					@if($actividad->finalizada==1)
+				@foreach($logged->actividades as $actividad)
+					@if($actividad->pivot->completada == 1)
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-content">
@@ -81,8 +81,8 @@
 					</div>
 				</div>
 
-				@foreach($actividades as $actividad)
-					@if($actividad->finalizada==0)
+				@foreach($logged->actividades as $actividad)
+					@if($actividad->pivot->completada == 0)
 					<div class="col-md-12">
 						<div class="card">
 							<div class="card-content">

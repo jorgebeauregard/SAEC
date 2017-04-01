@@ -14,7 +14,7 @@ class ActividadAlumnoTableSeeder extends Seeder
         DB::table('actividad_alumno')->insert([
         	'actividad_id' => 1,
         	'alumno_id' => 1,
-            'completada'=>TRUE,
+            'completada'=>FALSE,
             'equipo_id'=>1,
         ]);
 
@@ -388,7 +388,7 @@ class ActividadAlumnoTableSeeder extends Seeder
         DB::table('actividad_alumno')->insert([
         	'actividad_id' => 3,
         	'alumno_id' => 1,
-            'completada'=>TRUE,
+            'completada'=>FALSE,
             'equipo_id'=>13,
         ]);
 
