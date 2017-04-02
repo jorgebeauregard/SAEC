@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Actividad;
 use App\Alumno;
 use App\Equipo;
-use App\AlumnoRespuestas;
+use App\AlumnoRespuesta;
 
 class ActividadController extends Controller
 {
@@ -53,27 +53,31 @@ class ActividadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $actividad_id)
+    public function store($actividad_id)
     {
         $logged = Alumno::first();
-    	$actividad = Actividad::find($actividad_id);
-        $competencias = $actividad->competencias;
-        $alumnos = Equipo::find($logged->getActividadEquipo($id))->alumnos;
+    	$actividad = $logged->actividades->find($actividad_id);
+        $equipo = Equipo::find($actividad->pivot->equipo_id);
 
-        foreach($competencias as $competencia){
+        foreach($actividad->competencias as $competencia){
             foreach($competencia->comportamientos as $comportamiento){
-                foreach($alumnos as $alumno){
+                foreach($equipo->alumnos as $alumno){
                     $name = $comportamiento->id.'_'.$alumno->id;
-                    AlumnoRespuestas::create([
+                    AlumnoRespuesta::create([
                         'actividad_id' => $actividad_id,
                         'evaluador_id' => $logged->id,
                         'evaluado_id' => $alumno->id,
                         'comportamiento_id' => $comportamiento->id,
-                        'nota' => $request($name)
+                        'nota' => (int) request('' + $name),
                     ]);
                 }
             }
         }
+
+        $actividad->pivot->completada = 1;
+        $actividad->pivot->save();
+
+        return redirect('/actividades'); 
     }
 
     /**
