@@ -23,17 +23,21 @@ class ActividadController extends Controller
         return view('actividades.index', compact('logged', 'actividades'));
     }
 
-    public function show($id)
+    public function show($actividad_id)
     {
         $logged = Alumno::first();
-    	$actividad = Actividad::find($id);
-    	$competencias = $actividad->competencias;
-        $alumnos = Equipo::find($logged->getActividadEquipo($id))->alumnos;
+    	$actividad = $logged->actividades->find($actividad_id);
         
-        if($actividad->vista)
+        if($actividad == null || $actividad->pivot->completada)
+            return redirect('/actividades');
+
+    	$competencias = $actividad->competencias;
+        $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
+        
+        if($actividad->vista == 1)
             return view('actividades.show_student', compact('actividad','competencias', 'alumnos'));
         else
-            return view('actividades.show_student', compact('actividad','competencias', 'alumnos'));
+            return view('actividades.show_competence', compact('actividad','competencias', 'alumnos'));
     }
 
     public function create()
@@ -68,9 +72,9 @@ class ActividadController extends Controller
                         'evaluador_id' => $logged->id,
                         'evaluado_id' => $alumno->id,
                         'comportamiento_id' => $comportamiento->id,
-                        'nota' => (int) request('' + $name),
+                        'nota' => (int) request((String)$name),
                     ]);
-                }
+                }   
             }
         }
 

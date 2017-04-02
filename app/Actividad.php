@@ -35,5 +35,5 @@ class Actividad extends Model
 
     public function alumnos(){
     	return $this->belongsToMany(Alumno::class)->using(ActividadAlumno::class);
-    }              
+    }
 }
