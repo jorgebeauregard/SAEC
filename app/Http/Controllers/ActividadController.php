@@ -61,6 +61,10 @@ class ActividadController extends Controller
     {
         $logged = Alumno::first();
     	$actividad = $logged->actividades->find($actividad_id);
+
+         if($actividad == null || $actividad->pivot->completada)
+            return redirect('/actividades');
+            
         $equipo = Equipo::find($actividad->pivot->equipo_id);
 
         foreach($actividad->competencias as $competencia){
@@ -69,7 +73,7 @@ class ActividadController extends Controller
                     $name = $comportamiento->id.'_'.$alumno->id;
                     AlumnoRespuesta::create([
                         'actividad_id' => $actividad_id,
-                        'evaluador_id' => $logged->id,
+                        'alumno_id' => $logged->id,
                         'evaluado_id' => $alumno->id,
                         'comportamiento_id' => $comportamiento->id,
                         'nota' => (int) request((String)$name),

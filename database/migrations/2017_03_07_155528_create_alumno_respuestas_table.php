@@ -17,13 +17,13 @@ class CreateAlumnoRespuestasTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->integer('actividad_id')->unsigned();
-            $table->integer('evaluador_id')->unsigned();
+            $table->integer('alumno_id')->unsigned();
             $table->integer('evaluado_id')->unsigned();
             $table->integer('comportamiento_id')->unsigned();
             $table->tinyInteger('nota');
 
             $table->foreign('actividad_id')->references('id')->on('actividads')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('evaluador_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('evaluado_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('comportamiento_id')->references('id')->on('comportamientos')->onUpdate('cascade')->onDelete('cascade');
         });
