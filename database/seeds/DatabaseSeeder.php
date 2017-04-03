@@ -30,6 +30,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ProfesorRespuestasTableSeeder::class);    
         $this->call(ActividadAlumnoTableSeeder::class);  
 
-        //Test line :D  
+        //Test line
     }
 }
