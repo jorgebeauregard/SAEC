@@ -26,18 +26,17 @@
                             <table class="table table-hover">
                                 <thead class="text-warning">
                                     <th>Name</th>
-                                    <th>Calidad</th>
-                                    <th>Frecuencia</th>
+                                    <th>Sí</th>
+                                    <th>No</th>
                                     <th>No puedo responder</th>
                                 </thead>
                                 <tbody>
                                     @foreach($alumnos as $alumno)
                                     <tr>
                                         <td>{{$alumno->nombre}}</td>
-                                        
-                                        <td><input type="range" name="points" min="0" max="10"></td>
-                                        <td><input type="range" name="points" min="0" max="10"></td>
                                         <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=1></td>
+                                        <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=2></td>
+                                        <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=0></td>
                                     </tr>
                                     @endforeach                                       
                                 </tbody>
