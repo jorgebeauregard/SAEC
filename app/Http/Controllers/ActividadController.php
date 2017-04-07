@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Actividad;
 use App\Alumno;
 use App\Equipo;
-use App\AlumnoRespuestas;
+use App\AlumnoRespuesta;
 
 class ActividadController extends Controller
 {
@@ -23,17 +23,21 @@ class ActividadController extends Controller
         return view('actividades.index', compact('logged', 'actividades'));
     }
 
-    public function show($id)
+    public function show($actividad_id)
     {
         $logged = Alumno::first();
-    	$actividad = Actividad::find($id);
-    	$competencias = $actividad->competencias;
-        $alumnos = Equipo::find($logged->getActividadEquipo($id))->alumnos;
+    	$actividad = $logged->actividades->find($actividad_id);
         
-        if($actividad->vista)
+        if($actividad == null || $actividad->pivot->completada)
+            return redirect('/actividades');
+
+    	$competencias = $actividad->competencias;
+        $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
+        
+        if($actividad->vista == 1)
             return view('actividades.show_student', compact('actividad','competencias', 'alumnos'));
         else
-            return view('actividades.show_student', compact('actividad','competencias', 'alumnos'));
+            return view('actividades.show_competence', compact('actividad','competencias', 'alumnos'));
     }
 
     public function create()
@@ -53,27 +57,35 @@ class ActividadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $actividad_id)
+    public function store($actividad_id)
     {
         $logged = Alumno::first();
-    	$actividad = Actividad::find($actividad_id);
-        $competencias = $actividad->competencias;
-        $alumnos = Equipo::find($logged->getActividadEquipo($id))->alumnos;
+    	$actividad = $logged->actividades->find($actividad_id);
 
-        foreach($competencias as $competencia){
+         if($actividad == null || $actividad->pivot->completada)
+            return redirect('/actividades');
+            
+        $equipo = Equipo::find($actividad->pivot->equipo_id);
+
+        foreach($actividad->competencias as $competencia){
             foreach($competencia->comportamientos as $comportamiento){
-                foreach($alumnos as $alumno){
+                foreach($equipo->alumnos as $alumno){
                     $name = $comportamiento->id.'_'.$alumno->id;
-                    AlumnoRespuestas::create([
+                    AlumnoRespuesta::create([
                         'actividad_id' => $actividad_id,
-                        'evaluador_id' => $logged->id,
+                        'alumno_id' => $logged->id,
                         'evaluado_id' => $alumno->id,
                         'comportamiento_id' => $comportamiento->id,
-                        'nota' => $request($name)
+                        'nota' => (int) request((String)$name),
                     ]);
-                }
+                }   
             }
         }
+
+        $actividad->pivot->completada = 1;
+        $actividad->pivot->save();
+
+        return redirect('/actividades'); 
     }
 
     /**

@@ -23,16 +23,16 @@
 									<br>
 									<br>
 									<p class="category" >Usuario</p>
-									<h3 class="title">Julián Beauregard Luna</h3>
+									<h3 class="title">{{$logged->nombre.' '.$logged->apellido}}</h3>
 									<br>
 									<p class="category">Matr&iacutecula</p>
-									<h3 class="title">A01328439</h3>
+									<h3 class="title">{{$logged->matricula}}</h3>
 									<br>
 									<p class="category">Campus</p>
-									<h3 class="title">Puebla</h3>
+									<h3 class="title">{{$logged->campus->nombre}}</h3>
 									<br>
 									<p class="category">Programa</p>
-									<h3 class="title">ITC11</h3>																												
+									<h3 class="title">{{$logged->plan->nombre}}</h3>																												
 								</div>
 								<div class="card-footer">
 

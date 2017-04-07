@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Alumno;
 
 class PerfilController extends Controller
 {
@@ -13,7 +14,9 @@ class PerfilController extends Controller
      */
     public function index()
     {
-        return view('perfil.index');
+        $logged = Alumno::first();
+        
+        return view('perfil.index', compact('logged'));
     }
 
     /**
