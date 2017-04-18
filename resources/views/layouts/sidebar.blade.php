@@ -12,10 +12,10 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- Bootstrap core CSS     -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href=" {!! asset('css/bootstrap.min.css') !!}" rel="stylesheet" />
 
     <!--  Material Dashboard CSS    -->
-    <link href="css/material-dashboard.css" rel="stylesheet"/>
+    <link href="{!! asset('css/material-dashboard.css') !!}" rel="stylesheet"/>
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -123,9 +123,10 @@
 </body>
 
 	<!--   Core JS Files   -->
-	<script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/material.min.js" type="text/javascript"></script>
+
+	<script src="{!! asset('js/jquery-3.1.0.min.js') !!}" type="text/javascript"></script>
+	<script src="{!! asset('js/bootstrap.min.js') !!}" type="text/javascript"></script>
+	<script src="{!! asset('js/material.min.js') !!}"></script>
 
 	<!--  Charts Plugin -->
 
