@@ -28,7 +28,7 @@
                 <div class="card-header" data-background-color="blue">
                     <h4 class="title">{{$alumno->nombre}}</h4>
                 </div>
-                <div class="card-content table-responsive">
+                <div>
                     <table class="table table-hover">
                         <thead class="text-warning">
                             <th>Pregunta</th>
@@ -40,7 +40,7 @@
                             @foreach($competencias as $competencia)
                                 @foreach($competencia->comportamientos as $comportamiento)
                                 <tr>
-                                    <td>{{$alumno->nombre}}</td>
+                                    <td>{{$comportamiento->pregunta}}</td>
                                     <td><input id="calidad_{{$comportamiento->id}}_{{$alumno->id}}" type="range" name="calidad_{{$comportamiento->id}}_{{$alumno->id}}" min="1" max="5"></td>
                                     <td><input id="frecuencia_{{$comportamiento->id}}_{{$alumno->id}}" type="range" name="frecuencia_{{$comportamiento->id}}_{{$alumno->id}}" min="1" max="5"></td>
                                     <td><input type="hidden" name="{{$comportamiento->id}}_{{$alumno->id}}" value="-1"></td>
