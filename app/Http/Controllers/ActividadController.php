@@ -62,21 +62,32 @@ class ActividadController extends Controller
         $logged = Alumno::first();
     	$actividad = $logged->actividades->find($actividad_id);
 
-         if($actividad == null || $actividad->pivot->completada)
+        if($actividad == null || $actividad->pivot->completada)
             return redirect('/actividades');
-            
+        
         $equipo = Equipo::find($actividad->pivot->equipo_id);
 
         foreach($actividad->competencias as $competencia){
             foreach($competencia->comportamientos as $comportamiento){
                 foreach($equipo->alumnos as $alumno){
                     $name = $comportamiento->id.'_'.$alumno->id;
+
+                    if(!(int) request((String)$name) == 0 ){
+                        $calidad = (int) request((String)('calidad_'.$name));
+                        $frecuencia = (int) request((String)('frecuencia_'.$name));
+                    }
+                    else{
+                        $calidad = 0;
+                        $frecuencia = 0;
+                    }
+
                     AlumnoRespuesta::create([
                         'actividad_id' => $actividad_id,
                         'alumno_id' => $logged->id,
                         'evaluado_id' => $alumno->id,
                         'comportamiento_id' => $comportamiento->id,
-                        'nota' => (int) request((String)$name),
+                        'nota_calidad' => $calidad,
+                        'nota_frecuencia' => $frecuencia
                     ]);
                 }   
             }
