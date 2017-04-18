@@ -12,6 +12,13 @@
 @section('content')
 
 <div class="content">
+    <script>
+    function clicked(comportamiento_id, alumno_id){
+        var checkbox = document.getElementById("check_" + comportamiento_id + "_" + alumno_id);
+        var sf = document.getElementById("frecuencia_" + comportamiento_id + "_" + alumno_id).disabled = checkbox.checked;
+        var sc = document.getElementById("calidad_" + comportamiento_id + "_" + alumno_id).disabled = checkbox.checked;
+    }
+    </script>
     <form method="POST" action="/actividades/{{$actividad->id}}">
         {{ csrf_field() }}
         @foreach($competencias as $competencia)
@@ -34,12 +41,12 @@
                                     @foreach($alumnos as $alumno)
                                     <tr>
                                         <td>{{$alumno->nombre}}</td>
-                                        
-                                        <td><input type="range" name="points" min="0" max="10"></td>
-                                        <td><input type="range" name="points" min="0" max="10"></td>
-                                        <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=1></td>
+                                        <td><input id="calidad_{{$comportamiento->id}}_{{$alumno->id}}" type="range" name="calidad_{{$comportamiento->id}}_{{$alumno->id}}" min="1" max="5"></td>
+                                        <td><input id="frecuencia_{{$comportamiento->id}}_{{$alumno->id}}" type="range" name="frecuencia_{{$comportamiento->id}}_{{$alumno->id}}" min="1" max="5"></td>
+                                        <td><input type="hidden" name="{{$comportamiento->id}}_{{$alumno->id}}" value="-1"></td>
+                                        <td><input id="check_{{$comportamiento->id}}_{{$alumno->id}}" type="checkbox" name="{{$comportamiento->id}}_{{$alumno->id}}" value="0" onclick="clicked({{$comportamiento->id}}, {{$alumno->id}});"></td>
                                     </tr>
-                                    @endforeach                                       
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
