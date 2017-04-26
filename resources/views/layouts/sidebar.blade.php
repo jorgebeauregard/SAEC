@@ -42,16 +42,23 @@
 			</div>
 	    	<div class="sidebar-wrapper">
 	            <ul class="nav">
+					<li class= "{{strpos(Request::url(), 'home') ? 'active' : 'inactive' }}">
+	                    <a href="{{ route('/home') }}">
+	                        <i class="material-icons">home</i>
+	                        <p>Home</p>
+	                    </a>
+	                </li>
+					@role('student')
+					<li class= "{{strpos(Request::url(), 'actividades') ? 'active' : 'inactive' }}">
+	                    <a href="{{ route('actividades.index') }}">
+	                        <i class="material-icons">library_books</i>
+	                        <p>Actividades</p>
+	                    </a>
+	                </li>
 					<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('calificaciones.index') }}">
 	                        <i class="material-icons">content_paste</i>
 	                        <p>Desempeño</p>
-	                    </a>
-	                </li>
-	                <li class= "{{strpos(Request::url(), 'actividades') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('actividades.index') }}">
-	                        <i class="material-icons">library_books</i>
-	                        <p>Actividades</p>
 	                    </a>
 	                </li>
 	                <li class= "{{strpos(Request::url(), 'perfil') ? 'active' : 'inactive' }}">
@@ -60,6 +67,7 @@
 	                        <p>Perfil</p>
 	                    </a>
 	                </li>
+					@endrole
 	            </ul>
 	    	</div>
 	    </div>
