@@ -14,8 +14,8 @@ class Profesor extends Model
     }
 
     public function actividades(){
-    	return $this->hasMany(Actividad::class);
-    }
+		return $this->belongsToMany(Actividad::class)->withPivot('completada');
+	}
 
 	public function profesor_respuestas(){
 		return $this->hasMany(ProfesorRespuesta::class);

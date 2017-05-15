@@ -1,4 +1,4 @@
-@extends('layouts.sidebar_profesor')
+@extends('layouts.sidebar')
 
 @section('title')
     <div>
@@ -40,12 +40,10 @@
 				</div>
 				@endif
 			<?php } ?>
-
 		</div> <!--end row -->
 
 		<div class="row">
 			<div class="col-md-6">
-
 				<div class="card">
 					<div class="card-content" data-background-color="blue">
 						<h3 class="title">Coevaluaciones completadas</h4>

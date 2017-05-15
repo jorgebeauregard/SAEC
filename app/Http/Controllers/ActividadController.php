@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Actividad;
 use App\Alumno;
 use App\Equipo;
+use App\Profesor;
+use Illuminate\Support\Facades\Auth;
 use App\AlumnoRespuesta;
+
 
 class ActividadController extends Controller
 {
@@ -17,10 +20,17 @@ class ActividadController extends Controller
      */
     public function index()
     {
-        $logged = Alumno::first();
+        if(Auth::user()->roles[0]->name == 'Student')
+            $logged = Alumno::first();
+        else
+            $logged = Profesor::first();
+
         $actividades = $logged->actividades->sortBy('fecha_limite')->all();
         
-        return view('alumno.actividades.index', compact('logged', 'actividades'));
+        if(Auth::user()->roles[0]->name == 'Student')
+            return view('alumno.actividades.index', compact('logged', 'actividades'));
+        else
+            return view('profesor.actividades.index', compact('logged', 'actividades'));
     }
 
     public function show($actividad_id)
