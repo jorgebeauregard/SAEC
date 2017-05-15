@@ -19,24 +19,28 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('/', function () {
         return view('/home');
     });
-    
-    Route::group([
-        'middleware' => ['auth', 'acl'],
-        'is' => 'student'
-    ], function() {
-        Route::resource('/actividades', 'ActividadController');
-        Route::get('/actividades/{actividad}', 'ActividadController@show');
-        Route::post('/actividades/{actividad}', 'ActividadController@store');
-        Route::resource('/calificaciones', 'CalificacionesController');
-        Route::resource('perfil', 'PerfilController');
-    });
 
+    Route::resource('/actividades', 'ActividadController');
+    Route::resource('perfil', 'PerfilController');
+    
     Route::group([
         'middleware' => ['auth', 'acl'],
         'is' => 'professor'
     ], function() {
-         Route::resource('/actividades', 'ActividadController');
+         
     });
+
+    Route::group([
+        'middleware' => ['auth', 'acl'],
+        'is' => 'student'
+    ], function() {
+        Route::get('/actividades/{actividad}', 'ActividadController@show');
+        Route::post('/actividades/{actividad}', 'ActividadController@store');
+        Route::resource('/calificaciones', 'CalificacionesController');
+        
+    });
+
+    
 
     Route::get('logout', function(){
         Auth::logout();
