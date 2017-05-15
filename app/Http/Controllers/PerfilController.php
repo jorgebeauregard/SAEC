@@ -16,7 +16,7 @@ class PerfilController extends Controller
     {
         $logged = Alumno::first();
         
-        return view('perfil.index', compact('logged'));
+        return view('alumno.perfil.index', compact('logged'));
     }
 
     /**

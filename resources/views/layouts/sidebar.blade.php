@@ -48,6 +48,7 @@
 	                        <p>Home</p>
 	                    </a>
 	                </li>
+
 					@role('student')
 					<li class= "{{strpos(Request::url(), 'actividades') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('alumno.actividades.index') }}">

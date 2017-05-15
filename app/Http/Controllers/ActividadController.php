@@ -20,7 +20,7 @@ class ActividadController extends Controller
         $logged = Alumno::first();
         $actividades = $logged->actividades->sortBy('fecha_limite')->all();
         
-        return view('actividades.index', compact('logged', 'actividades'));
+        return view('alumno.actividades.index', compact('logged', 'actividades'));
     }
 
     public function show($actividad_id)
@@ -35,9 +35,9 @@ class ActividadController extends Controller
         $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
         
         if($actividad->vista == 1)
-            return view('actividades.show_student', compact('actividad','competencias', 'alumnos'));
+            return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
         else
-            return view('actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+            return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
     }
 
     public function create()
