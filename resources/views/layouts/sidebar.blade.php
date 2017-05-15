@@ -50,24 +50,46 @@
 	                </li>
 					@role('student')
 					<li class= "{{strpos(Request::url(), 'actividades') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('actividades.index') }}">
+	                    <a href="{{ route('alumno.actividades.index') }}">
 	                        <i class="material-icons">library_books</i>
 	                        <p>Actividades</p>
 	                    </a>
 	                </li>
 					<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('calificaciones.index') }}">
+	                    <a href="{{ route('alumno.calificaciones.index') }}">
 	                        <i class="material-icons">content_paste</i>
 	                        <p>Desempeño</p>
 	                    </a>
 	                </li>
 	                <li class= "{{strpos(Request::url(), 'perfil') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('perfil.index') }}">
+	                    <a href="{{ route('alumno.perfil.index') }}">
 	                        <i class="material-icons">person</i>
 	                        <p>Perfil</p>
 	                    </a>
 	                </li>
 					@endrole
+
+					@role('professor')
+					<li class= "{{strpos(Request::url(), 'actividades') ? 'active' : 'inactive' }}">
+	                    <a href="{{ route('profesor.actividades.index') }}">
+	                        <i class="material-icons">library_books</i>
+	                        <p>Actividades</p>
+	                    </a>
+	                </li>
+					<li class= "{{strpos(Request::url(), 'grupos') ? 'active' : 'inactive' }}">
+	                    <a href="{{ route('profesor.grupos.index') }}">
+	                        <i class="material-icons">content_paste</i>
+	                        <p>Grupos</p>
+	                    </a>
+	                </li>
+	                <li class= "{{strpos(Request::url(), 'perfil') ? 'active' : 'inactive' }}">
+	                    <a href="{{ route('profesor.perfil.index') }}">
+	                        <i class="material-icons">person</i>
+	                        <p>Perfil</p>
+	                    </a>
+	                </li>
+					@endrole
+
 	            </ul>
 	    	</div>
 	    </div>
