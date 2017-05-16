@@ -2,7 +2,7 @@
 
 @section('title')
     <div>
-        <i class= ""></i> Actividades
+        <i class= ""></i> Actividad
     </div>
 @endsection
 
@@ -14,54 +14,44 @@
 	<div class="container-fluid">
 
 		<div class="row">
-			<?php for($i=0; $i<4; $i++){ ?>
-				@if($i < sizeof($actividades))
-				<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="col-md-12">
 					<div class="card card-stats">
 						<div class="card-header" data-background-color="blue">
-							<i class="material-icons">insert_chart</i>
+							<i class="material-icons">bubble_chart</i>
 						</div>
 						<div class="card-content">
 							<p class="category">Actividad</p>
 							<br>
 							<br>
-							<h3 class="title"> <?php echo($actividades[$i]->nombre) ?></h3>
+							<h3 class="title"> Nombre</h3>
 						</div>
 						<div class="card-footer">
 							<div class="stats">
-							@if( $logged->actividades->find($actividades[$i]->id)->pivot->completada == 0)
-								<i class="material-icons text-danger">warning</i> <a href="/actividades/{{$actividades[$i]->id}}">Coevaluaci&oacuten pendiente</a>
-							@else
-								<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
-							@endif
+								<p class="category">Fecha de finalización</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				@endif
-			<?php } ?>
 		</div> <!--end row -->
 
 		<div class="row">
 			<div class="col-md-12">
 	            <div class="card">
 	                <div class="card-header" data-background-color="blue">
-	                    <h4 class="title">Actividades</h4>
-	                     <p class="category">Aquí se muestra el estado de las actividades realizadas</p>
+	                    <h4 class="title">Alumnos</h4>
+	                     <p class="category">Aquí se muestra el estado de respuesta de los alumnos en la actividad</p>
 	                </div>
 	                <div class="card-content table-responsive">
 	                    <table class="table">
 	                        <thead class="text-primary">
-	                            <th>Actividad</th>
-	                            <th>Finalizada</th>
-	                            <th>Contestada</th>
-								<th>Editar</th>
+	                            <th>Nombre</th>
+								<th>Apellidos</th>
+	                            <th>Completada</th>
 	                        </thead>
 	                        <tbody>
 	                            <tr>
 	                            	<td>Dakota Rice</td>
 	                                <td>Niger</td>
-	                               	<td>Oud-Turnhout</td>
 									<td>$36,738</td>
 	                            </tr>
 	                        </tbody>
