@@ -20,10 +20,10 @@ class ActividadController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->roles[0]->name == 'student')
-            $logged = Alumno::first();
+        if(Auth::user()->roles[0]->id == 3)
+            $logged = Auth::user()->alumno[0];
         else
-            $logged = Profesor::first();
+            $logged = Auth::user()->profesor[0];
 
         $actividades = $logged->actividades->sortBy('fecha_limite')->all();
         
@@ -35,7 +35,11 @@ class ActividadController extends Controller
 
     public function show($actividad_id)
     {
-        $logged = Alumno::first();
+        if(Auth::user()->roles[0]->id == 3)
+            $logged = Auth::user()->alumno[0];
+        else
+            $logged = Auth::user()->profesor[0];
+
     	$actividad = $logged->actividades->find($actividad_id);
         
         if($actividad == null || $actividad->pivot->completada)
@@ -69,7 +73,11 @@ class ActividadController extends Controller
      */
     public function store($actividad_id)
     {
-        $logged = Alumno::first();
+        if(Auth::user()->roles[0]->id == 3)
+            $logged = Auth::user()->alumno[0];
+        else
+            $logged = Auth::user()->profesor[0];
+            
     	$actividad = $logged->actividades->find($actividad_id);
 
         if($actividad == null || $actividad->pivot->completada)

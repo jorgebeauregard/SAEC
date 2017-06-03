@@ -22,7 +22,6 @@ class CreateAlumnosTable extends Migration
             $table->integer('campus_id')->unsigned();
             $table->tinyInteger('genero');
             $table->integer('plan_id')->unsigned();
-            $table->string('contrasena', 30);
             $table->integer('user_id')->unsigned();
             $table->timestamps();
             

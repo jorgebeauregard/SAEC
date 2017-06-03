@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Kodeine\Acl\Traits\HasRole;
+use App\Alumno;
+use App\Profesor;
 
 class User extends Authenticatable
 {
@@ -27,4 +29,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function alumno(){
+        return $this->hasMany(Alumno::class);
+    }
+
+    public function profesor(){
+        return $this->hasMany(Profesor::class);
+    }
 }

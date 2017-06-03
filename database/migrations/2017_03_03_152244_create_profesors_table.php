@@ -19,7 +19,6 @@ class CreateProfesorsTable extends Migration
             $table->string('nombre',60);
             $table->string('apellido',60);
             $table->string('correo',60);
-            $table->string('contrasena',60);
             $table->integer('user_id')->unsigned();
             $table->timestamps();
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\User;
 use App\Campus;
 use App\Plan;
 use App\Equipo;
@@ -41,5 +42,9 @@ class Alumno extends Model
 
 	public function actividades(){
 		return $this->belongsToMany(Actividad::class)->withPivot('completada', 'equipo_id');
+	}
+
+	public function user(){
+		return $this->belongsTo(User::class);
 	}
 }

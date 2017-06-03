@@ -4,6 +4,7 @@ namespace App;
 use App\Crn;
 use App\ProfesorRespuesta;
 use App\Actividad;
+use App\User;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,5 +21,8 @@ class Profesor extends Model
 	public function profesor_respuestas(){
 		return $this->hasMany(ProfesorRespuesta::class);
 	}
-		    
+
+	public function user(){
+		return $this->belongsTo(User::class);
+	}
 }

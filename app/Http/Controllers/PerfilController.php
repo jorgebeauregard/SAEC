@@ -17,16 +17,14 @@ class PerfilController extends Controller
      */
     public function index()
     {
-
-        if(Auth::user()->roles[0]->name == 'Student'){
-            $logged = Alumno::first();
+        if(Auth::user()->roles[0]->id == 3){
+            $logged = Auth::user()->alumno[0];
             return view('alumno.perfil.index', compact('logged'));
         }
         else{
-            $logged = Profesor::first();
+            $logged = Auth::user()->profesor[0];
             return view('profesor.perfil.index', compact('logged'));
         }
-       
     }
 
     /**
