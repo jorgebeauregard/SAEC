@@ -20,14 +20,14 @@ class ActividadController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->roles[0]->name == 'Student')
+        if(Auth::user()->roles[0]->name == 'student')
             $logged = Alumno::first();
         else
             $logged = Profesor::first();
 
         $actividades = $logged->actividades->sortBy('fecha_limite')->all();
         
-        if(Auth::user()->roles[0]->name == 'Student')
+        if(Auth::user()->roles[0]->name == 'student')
             return view('alumno.actividades.index', compact('logged', 'actividades'));
         else
             return view('profesor.actividades.index', compact('logged', 'actividades'));

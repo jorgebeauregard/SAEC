@@ -20,7 +20,11 @@ class CreateProfesorsTable extends Migration
             $table->string('apellido',60);
             $table->string('correo',60);
             $table->string('contrasena',60);
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+
         });
     }
 

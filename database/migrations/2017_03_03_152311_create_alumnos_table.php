@@ -23,10 +23,13 @@ class CreateAlumnosTable extends Migration
             $table->tinyInteger('genero');
             $table->integer('plan_id')->unsigned();
             $table->string('contrasena', 30);
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
             
             $table->foreign('campus_id')->references('id')->on('campuses')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('plan_id')->references('id')->on('plans')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+
         });
 
       

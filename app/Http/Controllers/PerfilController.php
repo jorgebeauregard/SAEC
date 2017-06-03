@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Alumno;
+use App\Profesor;
+use Illuminate\Support\Facades\Auth;
+
 
 class PerfilController extends Controller
 {
@@ -14,9 +17,16 @@ class PerfilController extends Controller
      */
     public function index()
     {
-        $logged = Alumno::first();
-        
-        return view('alumno.perfil.index', compact('logged'));
+
+        if(Auth::user()->roles[0]->name == 'Student'){
+            $logged = Alumno::first();
+            return view('alumno.perfil.index', compact('logged'));
+        }
+        else{
+            $logged = Profesor::first();
+            return view('profesor.perfil.index', compact('logged'));
+        }
+       
     }
 
     /**
