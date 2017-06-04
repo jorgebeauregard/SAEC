@@ -12,6 +12,12 @@
 
 <div class="content">
 	<div class="container-fluid">
+	
+	<div class="row">
+		<div class="col-md-12">
+			<a type="button" class="btn btn-success btn-block">Crear actividad</a>
+		</div>
+	</div>
 
 		<div class="row">
 			<?php for($i=0; $i<4; $i++){ ?>
@@ -58,12 +64,28 @@
 								<th>Editar</th>
 	                        </thead>
 	                        <tbody>
+	                        @foreach($actividades as $actividad)
 	                            <tr>
-	                            	<td>Dakota Rice</td>
-	                                <td>Niger</td>
-	                               	<td>Oud-Turnhout</td>
-									<td>$36,738</td>
+	                            	<td>{{$actividad->nombre}}</td>
+	                            	@if($actividad->fecha_limite->isPast())
+		                                <td style = "color:red;">
+		                                {{$actividad->fecha_limite->toDayDateTimeString()}}</td>
+		                               	</td>
+		                            @else
+		                                <td style = "color:green;">
+		                                {{$actividad->fecha_limite->toDayDateTimeString()}}</td>
+		                               	</td>		                            
+	                               	@endif
+	                               	<td>
+	                               		@if($actividad->pivot->completada)
+	                               			<a type="button" class="btn btn-success" disabled><i class="fa fa-check"></i></a>
+	                               		@else
+	                               			<a type="button" class="btn btn-danger" disabled><i class="fa fa-times"></i></a>
+	                               		@endif
+	                               	</td>
+									<td><a href="/actividades/editar/{{$actividad->id}}" type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
 	                            </tr>
+	                        @endforeach
 	                        </tbody>
 	                    </table>
 
