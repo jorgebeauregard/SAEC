@@ -24,10 +24,12 @@ class ActividadController extends Controller
             $logged = Auth::user()->alumno[0];
         else
             $logged = Auth::user()->profesor[0];
+        dd($logged);
 
         $actividades = $logged->actividades->sortBy('fecha_limite')->all();
-        
-        if(Auth::user()->roles[0]->name == 'student')
+        dd($actividades);
+
+        if(Auth::user()->roles[0]->id == 3)
             return view('alumno.actividades.index', compact('logged', 'actividades'));
         else
             return view('profesor.actividades.index', compact('logged', 'actividades'));

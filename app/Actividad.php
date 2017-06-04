@@ -22,7 +22,7 @@ class Actividad extends Model
     }     
 
     public function profesor(){
-    	return $this->belongsTo(Profesor::class);
+    	return $this->belongsToMany(Profesor::class);
     }      
 
     public function competencias(){
