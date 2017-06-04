@@ -47,13 +47,23 @@ class ActividadController extends Controller
         if($actividad == null || $actividad->pivot->completada)
             return redirect('/actividades');
 
-    	$competencias = $actividad->competencias;
-        $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
         
-        if($actividad->vista == 1)
-            return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
-        else
-            return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+    	$competencias = $actividad->competencias;
+
+        if(Auth::user()->roles[0]->id == 3){
+            $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
+        
+            if($actividad->vista == 1)
+                return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
+            else
+                return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+        }
+        else{
+            $alumnos = $actividad->alumnos;
+            return view('profesor.actividades.show_competence', compact('actividad', 'competencias', 'alumnos'));
+        }
+        
+        
     }
 
     public function create()

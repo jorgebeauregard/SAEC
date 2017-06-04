@@ -7,7 +7,6 @@ use App\Profesor;
 use App\Alumno;
 use App\Competencia;
 use App\AlumnoRespuesta;
-use App\ActividadAlumno;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -34,6 +33,6 @@ class Actividad extends Model
     }
 
     public function alumnos(){
-    	return $this->belongsToMany(Alumno::class)->using(ActividadAlumno::class);
+    	return $this->belongsToMany(Alumno::class);
     }
 }
