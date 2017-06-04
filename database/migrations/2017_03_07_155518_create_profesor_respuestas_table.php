@@ -20,7 +20,8 @@ class CreateProfesorRespuestasTable extends Migration
             $table->integer('profesor_id')->unsigned();
             $table->integer('evaluado_id')->unsigned();
             $table->integer('comportamiento_id')->unsigned();
-            $table->tinyInteger('nota');
+            $table->tinyInteger('nota_calidad');
+            $table->tinyInteger('nota_frecuencia');
             $table->text('comentario');
 
             $table->foreign('actividad_id')->references('id')->on('actividads')->onUpdate('cascade')->onDelete('cascade');

@@ -83,7 +83,7 @@ class ActividadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($actividad_id)
+    public function store(Request $request, $actividad_id)
     {
         if(Auth::user()->roles[0]->id == 3)
             $logged = Auth::user()->alumno[0];
@@ -94,35 +94,8 @@ class ActividadController extends Controller
 
         if($actividad == null || $actividad->pivot->completada)
             return redirect('/actividades');
-        
-        $equipo = Equipo::find($actividad->pivot->equipo_id);
 
-        foreach($actividad->competencias as $competencia){
-            foreach($competencia->comportamientos as $comportamiento){
-                foreach($equipo->alumnos as $alumno){
-                    $name = $comportamiento->id.'_'.$alumno->id;
-
-                    if(!(int) request((String)$name) == 0 ){
-                        $calidad = (int) request((String)('calidad_'.$name));
-                        $frecuencia = (int) request((String)('frecuencia_'.$name));
-                    }
-                    else{
-                        $calidad = 0;
-                        $frecuencia = 0;
-                    }
-
-                    AlumnoRespuesta::create([
-                        'actividad_id' => $actividad_id,
-                        'alumno_id' => $logged->id,
-                        'evaluado_id' => $alumno->id,
-                        'comportamiento_id' => $comportamiento->id,
-                        'nota_calidad' => $calidad,
-                        'nota_frecuencia' => $frecuencia
-                    ]);
-                }   
-            }
-        }
-
+        $logged->evaluar($request, $actividad_id);
         $actividad->pivot->completada = 1;
         $actividad->pivot->save();
 
@@ -136,9 +109,11 @@ class ActividadController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function edit($id)
+    public function edit($actividad_id)
     {
-        //
+        $actividad = Actividad::find($actividad_id);
+        $alumnos = Alumnos::all()->sortBy('matricula');
+        return view('profesor.actividades.edit', compact('actividad', 'alumnos'));
     }
 
     /**

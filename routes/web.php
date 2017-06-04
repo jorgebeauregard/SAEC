@@ -22,14 +22,14 @@ Route::group(['middleware'=>'auth'], function() {
 
     Route::resource('/actividades', 'ActividadController');
     Route::get('/actividades/{actividad}', 'ActividadController@show');
-        Route::post('/actividades/{actividad}', 'ActividadController@store');
+    Route::post('/actividades/{actividad}', 'ActividadController@store');
     Route::resource('perfil', 'PerfilController');
     
     Route::group([
         'middleware' => ['auth', 'acl'],
         'is' => 'professor'
     ], function() {
-         
+         Route::get('/actividades/editar/{actividad}', 'ActividadController@edit');
     });
 
     Route::group([
