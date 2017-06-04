@@ -13,6 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Actividad extends Model
 {
+
+    protected $dates = ['fecha_limite'];
+
     public function equipos(){
     	return $this->hasMany(Equipo::class);
     }
