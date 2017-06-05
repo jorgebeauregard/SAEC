@@ -30,6 +30,7 @@ Route::group(['middleware'=>'auth'], function() {
         'is' => 'professor'
     ], function() {
          Route::get('/actividades/editar/{actividad}', 'ActividadController@edit');
+         Route::get('/grupos', 'CrnController@index');
     });
 
     Route::group([

@@ -19,8 +19,8 @@ class CreateAlumnosTable extends Migration
             $table->string('nombre', 60);
             $table->string('apellido', 60);
             $table->decimal('prom_anterior', 5,2);
-            $table->integer('campus_id')->unsigned();
             $table->tinyInteger('genero');
+            $table->integer('campus_id')->unsigned();
             $table->integer('plan_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->timestamps();
