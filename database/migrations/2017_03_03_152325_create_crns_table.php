@@ -15,7 +15,6 @@ class CreateCrnsTable extends Migration
     {
         Schema::create('crns', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre', 50);
             $table->integer('materia_id')->unsigned();
             $table->integer('periodo_id')->unsigned();
             $table->integer('profesor_id')->unsigned();

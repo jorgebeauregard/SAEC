@@ -5,6 +5,7 @@ use App\Crn;
 use App\ProfesorRespuesta;
 use App\Actividad;
 use App\User;
+use Illuminate\Http\Request;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -49,7 +50,8 @@ class Profesor extends Model
 						'evaluado_id' => $alumno->id,
 						'comportamiento_id' => $comportamiento->id,
 						'nota_calidad' => $calidad,
-						'nota_frecuencia' => $frecuencia
+						'nota_frecuencia' => $frecuencia,
+						'comentario' => ' '
 					]);
                 }   
             }
