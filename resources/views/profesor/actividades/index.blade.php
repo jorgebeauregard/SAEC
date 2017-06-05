@@ -12,12 +12,17 @@
 
 <div class="content">
 	<div class="container-fluid">
-	
-	<div class="row">
-		<div class="col-md-12">
-			<a type="button" class="btn btn-success btn-block">Crear actividad</a>
+
+		<div class="row">
+			<div class="col-md-8">
+				<h2>Actividades Recientes</h2>
+			</div>
+
+			<div class="col-md-4" style="text-align: right; padding-top: 20px">
+				<a type="button" class="btn btn-success">Crear actividad</a>
+			</div>
 		</div>
-	</div>
+
 
 		<div class="row">
 			<?php for($i=0; $i<4; $i++){ ?>
@@ -47,6 +52,13 @@
 				@endif
 			<?php } ?>
 		</div> <!--end row -->
+
+		<div class="row">
+			<div class="col-md-8">
+				<h2>Todas las actividades</h2>
+			</div>
+		</div>
+
 
 		<div class="row">
 			<div class="col-md-12">
@@ -80,7 +92,7 @@
 	                               		@if($actividad->pivot->completada)
 	                               			<a type="button" class="btn btn-success" disabled><i class="fa fa-check"></i></a>
 	                               		@else
-	                               			<a type="button" class="btn btn-danger" disabled><i class="fa fa-times"></i></a>
+	                               			<a href="/actividades/{{$actividad->id}}" type="button" class="btn btn-danger" ><i class="fa fa-times"></i></a>
 	                               		@endif
 	                               	</td>
 									<td><a href="/actividades/editar/{{$actividad->id}}" type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>

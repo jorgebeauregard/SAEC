@@ -20,6 +20,7 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -42,12 +43,6 @@
 			</div>
 	    	<div class="sidebar-wrapper">
 	            <ul class="nav">
-					<li class= "{{strpos(Request::url(), 'home') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('/home') }}">
-	                        <i class="material-icons">home</i>
-	                        <p>Home</p>
-	                    </a>
-	                </li>
 
 					@role('student')
 					<li class= "{{strpos(Request::url(), 'actividades') ? 'active' : 'inactive' }}">
@@ -75,6 +70,13 @@
 	                    <a href="{{ route('actividades.index') }}">
 	                        <i class="material-icons">library_books</i>
 	                        <p>Actividades</p>
+	                    </a>
+	                </li>
+
+	                <li class= "{{strpos(Request::url(), 'grupos') ? 'active' : 'inactive' }}">
+	                    <a href="/grupos">
+	                        <i class="material-icons">library_books</i>
+	                        <p>Grupos</p>
 	                    </a>
 	                </li>
 					@endrole
