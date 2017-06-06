@@ -29,7 +29,6 @@ class CreateAlumnosTable extends Migration
             $table->foreign('campus_id')->references('id')->on('campuses')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('plan_id')->references('id')->on('plans')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-
         });
 
         Schema::create('alumno_crn', function (Blueprint $table) {

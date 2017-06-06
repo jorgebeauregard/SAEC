@@ -9,6 +9,7 @@ use App\Actividad;
 use App\Periodo;
 use Carbon\Carbon;
 use App\AlumnoCrn;
+use App\Materia;
 use Illuminate\Support\Facades\Auth;
 
 class CrnController extends Controller
@@ -34,7 +35,8 @@ class CrnController extends Controller
 
      public function create()
     {
-        return view('profesor.grupos.create');
+        $materias = App\Materia::all();
+        return view('profesor.grupos.create', compact('materias'));
     }
 
      public function addStudent($crn_id ,$alumno_id){
@@ -42,6 +44,10 @@ class CrnController extends Controller
      }
 
      public function deleteStudent(){
+        $grupo = Crn::find(request($grupo_id));
+        $alumno = $grupo->alumnos->find(request($alumno_id));
 
+        $alumnos = $grupo->alumnos;
+        $todos = Alumno::all()->diff($alumnos)->sortBy('matricula');
      }
 }
