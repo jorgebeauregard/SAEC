@@ -25,6 +25,7 @@ class CrnController extends Controller
         $logged = Auth::user()->profesor[0];
         $grupo = Crn::find($grupo_id);
         $alumnos = $grupo->alumnos;
+        $alumnosAll = Alumno::all()->diff($alumnos);
         $actividades = $logged->actividades->where('crn_id', $grupo->id)->all();
 
         return view('profesor.grupos.show', compact('grupo', 'alumnos', 'actividades'));
