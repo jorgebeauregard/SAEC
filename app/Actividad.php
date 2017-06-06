@@ -7,12 +7,13 @@ use App\Profesor;
 use App\Alumno;
 use App\Competencia;
 use App\AlumnoRespuesta;
+use App\Crn;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Actividad extends Model
 {
-
+    
     protected $dates = ['fecha_limite'];
 
     public function equipos(){
@@ -37,5 +38,9 @@ class Actividad extends Model
 
     public function alumnos(){
     	return $this->belongsToMany(Alumno::class);
+    }
+
+    public function crn(){
+        return $this->belongsTo(Crn::class);
     }
 }

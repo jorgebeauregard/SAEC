@@ -31,10 +31,7 @@ class CreateComportamientosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profesors_respuestas');
-        Schema::dropIfExists('alumnos_respuestas');
         Schema::dropIfExists('comportamientos');
-
     }
 }
 

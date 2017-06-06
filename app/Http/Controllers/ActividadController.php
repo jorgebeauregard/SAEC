@@ -7,6 +7,7 @@ use App\Actividad;
 use App\Alumno;
 use App\Equipo;
 use App\Profesor;
+use App\Periodo;
 use Illuminate\Support\Facades\Auth;
 use App\AlumnoRespuesta;
 use Carbon\Carbon;
@@ -25,9 +26,8 @@ class ActividadController extends Controller
             $logged = Auth::user()->alumno[0];
         else
             $logged = Auth::user()->profesor[0];
-
-        $actividades = $logged->actividades->sortBy('fecha_limite')->all();
-
+        
+        $actividades = $logged->actividades->where('periodo_id', Periodo::all()->last()->id)->sortBy('fecha_limite')->all();
 
         if(Auth::user()->roles[0]->id == 3)
             return view('alumno.actividades.index', compact('logged', 'actividades'));
@@ -46,7 +46,6 @@ class ActividadController extends Controller
         
         if($actividad == null || $actividad->pivot->completada)
             return redirect('/actividades');
-
         
     	$competencias = $actividad->competencias;
 
@@ -62,8 +61,6 @@ class ActividadController extends Controller
             $alumnos = $actividad->alumnos;
             return view('profesor.actividades.show_competence', compact('actividad', 'competencias', 'alumnos'));
         }
-        
-        
     }
 
     public function create()
