@@ -26,14 +26,5 @@ class MateriasTableSeeder extends Seeder
         	'nombre' => 'Fisica 1',
     	]);
 
-        DB::table('materias')->insert([
-        	'clave' => 'MA1006',
-        	'nombre' => 'Probabilidad y estadistica',
-    	]);
-
-        DB::table('materias')->insert([
-        	'clave' => 'TC1020',
-        	'nombre' => 'Bases de datos',
-    	]);
     }
 }

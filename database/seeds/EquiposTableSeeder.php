@@ -14,126 +14,51 @@ class EquiposTableSeeder extends Seeder
         DB::table('equipos')->insert([
         	'numero_equipo' => 1,
         	'actividad_id' => 1,
-        ]);
+        ]); 
 
          DB::table('equipos')->insert([
-          	'numero_equipo' => 2,
-          	'actividad_id' => 1,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 3,
-          	'actividad_id' => 1,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 4,
-          	'actividad_id' => 1,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 5,
-          	'actividad_id' => 1,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 1,
-          	'actividad_id' => 2,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 2,
-          	'actividad_id' => 2,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 3,
-          	'actividad_id' => 2,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 4,
-          	'actividad_id' => 2,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 5,
-          	'actividad_id' => 2,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 1,
-          	'actividad_id' => 3,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 2,
-          	'actividad_id' => 3,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 3,
-          	'actividad_id' => 3,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 4,
-          	'actividad_id' => 3,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 5,
-          	'actividad_id' => 3,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 1,
-          	'actividad_id' => 4,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 2,
-          	'actividad_id' => 4,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 3,
-          	'actividad_id' => 4,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 4,
-          	'actividad_id' => 4,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 5,
-          	'actividad_id' => 4,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 1,
-          	'actividad_id' => 5,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 2,
-          	'actividad_id' => 5,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 3,
-          	'actividad_id' => 5,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 4,
-          	'actividad_id' => 5,
-          ]);
-  
-          DB::table('equipos')->insert([
-          	'numero_equipo' => 5,
-          	'actividad_id' => 5,
-          ]);
+        	'numero_equipo' => 2,
+        	'actividad_id' => 1,
+        ]);
+
+        DB::table('equipos')->insert([
+        	'numero_equipo' => 1,
+        	'actividad_id' => 2,
+        ]); 
+
+         DB::table('equipos')->insert([
+        	'numero_equipo' => 2,
+        	'actividad_id' => 2,
+        ]);
+
+        DB::table('equipos')->insert([
+        	'numero_equipo' => 1,
+        	'actividad_id' => 3,
+        ]); 
+
+         DB::table('equipos')->insert([
+        	'numero_equipo' => 2,
+        	'actividad_id' => 3,
+        ]);
+
+        DB::table('equipos')->insert([
+        	'numero_equipo' => 1,
+        	'actividad_id' => 4,
+        ]); 
+
+         DB::table('equipos')->insert([
+        	'numero_equipo' => 2,
+        	'actividad_id' => 4,
+        ]);
+
+        DB::table('equipos')->insert([
+        	'numero_equipo' => 1,
+        	'actividad_id' => 5,
+        ]); 
+
+         DB::table('equipos')->insert([
+        	'numero_equipo' => 2,
+        	'actividad_id' => 5,
+        ]);
     }
 }
