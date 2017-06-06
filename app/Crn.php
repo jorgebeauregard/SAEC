@@ -5,6 +5,7 @@ use App\Profesor;
 use App\Materia;
 use App\Periodo;
 use App\Alumno;
+use App\Actividad;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,5 +23,9 @@ class Crn extends Model
 
 	public function alumnos(){
 		return $this->belongsToMany(Alumno::class);
-	}	    
+    }
+
+    public function actividades(){
+        return $this->hasMany(Actividad::class);
+    }
 }

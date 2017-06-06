@@ -38,6 +38,5 @@ class CreateAlumnoRespuestasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('alumno_respuestas');
-        Schema::dropIfExists('actividad_alumno');
     }
 }

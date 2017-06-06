@@ -17,12 +17,16 @@ class CreateActividadsTable extends Migration
             $table->increments('id');
             $table->string('nombre', 60);
             $table->string('descripcion', 255);
-            $table->integer('profesor_id')->unsigned();
             $table->dateTime('fecha_limite');
             $table->boolean('vista')->default(false);
+            $table->integer('profesor_id')->unsigned();
+            $table->integer('periodo_id')->unsigned();
+            $table->integer('crn_id')->unsigned();
             $table->timestamps();
             
+            $table->foreign('periodo_id')->references('id')->on('periodos')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('profesor_id')->references('id')->on('profesors')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('crn_id')->references('id')->on('crns')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('actividad_competencia', function (Blueprint $table) {
@@ -54,8 +58,8 @@ class CreateActividadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividad_competencia');
         Schema::dropIfExists('actividad_profesor');
+        Schema::dropIfExists('actividad_competencia');
         Schema::dropIfExists('actividads');
     }
 }

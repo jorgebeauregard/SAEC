@@ -25,16 +25,6 @@ class CreateCrnsTable extends Migration
             $table->foreign('periodo_id')->references('id')->on('periodos')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('profesor_id')->references('id')->on('profesors')->onUpdate('cascade')->onDelete('cascade');
         });
-
-        Schema::create('alumno_crn', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('crn_id')->unsigned();
-            $table->integer('alumno_id')->unsigned();
-            $table->timestamps();
-
-            $table->foreign('crn_id')->references('id')->on('crns')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('alumno_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
-        });
     }
 
     /**
@@ -44,8 +34,6 @@ class CreateCrnsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumno_crn');
         Schema::dropIfExists('crns');
-
     }
 }

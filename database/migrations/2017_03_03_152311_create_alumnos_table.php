@@ -31,7 +31,15 @@ class CreateAlumnosTable extends Migration
 
         });
 
-      
+        Schema::create('alumno_crn', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('crn_id')->unsigned();
+            $table->integer('alumno_id')->unsigned();
+            $table->timestamps();
+
+            $table->foreign('crn_id')->references('id')->on('crns')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('alumno_id')->references('id')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
+        });
     }
     
     /**
@@ -41,7 +49,7 @@ class CreateAlumnosTable extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('actividad_alumno');
-        Schema::dropIfExists('alumnos');
+        Schema::dropIfExists('alumno_crn');
+        Schema::dropIfExists('alumnos');   
     }
 }
