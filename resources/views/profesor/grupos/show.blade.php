@@ -9,6 +9,8 @@
 @section('description', 'Has ingresado exitosamente')
 
 @section('content')
+<div class="content">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
 	            <div class="card">
@@ -38,20 +40,17 @@
 		                               	</td>		                            
 	                               	@endif
 	                               	<td>
-	                               		@if($actividad->pivot->completada)
-	                               			<a type="button" class="btn btn-success" disabled><i class="fa fa-check"></i></a>
-	                               		@else
-	                               			<a href="/actividades/{{$actividad->id}}" type="button" class="btn btn-danger" ><i class="fa fa-times"></i></a>
-	                               		@endif
+
 	                               	</td>
 									<td><a href="/actividades/editar/{{$actividad->id}}" type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
 	                            </tr>
 	                        @endforeach
 	                        </tbody>
 	                    </table>
-
 	                </div>
 	            </div>
 			</div>
 		</div> <!--end row -->
+	</div>	
+</div>
 @endsection

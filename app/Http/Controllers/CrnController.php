@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Crn;
 use App\Alumno;
 use App\Actividad;
+use App\Periodo;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class CrnController extends Controller
@@ -22,7 +24,7 @@ class CrnController extends Controller
      {
         $grupo = Crn::find($grupo_id);
         $alumnos = $grupo->alumnos;
-        $actividades = $crn->actividades;
+        $actividades = $grupo->actividades;
 
         return view('profesor.grupos.show', compact('grupo', 'alumnos', 'actividades'));
      }
