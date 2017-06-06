@@ -109,8 +109,8 @@ class ActividadController extends Controller
     public function edit($actividad_id)
     {
         $actividad = Actividad::find($actividad_id);
-        $alumnos = Alumno::all()->sortBy('matricula');
-        return view('profesor.actividades.edit', compact('actividad', 'alumnos'));
+        
+        return view('profesor.actividades.edit', compact('actividad'));
     }
 
     /**
