@@ -16,7 +16,7 @@ class ProfesorsTableSeeder extends Seeder
             'nombre' => 'Abel',
             'apellido' => 'Flores',
             'correo' => 'aflores@itesm.mx',
-            'user_id' => 2,
+            'user_id' => 6,
     	]);
     }
 }

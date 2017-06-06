@@ -28,6 +28,6 @@ class CrnController extends Controller
         $todos = Alumno::all()->diff($alumnos);
         $actividades = $logged->actividades->where('crn_id', $grupo->id)->all();
 
-        return view('profesor.grupos.show', compact('grupo', 'alumnos', 'actividades'));
+        return view('profesor.grupos.show', compact('grupo', 'alumnos', 'actividades', 'todos'));
      }
 }
