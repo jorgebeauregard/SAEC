@@ -155,7 +155,7 @@
 	<script src="js/bootstrap-notify.js"></script>
 
 	<!-- Material Dashboard javascript methods -->
-	<script src="js/material-dashboard.js"></script>
+	<script src="{!! asset('js/material-dashboard.js') !!}" type="text/javascript"></script>
 
 	<script type="text/javascript">
     	$(document).ready(function(){
