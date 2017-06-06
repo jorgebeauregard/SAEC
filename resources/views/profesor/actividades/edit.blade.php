@@ -43,7 +43,7 @@
 									<div class="col-md-12">
 										<div class="form-group label-floating">
 											<label class="control-label">Nombre de la actividad</label>
-											<input type="text" class="form-control" text="hola">
+											<input type="text" class="form-control" value="{{$actividad->nombre}}">
 										</div>
 									</div>
 								</div>
@@ -51,7 +51,7 @@
 									<div class="col-md-12">
 										<div class="form-group label-floating">
 											<label class="control-label">Descripción</label>
-											<input type="text" class="form-control" >
+											<input type="text" class="form-control" value="{{$actividad->descripcion}}">
 										</div>
 									</div>
 								</div>
@@ -59,7 +59,7 @@
 									<div class="col-md-12">
 										<div class="form-group label-floating">
 											<label class="control-label">Fecha de finalización</label>
-											<input type="date" class="form-control" >
+											<input type="date" class="form-control" value="{{$actividad->fecha_limite}}">
 										</div>
 									</div>
 								</div>
