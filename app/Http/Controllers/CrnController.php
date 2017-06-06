@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Crn;
+use App\Periodo;
 
 class CrnController extends Controller
 {
     public function index()
     {
         $logged = Auth::user()->profesor[0];
-        $grupos = $logged->crns->where('periodo_id', App\Periodo::all()->last()->id);
+        $grupos = $logged->crns->where('periodo_id', Periodo::all()->last()->id);
 
         return view('profesor.grupos.index', compact('grupos'));
     }
