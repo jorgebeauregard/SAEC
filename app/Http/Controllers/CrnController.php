@@ -22,9 +22,10 @@ class CrnController extends Controller
 
      public function show($grupo_id)
      {
+        $logged = Auth::user()->profesor[0];
         $grupo = Crn::find($grupo_id);
         $alumnos = $grupo->alumnos;
-        $actividades = $grupo->actividades;
+        $actividades = $logged->actividades->where('crn_id', $grupo->id)->all();
 
         return view('profesor.grupos.show', compact('grupo', 'alumnos', 'actividades'));
      }
