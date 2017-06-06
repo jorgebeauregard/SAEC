@@ -11,19 +11,6 @@ class AlumnoEquipoTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('alumno_equipo')->insert([
-        	'equipo_id' => 1,
-        	'alumno_id' => 1,
-        ]);
-
-        DB::table('alumno_equipo')->insert([
-          	'equipo_id' => 2,
-          	'alumno_id' => 1,
-          ]);
-  
-          DB::table('alumno_equipo')->insert([
-          	'equipo_id' => 3,
-          	'alumno_id' => 1,
-          ]);
+        
     }
 }
