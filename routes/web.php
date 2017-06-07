@@ -35,6 +35,7 @@ Route::group(['middleware'=>'auth'], function() {
          Route::get('/grupos/eliminarAlumno', 'CrnController@addStudent');
          Route::get('/grupos/agregarAlumno', 'CrnController@deleteStudent');
          Route::get('/crear/grupo', 'CrnController@create');
+         Route::get('/crear/actividad', 'ActividadController@create');
     });
 
     Route::group([

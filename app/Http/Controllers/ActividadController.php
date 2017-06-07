@@ -65,7 +65,10 @@ class ActividadController extends Controller
 
     public function create()
     {
-        //
+        $logged = Auth::user()->profesor[0];
+        $grupos = $logged->crns;
+        
+        return view('profesor.actividades.create', compact('grupos'));
     }
     /**
      * Show the form for creating a new resource.

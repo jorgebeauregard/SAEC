@@ -49,5 +49,8 @@ class CrnController extends Controller
 
         $alumnos = $grupo->alumnos;
         $todos = Alumno::all()->diff($alumnos)->sortBy('matricula');
+
+        $view = view('profesor.grupos.student_tables', compact('alumnos', 'todos'));
+
      }
 }
