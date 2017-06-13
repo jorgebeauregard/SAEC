@@ -9,6 +9,7 @@
 @section('description', 'Has ingresado exitosamente')
 
 @section('content')
+<span id="grupo_id" style="display: none;">{{$grupo->id}}</span>
 <div class="content">
 	<div class="container-fluid">
 
@@ -81,7 +82,7 @@
 	</div>
 </div>
 
-    <script>
+<script>
         function myFunction() {
           var input, filter, table, tr, td, i;
           input = document.getElementById("myInput");
@@ -107,19 +108,29 @@
         var e = document.getElementById(id);
         e.style.display = (e.style.display == 'block') ? 'none' : 'block';
     }
-
-    function deleteStudent(grupo_id, alumno_id){
-        $.get( ("/eliminarAlumno?" + "grupo=" + grupo_id + "&alumno_id=" + alumno_id,
-            function(data, status){
-                console.log("/eliminarAlumno?" + "grupo=" + grupo_id + "&alumno_id=" + alumno_id);
-                console.log(data);
-                $('#tables').empty();
-                $('#tables').html(data);
-            }
-        );
-    }
 </script>
 
+<script>
+	function deleteStudent(alumno_id, grupo_id){
+		$.get( ("/eliminarAlumno?" + "alumno_id=" + alumno_id + "&grupo_id=" + grupo_id),
+			function(data, status){
+				console.log("/eliminarAlumno?" + "alumno_id=" + alumno_id + "&grupo_id=" + grupo_id);
+				console.log(data);
+				$('#tables').empty();
+				$('#tables').html(data);
+			}
+		);
+	}
 
-
+	function addStudent(alumno_id, grupo_id){
+		$.get( ("/agregarAlumno?" + "alumno_id=" + alumno_id + "&grupo_id=" + grupo_id),
+			function(data, status){
+				console.log("/agregarAlumno?" + "alumno_id=" + alumno_id + "&grupo_id=" + grupo_id);
+				console.log(data);
+				$('#tables').empty();
+				$('#tables').html(data);
+			}
+		);
+	}
+</script>
 @endsection

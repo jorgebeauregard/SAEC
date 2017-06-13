@@ -39,18 +39,29 @@ class CrnController extends Controller
         return view('profesor.grupos.create', compact('materias'));
     }
 
-     public function addStudent($crn_id ,$alumno_id){
+     public function addStudent(){
+        $grupo = Crn::find(request('grupo_id'));
+        $alumno = Alumno::find(request('alumno_id'));
 
+        $grupo->alumnos()->attach($alumno);
+
+
+        $alumnos = $grupo->alumnos->sortBy('matricula');
+        $todos = Alumno::all()->diff($alumnos)->sortBy('matricula');
+
+        $view = view('profesor.grupos.student_tables', compact('grupo', 'alumnos', 'todos'));
+        return $view->render();
      }
 
      public function deleteStudent(){
-        $grupo = Crn::find(request($grupo_id));
-        $alumno = $grupo->alumnos->find(request($alumno_id));
+        $grupo = Crn::find(request('grupo_id'));
+        $grupo->alumnos()->detach(request('alumno_id'));
 
-        $alumnos = $grupo->alumnos;
+
+        $alumnos = $grupo->alumnos->sortBy('matricula');
         $todos = Alumno::all()->diff($alumnos)->sortBy('matricula');
 
-        $view = view('profesor.grupos.student_tables', compact('alumnos', 'todos'));
-
+        $view = view('profesor.grupos.student_tables', compact('grupo', 'alumnos', 'todos'));
+        return $view->render();
      }
 }

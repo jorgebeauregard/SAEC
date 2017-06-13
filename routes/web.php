@@ -32,8 +32,9 @@ Route::group(['middleware'=>'auth'], function() {
          Route::get('/actividades/editar/{actividad}', 'ActividadController@edit');
          Route::get('/grupos', 'CrnController@index');
          Route::get('/grupos/{grupo}', 'CrnController@show');
-         Route::get('/grupos/eliminarAlumno', 'CrnController@addStudent');
-         Route::get('/grupos/agregarAlumno', 'CrnController@deleteStudent');
+         Route::get('/eliminarAlumno', 'CrnController@deleteStudent');
+         Route::get('/agregarAlumno', 'CrnController@addStudent');
+         Route::get('/grupos/agregarAlumno/{actividad_id}', 'CrnController@deleteStudent');
          Route::get('/crear/grupo', 'CrnController@create');
          Route::get('/crear/actividad', 'ActividadController@create');
     });
