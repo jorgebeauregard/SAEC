@@ -45,7 +45,6 @@ class CrnController extends Controller
 
         $grupo->alumnos()->attach($alumno);
 
-
         $alumnos = $grupo->alumnos->sortBy('matricula');
         $todos = Alumno::all()->diff($alumnos)->sortBy('matricula');
 
@@ -56,7 +55,6 @@ class CrnController extends Controller
      public function deleteStudent(){
         $grupo = Crn::find(request('grupo_id'));
         $grupo->alumnos()->detach(request('alumno_id'));
-
 
         $alumnos = $grupo->alumnos->sortBy('matricula');
         $todos = Alumno::all()->diff($alumnos)->sortBy('matricula');

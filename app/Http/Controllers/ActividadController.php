@@ -27,12 +27,15 @@ class ActividadController extends Controller
         else
             $logged = Auth::user()->profesor[0];
         
-        $actividades = $logged->actividades->where('periodo_id', Periodo::all()->last()->id)->sortBy('fecha_limite')->all();
+        $actividades = $logged->actividades->where('periodo_id', Periodo::all()->last()->id)->sortBy('fecha_limite');
+        $actividades2 = $actividades->chunk(4)->toArray();
+        $actividades = $actividades->all();
+        $actividades2 = $actividades2[0];
 
         if(Auth::user()->roles[0]->id == 3)
-            return view('alumno.actividades.index', compact('logged', 'actividades'));
+            return view('alumno.actividades.index', compact('logged', 'actividades', 'actividades2'));
         else
-            return view('profesor.actividades.index', compact('logged', 'actividades'));
+            return view('profesor.actividades.index', compact('logged', 'actividades', 'actividades2'));
     }
 
     public function show($actividad_id)
