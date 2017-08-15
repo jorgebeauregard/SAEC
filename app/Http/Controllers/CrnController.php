@@ -35,8 +35,7 @@ class CrnController extends Controller
 
      public function create()
     {
-        $materias = App\Materia::all();
-        return view('profesor.grupos.create', compact('materias'));
+        return view('profesor.grupos.create');
     }
 
      public function addStudent(){
