@@ -15,21 +15,18 @@ class CRNsTableSeeder extends Seeder
 			'nombre' => 'Matemáticas 3-1',
         	'periodo_id'=>3,
         	'profesor_id'=>1,
-        	'grupo'=>1,
         ]);
 
 		DB::table('crns')->insert([
 			'nombre' => 'Mat/EyM',
         	'periodo_id'=>3,
         	'profesor_id'=>1,
-        	'grupo'=>1,
         ]);
 
 		DB::table('crns')->insert([
 			'nombre' => 'Electricidad y Magnetismo',
         	'periodo_id'=>3,
         	'profesor_id'=>1,
-        	'grupo'=>1,
         ]);
         
     }

@@ -33,10 +33,18 @@ class CrnController extends Controller
         return view('profesor.grupos.show', compact('grupo', 'alumnos', 'actividades', 'todos'));
      }
 
-     public function create()
-    {
-        return view('profesor.grupos.create');
-    }
+     public function store(Request $request){
+        $logged = Auth::user()->profesor[0];
+        $periodo = Periodo::all()->sortByDesc('id')->first();
+
+        $grupo = Crn::create([
+            'nombre' => request('nombre'),
+            'profesor_id' => $logged->id,
+            'periodo_id' => $periodo->id,
+        ]);
+
+        return redirect("/grupos/".$grupo->id);
+     }
 
      public function addStudent(){
         $grupo = Crn::find(request('grupo_id'));

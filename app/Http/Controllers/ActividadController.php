@@ -53,12 +53,19 @@ class ActividadController extends Controller
     	$competencias = $actividad->competencias;
 
         if(Auth::user()->roles[0]->id == 3){
-            $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
-        
-            if($actividad->vista == 1)
-                return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
-            else
-                return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+            
+
+            if($logged->equipo == NULL){
+                return view('alumno.actividades.agregar_equipo');
+            }
+            else{
+                $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
+
+                if($actividad->vista == 1)
+                    return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
+                else
+                    return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+            }
         }
         else{
             $alumnos = $actividad->alumnos;

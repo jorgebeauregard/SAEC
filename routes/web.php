@@ -37,12 +37,13 @@ Route::group(['middleware'=>'auth'], function() {
 
          Route::get('/grupos', 'CrnController@index');
          Route::get('/grupos/{grupo}', 'CrnController@show');
+         Route::post('/crear/grupo', 'CrnController@store');
 
          Route::get('/eliminarAlumno', 'CrnController@deleteStudent');
          Route::get('/agregarAlumno', 'CrnController@addStudent');
          Route::get('/grupos/agregarAlumno/{actividad_id}', 'CrnController@deleteStudent');
 
-         Route::get('/crear/grupo', 'CrnController@create');
+         
     });
 
     Route::group([

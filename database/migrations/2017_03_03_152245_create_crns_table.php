@@ -18,7 +18,6 @@ class CreateCrnsTable extends Migration
             $table->string('nombre', 60);
             $table->integer('periodo_id')->unsigned();
             $table->integer('profesor_id')->unsigned();
-            $table->integer('grupo');
             $table->timestamps();
 
             $table->foreign('periodo_id')->references('id')->on('periodos')->onUpdate('cascade')->onDelete('cascade');

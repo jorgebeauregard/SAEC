@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Crn extends Model
 {
+    protected $fillable = ['nombre', 'profesor_id', 'periodo_id'];
+    
     public function profesor(){
     	return $this->belongsTo(Profesor::class);
     }
