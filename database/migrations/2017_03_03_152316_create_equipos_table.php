@@ -17,6 +17,7 @@ class CreateEquiposTable extends Migration
             $table->increments('id');
             $table->integer('numero_equipo')->unsigned();
             $table->integer('actividad_id')->unsigned();
+            $table->string('contrasena', 4)->default('123');
             $table->timestamps();
 
             $table->foreign('actividad_id')->references('id')->on('actividads')->onUpdate('cascade')->onDelete('cascade');
@@ -37,7 +38,7 @@ class CreateEquiposTable extends Migration
             $table->integer('actividad_id')->unsigned();
             $table->integer('alumno_id')->unsigned();
             $table->boolean('completada')->default(FALSE);
-            $table->integer('equipo_id')->unsigned();
+            $table->integer('equipo_id')->unsigned()->nullable()->default(NULL);
 
             $table->timestamps();
 

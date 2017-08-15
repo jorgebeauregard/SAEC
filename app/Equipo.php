@@ -7,7 +7,9 @@ use App\Actividad;
 use Illuminate\Database\Eloquent\Model;
 
 class Equipo extends Model
-{
+{   
+    protected $fillable = ['numero_equipo', 'actividad_id', 'contrasena'];
+
     public function alumnos(){
 		return $this->belongsToMany(Alumno::class);
 	}

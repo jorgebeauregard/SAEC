@@ -69,9 +69,8 @@ class ActividadController extends Controller
     public function create()
     {
         $logged = Auth::user()->profesor[0];
-        $grupos = $logged->crns;
-        
-        return view('profesor.actividades.create', compact('grupos'));
+
+        return view('profesor.actividades.create', compact('logged'));
     }
     /**
      * Show the form for creating a new resource.
@@ -126,9 +125,41 @@ class ActividadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Actividad $actividad)
     {
-        //
+        
+        /*$this->validate(request(), [
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'fecha_limita' => 'required',
+            'num_equipos' => 'required'
+        ]);*/
+
+        $actividad->nombre = request('nombre');
+        $actividad->descripcion = request('descripcion');
+        $actividad->fecha_limite = request('fecha_limite');
+        
+        if((int)request('num_equipos') != count($actividad->equipos)){
+            
+            foreach($actividad->alumnos as $alumno){
+                $alumno->equipo_id = NULL;
+            }
+
+            foreach($actividad->equipos as $equipo){
+                $equipo->delete();
+            }
+
+            for($i=1; $i<=(int)request('num_equipos'); $i++){
+                Equipo::create([
+                    'numero_equipo' => $i,
+                    'actividad_id' => $actividad->id,
+                    'contrasena' => str_random(3),
+                ]);
+            }
+        }
+
+        session()->flash('message', 'Se ha actualizado la actividad');
+        return redirect('/actividades/editar/'.$actividad->id);
     }
 
     /**

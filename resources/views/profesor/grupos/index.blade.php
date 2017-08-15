@@ -14,6 +14,12 @@
 		<div class="container-fluid">
 		
 		<div class="row">
+			<div class="col-md-4">
+				<a type="button" class="btn btn-success" href="/crear/grupo">Crear grupo</a>
+			</div>
+		</div>
+
+		<div class="row">
 			<div class="col-md-12">
 	            <div class="card">
 	                <div class="card-header" data-background-color="orange">

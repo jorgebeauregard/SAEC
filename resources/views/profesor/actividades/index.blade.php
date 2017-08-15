@@ -15,15 +15,15 @@
 
 		<div class="row">
 			<div class="col-md-4">
-				<a type="button" class="btn btn-success">Crear actividad</a>
+				<a type="button" class="btn btn-success" href="/crear/actividad">Crear actividad</a>
 			</div>
 		</div>
 
 		<br>
 
 		<div class="row">
-			<?php for($i=0; $i<4; $i++){ ?>
-				@if($i < sizeof($actividades))
+			@foreach($actividades2 as $actividad)
+				
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="card card-stats">
 						<div class="card-header" data-background-color="blue">
@@ -33,12 +33,12 @@
 							<p class="category">Actividad</p>
 							<br>
 							<br>
-							<h3 class="title"> <?php echo($actividades[$i]->nombre) ?></h3>
+							<h3 class="title"> {{$actividad['nombre']}} ></h3>
 						</div>
 						<div class="card-footer">
 							<div class="stats">
-							@if( $logged->actividades->find($actividades[$i]->id)->pivot->completada == 0)
-								<i class="material-icons text-danger">warning</i> <a href="/actividades/{{$actividades[$i]->id}}">Coevaluaci&oacuten pendiente</a>
+							@if( $logged->actividades->find($actividad['id'])->pivot->completada == 0)
+								<i class="material-icons text-danger">warning</i> <a href="/actividades/{{$actividad['id']}}">Coevaluaci&oacuten pendiente</a>
 							@else
 								<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
 							@endif
@@ -46,8 +46,7 @@
 						</div>
 					</div>
 				</div>
-				@endif
-			<?php } ?>
+			@endforeach
 		</div> <!--end row -->
 
 		<div class="row">
