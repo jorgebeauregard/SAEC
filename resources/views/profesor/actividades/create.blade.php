@@ -25,7 +25,7 @@
 								<div class="col-md-12">
 									<div class="form-group label-floating">
 										<label class="control-label">Nombre de la actividad</label>
-										<input type="text" class="form-control" name="nombre">
+										<input type="text" class="form-control" name="nombre" required>
 									</div>
 								</div>
 							</div>
@@ -33,7 +33,7 @@
 								<div class="col-md-12">
 									<div class="form-group label-floating">
 										<label class="control-label">Descripción</label>
-										<input type="text" class="form-control" name="descripcion" >
+										<input type="text" class="form-control" name="descripcion" required>
 									</div>
 								</div>
 							</div>
@@ -41,7 +41,7 @@
 								<div class="col-md-12">
 									<div class="form-group label-floating">
 										<label class="control-label">Fecha de finalización</label>
-										<input type="date" class="form-control" name="fecha_limite">
+										<input type="date" class="form-control" name="fecha_limite" required>
 									</div>
 								</div>
 							</div>
@@ -49,8 +49,16 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group label-floating">
-										<label class="control-label">Grupo para la actividad</label>
-										
+										<label class="control-label">Grupo</label>
+										@if(count($grupos))
+										 <select name="grupo_id" class="form-control">
+										 	@foreach($grupos as $grupo)
+												<option value="{{$grupo->id}}">{{$grupo->nombre}}</option>
+											@endforeach
+										</select>
+										@else
+											<h5>Primero <a href="/crear/grupo">crea</a> un grupo.</h5>
+										@endif
 									</div>
 								</div>
 							</div>
@@ -59,12 +67,11 @@
 								<div class="col-md-12">
 									<div class="form-group label-floating">
 										<label class="control-label">Número de equipos</label>
-										<input type="number" name="num_equipos" min="1" max="15">
+										<input type="number" class="form-control" name="num_equipos" min="1" max="15" value="1">
 									</div>
 								</div>
 							</div>
 
-							
 					</div>
 				</div>
 			</div>

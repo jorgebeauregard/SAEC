@@ -16,17 +16,11 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card" style="background-color: #ff9800; color:white;">
-					<div class="col-md-3">
-						<h4>Materia: {{$actividad->crn->materia->nombre}}</h4>
-					</div>	
-					<div class="col-md-3">
-						<h4>Clave: {{$actividad->crn->materia->clave}}</h4>
+					<div class="col-md-4">
+						<h4>Grupo: {{$actividad->crn->nombre}}</h4>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-4">
 						<h4>Periodo: {{$actividad->crn->periodo->nombre}}</h4>
-					</div>
-					<div class="col-md-3">
-						<h4>Grupo: {{$actividad->crn->grupo}}</h4>
 					</div>
 				</div>
 			</div>

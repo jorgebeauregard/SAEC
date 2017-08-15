@@ -12,21 +12,21 @@ class CRNsTableSeeder extends Seeder
     public function run()
     {
         DB::table('crns')->insert([
-        	'materia_id'=>1,
-        	'periodo_id'=>1,
+			'nombre' => 'Matemáticas 3-1',
+        	'periodo_id'=>3,
         	'profesor_id'=>1,
         	'grupo'=>1,
         ]);
 
 		DB::table('crns')->insert([
-        	'materia_id'=>2,
-        	'periodo_id'=>2,
+			'nombre' => 'Mat/EyM',
+        	'periodo_id'=>3,
         	'profesor_id'=>1,
         	'grupo'=>1,
         ]);
 
 		DB::table('crns')->insert([
-        	'materia_id'=>3,
+			'nombre' => 'Electricidad y Magnetismo',
         	'periodo_id'=>3,
         	'profesor_id'=>1,
         	'grupo'=>1,

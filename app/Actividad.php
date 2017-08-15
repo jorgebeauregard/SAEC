@@ -8,12 +8,13 @@ use App\Alumno;
 use App\Competencia;
 use App\AlumnoRespuesta;
 use App\Crn;
+use App\Periodo;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Actividad extends Model
 {
-    
+    protected $fillable = ['nombre', 'descripcion', 'fecha_limite', 'profesor_id', 'crn_id', 'periodo_id'];
     protected $dates = ['fecha_limite'];
 
     public function equipos(){
@@ -25,7 +26,7 @@ class Actividad extends Model
     }     
 
     public function profesor(){
-    	return $this->belongsToMany(Profesor::class);
+    	return $this->belongsToMany(Profesor::class)->withPivot('completada');
     }      
 
     public function competencias(){
@@ -42,5 +43,9 @@ class Actividad extends Model
 
     public function crn(){
         return $this->belongsTo(Crn::class);
+    }
+
+    public function periodo(){
+        return $this->belongsTo(Periodo::class);
     }
 }

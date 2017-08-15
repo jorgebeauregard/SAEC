@@ -20,7 +20,7 @@
 		</div>
 
 		<br>
-
+		@if(count($actividades2))
 		<div class="row">
 			@foreach($actividades2 as $actividad)
 				
@@ -33,7 +33,7 @@
 							<p class="category">Actividad</p>
 							<br>
 							<br>
-							<h3 class="title"> {{$actividad['nombre']}} ></h3>
+							<h3 class="title"> {{$actividad['nombre']}} </h3>
 						</div>
 						<div class="card-footer">
 							<div class="stats">
@@ -48,6 +48,7 @@
 				</div>
 			@endforeach
 		</div> <!--end row -->
+		@endif
 
 		<div class="row">
 			<div class="col-md-12">

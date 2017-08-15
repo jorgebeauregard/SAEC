@@ -30,18 +30,14 @@
 	                    <table class="table">
 	                        <thead class="text-primary">
 	                            <th>Nombre</th>
-	                            <th>Clave</th>
 	                            <th>Periodo</th>
-								<th>Grupo</th>
 								<th>Más información</th>
 	                        </thead>
 	                        <tbody>
 	                        @foreach($grupos as $grupo)
 	                            <tr>
-	                            	<td>{{$grupo->materia->nombre}}</td>
-	                               	<td>{{$grupo->materia->clave}}</td>
+	                            	<td>{{$grupo->nombre}}</td>
 									<td>{{$grupo->periodo->nombre}}</td>
-									<td>{{$grupo->grupo}}</td>
 									<td><a href="/grupos/{{$grupo->id}}" type="button" class="btn btn-primary">Ver</a></td>
 	                            </tr>
 	                        @endforeach

@@ -33,7 +33,7 @@ Route::group(['middleware'=>'auth'], function() {
          Route::get('/actividades/editar/{actividad}', 'ActividadController@edit');
          Route::post('/actividades/actualizar/{actividad}', 'ActividadController@update');
          Route::get('/crear/actividad', 'ActividadController@create');
-         Route::post('/crear/actividad', 'ActividadController@store');
+         Route::post('/crear/actividad', 'ActividadController@newActivity');
 
          Route::get('/grupos', 'CrnController@index');
          Route::get('/grupos/{grupo}', 'CrnController@show');

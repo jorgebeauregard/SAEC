@@ -69,8 +69,10 @@ class ActividadController extends Controller
     public function create()
     {
         $logged = Auth::user()->profesor[0];
+        $periodo = Periodo::all()->sortByDesc('id')->first();
+        $grupos = $logged->crns->where('periodo_id', $periodo->id);
 
-        return view('profesor.actividades.create', compact('logged'));
+        return view('profesor.actividades.create', compact('logged', 'grupos'));
     }
     /**
      * Show the form for creating a new resource.
@@ -102,6 +104,32 @@ class ActividadController extends Controller
         $actividad->pivot->save();
 
         return redirect('/actividades'); 
+    }
+
+    public function newActivity(Request $request){
+        $logged = Auth::user()->profesor[0];
+        $periodo = Periodo::all()->sortByDesc('id')->first();
+
+        $actividad = Actividad::create([
+            'nombre' => request('nombre'),
+            'descripcion' => request('descripcion'),
+            'fecha_limite' => request('fecha_limite'),
+            'profesor_id' => $logged->id,
+            'periodo_id' => $periodo->id,
+            'crn_id' => request('grupo_id'),
+        ]);
+
+        $actividad->profesor()->attach($logged->id);
+
+        for($i=1; $i<=(int)request('num_equipos'); $i++){
+            $equipo = Equipo::create([
+                'numero_equipo' => $i,
+                'actividad_id' => $actividad->id,
+                'contrasena' => str_random(3),
+            ]);
+        }
+
+        return redirect('/actividades');
     }
 
     /**
