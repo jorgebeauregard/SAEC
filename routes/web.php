@@ -32,6 +32,7 @@ Route::group(['middleware'=>'auth'], function() {
     ], function() {
          Route::get('/actividades/editar/{actividad}', 'ActividadController@edit');
          Route::post('/actividades/actualizar/{actividad}', 'ActividadController@update');
+         
          Route::get('/crear/actividad', 'ActividadController@create');
          Route::post('/crear/actividad', 'ActividadController@newActivity');
 
@@ -50,7 +51,7 @@ Route::group(['middleware'=>'auth'], function() {
         'middleware' => ['auth', 'acl'],
         'is' => 'student'
     ], function() {
-        
+        Route::post('/actividades/unirse/{actividad}', 'ActividadController@joinTeam');
         Route::resource('/calificaciones', 'CalificacionesController');
         
     });

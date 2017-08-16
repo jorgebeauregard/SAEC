@@ -8,6 +8,7 @@ use App\Alumno;
 use App\Equipo;
 use App\Profesor;
 use App\Periodo;
+use App\Crn;
 use Illuminate\Support\Facades\Auth;
 use App\AlumnoRespuesta;
 use Carbon\Carbon;
@@ -52,11 +53,9 @@ class ActividadController extends Controller
         
     	$competencias = $actividad->competencias;
 
-        if(Auth::user()->roles[0]->id == 3){
-            
-
-            if($logged->equipo == NULL){
-                return view('alumno.actividades.agregar_equipo');
+        if(Auth::user()->roles[0]->id == 3){//Si es alumno
+            if( count($logged->equipos->where('actividad_id', $actividad->id)) == 0 ){//Si el alumno no tiene equipo
+                return view('alumno.actividades.agregar_equipo', compact('actividad'));
             }
             else{
                 $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
@@ -116,6 +115,7 @@ class ActividadController extends Controller
     public function newActivity(Request $request){
         $logged = Auth::user()->profesor[0];
         $periodo = Periodo::all()->sortByDesc('id')->first();
+        $grupo = Crn::find((int)request('grupo_id'));
 
         $actividad = Actividad::create([
             'nombre' => request('nombre'),
@@ -127,6 +127,10 @@ class ActividadController extends Controller
         ]);
 
         $actividad->profesor()->attach($logged->id);
+        
+        foreach($grupo->alumnos as $alumno){
+            $actividad->alumnos()->attach($alumno);
+        }
 
         for($i=1; $i<=(int)request('num_equipos'); $i++){
             $equipo = Equipo::create([
@@ -192,9 +196,29 @@ class ActividadController extends Controller
                 ]);
             }
         }
-
+        
+        $actividad->save();
         session()->flash('message', 'Se ha actualizado la actividad');
         return redirect('/actividades/editar/'.$actividad->id);
+    }
+
+    public function joinTeam(Request $request, Actividad $actividad){
+        $alumno = Auth::user()->alumno[0];
+        $actividad = $alumno->actividades->find($actividad->id);
+        $key = request('clave');
+        $equipo = $actividad->equipos->where('contrasena', $key)->first();
+
+        if(count($equipo)){
+            $alumno->equipos()->attach($equipo);
+            $alumno->save();
+            $actividad->pivot->equipo_id = $equipo->id;
+            $actividad->pivot->save();
+            return redirect('/actividades/'.$actividad->id);
+        }
+        else{
+            session()->flash('message', 'No se ha encontrado un equipo con esa clave.');
+            return redirect()->back();
+        }
     }
 
     /**
