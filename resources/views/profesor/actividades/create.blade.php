@@ -71,6 +71,21 @@
 								</div>
 							</div>
 
+							<div class="row">
+								<h4>Competencias</h4>
+								@foreach($competencias as $competencia)
+									<div class="col-md-4">
+										<div class="form-group label-floating">
+											<label class="control-label">{{$competencia->nombre}}</label>
+											<input type="checkbox" class="form-control" name="competencia_{{$competencia->id}}" value="1">
+										</div>
+									</div>
+								@endforeach
+							</div>
+							
+
+							
+
 					</div>
 				</div>
 			</div>

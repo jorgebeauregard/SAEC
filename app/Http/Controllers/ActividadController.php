@@ -9,6 +9,7 @@ use App\Equipo;
 use App\Profesor;
 use App\Periodo;
 use App\Crn;
+use App\Competencia;
 use Illuminate\Support\Facades\Auth;
 use App\AlumnoRespuesta;
 use Carbon\Carbon;
@@ -77,8 +78,9 @@ class ActividadController extends Controller
         $logged = Auth::user()->profesor[0];
         $periodo = Periodo::all()->sortByDesc('id')->first();
         $grupos = $logged->crns->where('periodo_id', $periodo->id);
+        $competencias = Competencia::all()->sortBy('nombre');
 
-        return view('profesor.actividades.create', compact('logged', 'grupos'));
+        return view('profesor.actividades.create', compact('logged', 'grupos', 'competencias'));
     }
     /**
      * Show the form for creating a new resource.
@@ -116,6 +118,7 @@ class ActividadController extends Controller
         $logged = Auth::user()->profesor[0];
         $periodo = Periodo::all()->sortByDesc('id')->first();
         $grupo = Crn::find((int)request('grupo_id'));
+        $competencias = Competencia::all();
 
         $actividad = Actividad::create([
             'nombre' => request('nombre'),
@@ -138,6 +141,12 @@ class ActividadController extends Controller
                 'actividad_id' => $actividad->id,
                 'contrasena' => str_random(3),
             ]);
+        }
+
+        foreach($competencias as $competencia){
+            if((int) request((String)('competencia_'.$competencia->id)) == 1){
+                $actividad->competencias()->attach($competencia);
+            }
         }
 
         return redirect('/actividades');

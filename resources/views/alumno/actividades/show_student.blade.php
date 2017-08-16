@@ -59,7 +59,7 @@
                             </div>
                         </div>
                     @endforeach
-                    <button type="submit" class="btn btn-primary">Submit</button>     
+                    <button type="submit" class="btn btn-primary">Terminar</button>     
                 </form>               
             </div>
 
