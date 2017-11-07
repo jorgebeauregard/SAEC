@@ -71,5 +71,36 @@ class ComportamientosTableSeeder extends Seeder
             'competencia_id'=> 1,
         ]);
 
+        DB::table('comportamientos')->insert([
+        	'pregunta'=>'¿Obtuvo la inforamción de fuentes confiables',
+        	'descripcion'=>'Utilizó sus conocimientos y habilidades para ayudar a algún compañero de equipo que tuviera alguna duda',
+            'competencia_id'=> 4,
+        ]);
+
+        DB::table('comportamientos')->insert([
+        	'pregunta'=>'¿Siguió una serie de pasos a la hora de hacer el problema?',
+        	'descripcion'=>'Utilizó sus conocimientos y habilidades para ayudar a algún compañero de equipo que tuviera alguna duda',
+            'competencia_id'=> 4,
+        ]);
+
+        DB::table('comportamientos')->insert([
+        	'pregunta'=>'¿Permitió que los compañeros expresaran sus ideas?',
+        	'descripcion'=>'Utilizó sus conocimientos y habilidades para ayudar a algún compañero de equipo que tuviera alguna duda',
+            'competencia_id'=> 4,
+        ]);
+
+        DB::table('comportamientos')->insert([
+        	'pregunta'=>'¿Planteó ideas claras relacionadas con el problema?',
+        	'descripcion'=>'Utilizó sus conocimientos y habilidades para ayudar a algún compañero de equipo que tuviera alguna duda',
+            'competencia_id'=> 4,
+        ]);
+
+        DB::table('comportamientos')->insert([
+        	'pregunta'=>'¿Elaboró conclusiones coherentes respecto al problema?',
+        	'descripcion'=>'Utilizó sus conocimientos y habilidades para ayudar a algún compañero de equipo que tuviera alguna duda',
+            'competencia_id'=> 4,
+        ]);
+
+
     }
 }
