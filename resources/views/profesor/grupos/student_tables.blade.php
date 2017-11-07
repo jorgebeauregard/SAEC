@@ -4,12 +4,10 @@
             <div class="card">
                 <div class="card-header" data-background-color="green">
                     <h4 class="title">Alumnos en el grupo</h4>
-                    <br>
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar alumnos por apellido">
                 </div>
 
                 <div class="content table-responsive">
-                    <table id="myTable" class="table table-striped">
+                    <table id="datatable1" class="table table-striped">
                         <tr class="header">
                             <th>Apellido Paterno</th>
                             <th>Nombre</th>
@@ -28,7 +26,6 @@
                             @endforeach
                     </table>
                 </div>
-
             </div>
         </div>
 
@@ -36,12 +33,10 @@
             <div class="card">
                 <div class="card-header" data-background-color="purple">
                     <h4 class="title">Agregar alumnos al grupo</h4>
-                    <br>
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar alumnos por matrícula">
                 </div>
 
                 <div class="content table-responsive">
-                    <table id="myTable" class="table table-striped">
+                    <table id="datatable2" class="table table-striped">
                         <tr class="header">
                             <th>Apellido Paterno</th>
                             <th>Nombre</th>
@@ -49,7 +44,6 @@
                             <th>Plan</th>
                             <th>Agregar</th>
                         </tr>
-
                         @foreach($todos as $todo)
                             <tr>
                                 <td>{{$todo->apellido_paterno}}</td>
