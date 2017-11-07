@@ -11,13 +11,6 @@ class ProfesorsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('profesors')->insert([
-        	'nomina' => 'L012345678',
-            'nombre' => 'Abel',
-            'apellido' => 'Flores',
-            'correo' => 'aflores@itesm.mx',
-            'user_id' => 6,
-        ]);
         
         DB::table('profesors')->insert([
         	'nomina' => 'L023456789',
