@@ -16,6 +16,7 @@
 
     <!--  Material Dashboard CSS    -->
     <link href="{!! asset('css/material-dashboard.css') !!}" rel="stylesheet"/>
+	<link href="{!! asset('css/jquery.dataTables.min.css') !!}" rel="stylesheet"/>
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -141,26 +142,20 @@
 		</div>
 	</div>
 
-</body>
-
 	<!--   Core JS Files   -->
 
-	<script src="{!! asset('js/jquery-3.1.0.min.js') !!}" type="text/javascript"></script>
-	<script src="{!! asset('js/bootstrap.min.js') !!}" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	<script src="{!! asset('js/material.min.js') !!}"></script>
-
-	<!--  Charts Plugin -->
-
-	<!--  Notifications Plugin    -->
-	<script src="js/bootstrap-notify.js"></script>
 
 	<!-- Material Dashboard javascript methods -->
 	<script src="{!! asset('js/material-dashboard.js') !!}" type="text/javascript"></script>
 
-	<script type="text/javascript">
-    	$(document).ready(function(){
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.js"></script>
+	<script src="{!! asset('js/dataTables.bootstrap.min.js') !!}" type="text/javascript"></script>
+	@yield('scripts')
 
-    	});
-	</script>
+</body>
 
 </html>
