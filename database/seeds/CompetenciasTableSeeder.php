@@ -25,5 +25,10 @@ class CompetenciasTableSeeder extends Seeder
         	'nombre' => 'Innovacion',
             'descripcion' => 'Capacidad de crear soluciones novedosas y utiles.'
     	]);
+
+        DB::table('competencias')->insert([
+            'nombre' => 'Pensamiento Critico',
+            'descripcion' => 'Capacidad de pensar criticamente'
+        ]);
     }
 }
