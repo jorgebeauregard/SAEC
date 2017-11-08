@@ -118,13 +118,10 @@
 								</ul>
 							</li>
 							<li>
-								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+								<a href="{{ route('logout') }}">
 	 							   <i class="material-icons">power_settings_new</i>
 	 							   <p class="hidden-lg hidden-md">Profile</p>
 		 						</a>
-		 						<ul class="dropdown-menu">
-									<li><a href="{{ route('logout') }}">Log out</a></li>
-								</ul>
 							</li>
 						</ul>
 
@@ -151,6 +148,9 @@
 
 	<!-- Material Dashboard javascript methods -->
 	<script src="{!! asset('js/material-dashboard.js') !!}" type="text/javascript"></script>
+
+	<!--  Notifications Plugin    -->
+-	<script src="js/bootstrap-notify.js"></script>
 
 	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.js"></script>
 	<script src="{!! asset('js/dataTables.bootstrap.min.js') !!}" type="text/javascript"></script>
