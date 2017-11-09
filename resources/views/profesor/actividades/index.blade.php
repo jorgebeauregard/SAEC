@@ -62,8 +62,7 @@
 	                        <thead class="text-primary">
 	                            <th>Actividad</th>
 	                            <th>Finalizada</th>
-	                            <th>Contestada</th>
-								<th>Editar</th>
+								<th>Ver Detalles</th>
 	                        </thead>
 	                        <tbody>
 	                        @foreach($actividades as $actividad)
@@ -78,13 +77,6 @@
 		                                {{$actividad->fecha_limite->toDayDateTimeString()}}</td>
 		                               	</td>		                            
 	                               	@endif
-	                               	<td>
-	                               		@if($actividad->pivot->completada)
-	                               			<a type="button" class="btn btn-success" disabled><i class="fa fa-check"></i></a>
-	                               		@else
-	                               			<a href="/actividades/{{$actividad->id}}" type="button" class="btn btn-danger" ><i class="fa fa-times"></i></a>
-	                               		@endif
-	                               	</td>
 									<td><a href="/actividades/editar/{{$actividad->id}}" type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
 	                            </tr>
 	                        @endforeach

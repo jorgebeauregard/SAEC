@@ -65,11 +65,12 @@ class ActividadController extends Controller
                     return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
                 else
                     return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+
             }
         }
         else{
             $alumnos = $actividad->alumnos;
-            return view('profesor.actividades.show_competence', compact('actividad', 'competencias', 'alumnos'));
+            return view('profesor.actividades.show_student', compact('actividad', 'competencias', 'alumnos'));
         }
     }
 
