@@ -32,7 +32,8 @@ class ActividadController extends Controller
         $actividades = $logged->actividades->where('periodo_id', Periodo::all()->last()->id)->sortBy('fecha_limite');
         $actividades2 = $actividades->chunk(4)->toArray();
         $actividades = $actividades->all();
-        $actividades2 = $actividades2[0];
+        if(sizeof($actividades)>0)
+            $actividades2 = $actividades2[0];
 
         if(Auth::user()->roles[0]->id == 3)
             return view('alumno.actividades.index', compact('logged', 'actividades', 'actividades2'));
@@ -62,9 +63,10 @@ class ActividadController extends Controller
                 $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
 
                 if($actividad->vista == 1)
-                    return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
-                else
                     return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+                else
+                    return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
+                    
 
             }
         }
