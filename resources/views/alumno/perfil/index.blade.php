@@ -23,7 +23,7 @@
 									<br>
 									<br>
 									<p class="category" >Usuario</p>
-									<h3 class="title">{{$logged->nombre.' '.$logged->apellido_paterno}}</h3>
+									<h3 class="title">{{$logged->nombre.' '.$logged->apellido_paterno.' '.$logged->apellido_materno}}</h3>
 									<br>
 									<p class="category">Matr&iacutecula</p>
 									<h3 class="title">{{$logged->matricula}}</h3>

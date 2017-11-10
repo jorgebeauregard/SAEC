@@ -11,7 +11,7 @@ class AlumnoCRNTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('alumno_crn')->insert([
+        /*DB::table('alumno_crn')->insert([
         	'crn_id'=>1,
         	'alumno_id'=>1,
         ]);
@@ -109,6 +109,6 @@ class AlumnoCRNTableSeeder extends Seeder
          DB::table('alumno_crn')->insert([
         	'crn_id'=>2,
         	'alumno_id'=>5,
-        ]);
+        ]);*/
     }
 }

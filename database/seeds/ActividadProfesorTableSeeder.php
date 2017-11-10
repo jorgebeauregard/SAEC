@@ -39,6 +39,6 @@ class ActividadProfesorTableSeeder extends Seeder
         	'actividad_id' => 5,
         	'profesor_id' => 1,
             'completada'=>FALSE,
-        ]);
+        ]); 
     }
 }

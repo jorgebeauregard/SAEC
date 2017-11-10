@@ -27,33 +27,20 @@ class Profesor extends Model
 		return $this->belongsTo(User::class);
 	}
 
-	public function evaluar(Request $request, $actividad_id){
+	public function evaluar(Request $request, $actividad_id, $alumno_id){
 		$actividad = $this->actividades->find($actividad_id);
 		
 		foreach($actividad->competencias as $competencia){
             foreach($competencia->comportamientos as $comportamiento){
-                foreach($actividad->alumnos as $alumno){
-					$name = $comportamiento->id.'_'.$alumno->id;
 
-					if(!(int) request((String)$name) == 0 ){
-						$calidad = (int) request((String)('calidad_'.$name));
-						$frecuencia = (int) request((String)('frecuencia_'.$name));
-					}
-					else{
-						$calidad = 0;
-						$frecuencia = 0;
-					}
-
-					ProfesorRespuesta::create([
-						'actividad_id' => $actividad_id,
-						'profesor_id' => $this->id,
-						'evaluado_id' => $alumno->id,
-						'comportamiento_id' => $comportamiento->id,
-						'nota_calidad' => $calidad,
-						'nota_frecuencia' => $frecuencia,
-						'comentario' => ' '
-					]);
-                }   
+				ProfesorRespuesta::create([
+					'actividad_id' => $actividad_id,
+					'profesor_id' => $this->id,
+					'evaluado_id' => $alumno_id,
+					'comportamiento_id' => $comportamiento->id,
+					'nota' => request('comportamiento_'.$comportamiento->id),
+					'comentario' => ' '
+				]);
             }
         }
 	}

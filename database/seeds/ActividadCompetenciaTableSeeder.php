@@ -11,7 +11,7 @@ class ActividadCompetenciaTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('actividad_competencia')->insert([
+    DB::table('actividad_competencia')->insert([
         	'actividad_id' => 1,
             'competencia_id' => 1,
     	]);

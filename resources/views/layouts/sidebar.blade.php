@@ -106,7 +106,8 @@
 									<p class="hidden-lg hidden-md">Dashboard</p>
 								</a>
 							</li>
-							<li class="dropdown">
+
+							{{--<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 									<i class="material-icons">notifications</i>
 									<span class="notification">2</span>
@@ -116,7 +117,8 @@
 									<li><a href="{{ route('actividades.index') }}">1 Actividad pendiente de matem&aacuteticas</a></li>
 									<li><a href="{{ route('actividades.index') }}">1 Actividad pendiente de &Aacutelgebra lineal</a></li>
 								</ul>
-							</li>
+							</li>--}}
+
 							<li>
 								<a href="{{ route('logout') }}">
 									<i class="material-icons">power_settings_new</i>
@@ -151,6 +153,9 @@
 
 	<!-- Material Dashboard javascript methods -->
 	<script src="{!! asset('js/material-dashboard.js') !!}" type="text/javascript"></script>
+
+	<!--  Notifications Plugin    -->
+-	<script src="js/bootstrap-notify.js"></script>
 
 	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.js"></script>
 	<script src="{!! asset('js/dataTables.bootstrap.min.js') !!}" type="text/javascript"></script>

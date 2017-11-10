@@ -11,7 +11,7 @@ class AlumnoEquipoTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('alumno_equipo')->insert([
+        /*DB::table('alumno_equipo')->insert([
         	'equipo_id' => 1,
         	'alumno_id' => 1 
         ]);
@@ -109,6 +109,6 @@ class AlumnoEquipoTableSeeder extends Seeder
          DB::table('alumno_equipo')->insert([
         	'equipo_id' => 10,
         	'alumno_id' => 5 
-        ]);
+        ]);*/
     }
 }
