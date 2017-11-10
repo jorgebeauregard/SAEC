@@ -10,6 +10,7 @@ use App\Profesor;
 use App\Periodo;
 use App\Crn;
 use App\Competencia;
+use App\ProfesorRespuesta;
 use Illuminate\Support\Facades\Auth;
 use App\AlumnoRespuesta;
 use Carbon\Carbon;
@@ -43,10 +44,7 @@ class ActividadController extends Controller
 
     public function show($actividad_id)
     {
-        if(Auth::user()->roles[0]->id == 3)
-            $logged = Auth::user()->alumno[0];
-        else
-            $logged = Auth::user()->profesor[0];
+        $logged = Auth::user()->alumno[0];
 
     	$actividad = $logged->actividades->find($actividad_id);
         
@@ -55,25 +53,42 @@ class ActividadController extends Controller
         
     	$competencias = $actividad->competencias;
 
-        if(Auth::user()->roles[0]->id == 3){//Si es alumno
-            if( count($logged->equipos->where('actividad_id', $actividad->id)) == 0 ){//Si el alumno no tiene equipo
-                return view('alumno.actividades.agregar_equipo', compact('actividad'));
-            }
-            else{
-                $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
-
-                if($actividad->vista == 1)
-                    return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
-                else
-                    return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
-                    
-
-            }
+        if( count($logged->equipos->where('actividad_id', $actividad->id)) == 0 ){//Si el alumno no tiene equipo
+            return view('alumno.actividades.agregar_equipo', compact('actividad'));
         }
         else{
-            $alumnos = $actividad->alumnos;
-            return view('profesor.actividades.show_student', compact('actividad', 'competencias', 'alumnos'));
+            $alumnos = Equipo::find($actividad->pivot->equipo_id)->alumnos;
+
+            if($actividad->vista == 1)
+                return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
+            else
+                return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
         }
+    }
+
+    public function showEvaluation($actividad_id, $alumno_id){
+        $logged = Auth::user()->profesor[0];
+        $actividad = $logged->actividades->find($actividad_id);
+        $competencias = $actividad->competencias;
+        $alumno = Alumno::find($alumno_id);
+
+        return view('profesor.actividades.show_student', compact('actividad', 'competencias', 'alumno'));
+    }
+
+    public function evaluateStudent(Request $request, $actividad_id, $alumno_id){
+        $logged = Auth::user()->profesor[0];
+
+        $logged->evaluar($request, $actividad_id, $alumno_id);
+
+        $actividad = $logged->actividades->find($actividad_id);
+        $cuenta_alumnos = $actividad->alumnos->count();
+        $cuenta_respuestas = ProfesorRespuesta::all()->where('actividad_id', $actividad_id)->groupBy('evaluado_id')->count();
+        
+        if($cuenta_alumnos == $cuenta_respuestas){
+            $actividad->pivot->completada = 1;
+            $actividad->pivot->save();
+        }
+        return redirect('/actividades/editar/'.$actividad_id);
     }
 
     public function create()
@@ -100,10 +115,7 @@ class ActividadController extends Controller
      */
     public function store(Request $request, $actividad_id)
     {
-        if(Auth::user()->roles[0]->id == 3)
-            $logged = Auth::user()->alumno[0];
-        else
-            $logged = Auth::user()->profesor[0];
+        $logged = Auth::user()->alumno[0];
             
     	$actividad = $logged->actividades->find($actividad_id);
 

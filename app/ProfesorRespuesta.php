@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProfesorRespuesta extends Model
 {
-    protected $fillable = ['actividad_id', 'profesor_id', 'evaluado_id', 'comportamiento_id', 'nota_calidad', 'nota_frecuencia', 'comentario'];
+    protected $fillable = ['actividad_id', 'profesor_id', 'evaluado_id', 'comportamiento_id', 'nota', 'comentario'];
 
     public function comportamiento(){
     	return $this->belongsTo(Comportamiento::class);

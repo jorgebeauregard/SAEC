@@ -19,7 +19,12 @@
 	                            <tr>
 	                            	<td>{{$alumno->matricula}}</td>
                                     <td>{{$alumno->nombre.' '.$alumno->apellido_paterno}}</td></td>
-                                    <td></td>
+                                    @if($actividad->profesor_respuestas->where('evaluado_id', $alumno->id)->count() > 0)
+										<td><button class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a></td>
+									@else
+										<td><a href="/actividades/{{$actividad->id}}/alumnos/{{$alumno->id}}" type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+									@endif
+									
 	                            </tr>
 	                        @endforeach
 	                        </tbody>

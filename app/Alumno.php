@@ -59,22 +59,12 @@ class Alumno extends Model
                 foreach($equipo->alumnos as $alumno){
 					$name = $comportamiento->id.'_'.$alumno->id;
 
-					if(!(int) request((String)$name) == 0 ){
-						$calidad = (int) request((String)('calidad_'.$name));
-						$frecuencia = (int) request((String)('frecuencia_'.$name));
-					}
-					else{
-						$calidad = 0;
-						$frecuencia = 0;
-					}
-
 					AlumnoRespuesta::create([
 						'actividad_id' => $actividad_id,
 						'alumno_id' => $this->id,
 						'evaluado_id' => $alumno->id,
 						'comportamiento_id' => $comportamiento->id,
-						'nota_calidad' => $calidad,
-						'nota_frecuencia' => $frecuencia
+						'nota' => (int) request((String)$name)
 					]);
                 }   
             }

@@ -16,7 +16,7 @@ class ActividadsTableSeeder extends Seeder
         	'descripcion' => 'El alumno formara equipos para resolver los ejercicios de funciones inversas y logaritmos',
         	'profesor_id' => 1,
         	'fecha_limite' => '2014-05-12 16:50',
-			'vista' => 1,
+			
 			'periodo_id' => 3,
 			'crn_id' => 1
         ]);

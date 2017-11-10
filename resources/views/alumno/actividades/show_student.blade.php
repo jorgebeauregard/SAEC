@@ -10,14 +10,6 @@
 @section('description', 'Has ingresado exitosamente')
 
 @section('content')
-
-<script>
-    function clicked(comportamiento_id, alumno_id){
-        var checkbox = document.getElementById("check_" + comportamiento_id + "_" + alumno_id);
-        var sf = document.getElementById("frecuencia_" + comportamiento_id + "_" + alumno_id).disabled = checkbox.checked;
-        var sc = document.getElementById("calidad_" + comportamiento_id + "_" + alumno_id).disabled = checkbox.checked;
-    }
-</script>
     
 <div class="content">
     <form method="POST" action="/actividades/{{$actividad->id}}">
@@ -43,12 +35,11 @@
                                     @foreach($competencia->comportamientos as $comportamiento)
                                     <tr>
                                         <td>{{$comportamiento->pregunta}}</td>
-                                            <td><input id="lo_lograste_{{$comportamiento->id}}_{{$alumno->id}}" type="radio" name="lo_lograste_{{$comportamiento->id}}_{{$alumno->id}}" value=4></td>
-                                            <td><input id="vas_bien_{{$comportamiento->id}}_{{$alumno->id}}" type="radio" name="vas_bien_{{$comportamiento->id}}_{{$alumno->id}}" value=3></td>
-                                            <td><input id="echale_ganas_{{$comportamiento->id}}_{{$alumno->id}}" type="radio" name="echale_ganas_{{$comportamiento->id}}_{{$alumno->id}}" value=2></td>
-                                            <td><input id="en_el_hoyo_{{$comportamiento->id}}_{{$alumno->id}}" type="radio" name="en_el_hoyo_{{$comportamiento->id}}_{{$alumno->id}}" value=1></td>
-                                            <td hidden><input type="hidden" name="{{$comportamiento->id}}_{{$alumno->id}}" value="-1"></td>
-                                            <td><input id="no_puedo_responder_{{$comportamiento->id}}_{{$alumno->id}}" type="radio" name="no_puedo_responder_{{$comportamiento->id}}_{{$alumno->id}}" value=0></td>
+                                            <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=4 required></td>
+                                            <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=3 required></td>
+                                            <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=2 required></td>
+                                            <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=1 required></td>
+                                            <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=0 required></td>
                                     </tr>
                                     @endforeach
                                 @endforeach                                         
