@@ -36,10 +36,12 @@
 									</div>
 								</div>
 							</div>
+							<br>
+							<span>Fecha de finalizacion</span>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group label-floating">
-										<label class="control-label">Fecha de finalización</label>
+										<label class="control-label"></label>
 										<input type="date" class="form-control" name="fecha_limite" required>
 									</div>
 								</div>

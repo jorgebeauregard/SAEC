@@ -52,12 +52,12 @@
 	                        <p>Actividades</p>
 	                    </a>
 	                </li>
-					<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
+					{{--<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('calificaciones.index') }}">
 	                        <i class="material-icons">content_paste</i>
 	                        <p>Desempeño</p>
 	                    </a>
-	                </li>
+	                </li>--}}
 	                <li class= "{{strpos(Request::url(), 'perfil') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('perfil.index') }}">
 	                        <i class="material-icons">person</i>
@@ -118,13 +118,10 @@
 								</ul>
 							</li>
 							<li>
-								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-	 							   <i class="material-icons">power_settings_new</i>
-	 							   <p class="hidden-lg hidden-md">Profile</p>
-		 						</a>
-		 						<ul class="dropdown-menu">
-									<li><a href="{{ route('logout') }}">Log out</a></li>
-								</ul>
+								<a href="{{ route('logout') }}">
+									<i class="material-icons">power_settings_new</i>
+									<p class="hidden-lg hidden-md">Logout</p>
+								</a>
 							</li>
 						</ul>
 
@@ -148,6 +145,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	<script src="{!! asset('js/material.min.js') !!}"></script>
+
+	<!--  Notifications Plugin    -->
+ -	<script src="js/bootstrap-notify.js"></script>
 
 	<!-- Material Dashboard javascript methods -->
 	<script src="{!! asset('js/material-dashboard.js') !!}" type="text/javascript"></script>
