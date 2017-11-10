@@ -27,7 +27,7 @@ class CRNsTableSeeder extends Seeder
 			'nombre' => 'Electricidad y Magnetismo',
         	'periodo_id'=>3,
         	'profesor_id'=>1,
-        ]);
+        ]); 
         
     }
 }

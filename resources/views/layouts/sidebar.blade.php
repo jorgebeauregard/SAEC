@@ -52,12 +52,12 @@
 	                        <p>Actividades</p>
 	                    </a>
 	                </li>
-					<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
+					{{--<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('calificaciones.index') }}">
 	                        <i class="material-icons">content_paste</i>
 	                        <p>Desempeño</p>
 	                    </a>
-	                </li>
+	                </li>--}}
 	                <li class= "{{strpos(Request::url(), 'perfil') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('perfil.index') }}">
 	                        <i class="material-icons">person</i>
@@ -106,7 +106,8 @@
 									<p class="hidden-lg hidden-md">Dashboard</p>
 								</a>
 							</li>
-							<li class="dropdown">
+
+							{{--<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 									<i class="material-icons">notifications</i>
 									<span class="notification">2</span>
@@ -116,7 +117,8 @@
 									<li><a href="{{ route('actividades.index') }}">1 Actividad pendiente de matem&aacuteticas</a></li>
 									<li><a href="{{ route('actividades.index') }}">1 Actividad pendiente de &Aacutelgebra lineal</a></li>
 								</ul>
-							</li>
+							</li>--}}
+
 							<li>
 								<a href="{{ route('logout') }}">
 	 							   <i class="material-icons">power_settings_new</i>

@@ -38,7 +38,7 @@
 						<div class="card-footer">
 							<div class="stats">
 							@if( $logged->actividades->find($actividad['id'])->pivot->completada == 0)
-								<i class="material-icons text-danger">warning</i> <a href="/actividades/{{$actividad['id']}}">Coevaluaci&oacuten pendiente</a>
+								<i class="material-icons text-danger">warning</i> <a href="/actividades/editar/{{$actividad['id']}}">Coevaluaci&oacuten pendiente</a>
 							@else
 								<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
 							@endif
