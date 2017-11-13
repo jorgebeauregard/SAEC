@@ -11,7 +11,7 @@ class ActividadProfesorTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('actividad_profesor')->insert([
+       /* DB::table('actividad_profesor')->insert([
         	'actividad_id' => 1,
         	'profesor_id' => 1,
             'completada'=>FALSE,
@@ -39,6 +39,6 @@ class ActividadProfesorTableSeeder extends Seeder
         	'actividad_id' => 5,
         	'profesor_id' => 1,
             'completada'=>FALSE,
-        ]); 
+        ]); */
     }
 }

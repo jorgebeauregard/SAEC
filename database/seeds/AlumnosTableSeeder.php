@@ -419,8 +419,8 @@ class AlumnosTableSeeder extends Seeder
             'user_id' => 34,
     	]);
 
-        DB::table('alumnos')->insert([
-        	'matricula' => 'A01731255',
+       DB::table('alumnos')->insert([
+            'matricula' => 'A01731255',
             'nombre' => 'Diego Enrique Rivas',
             'apellido_paterno' => 'Sánchez ',
             'apellido_materno'=> 'Rangel',
@@ -429,7 +429,212 @@ class AlumnosTableSeeder extends Seeder
             'plan_id' => 1,
             'genero' => 2,
             'user_id' => 35,
+        ]);
+
+        DB::table('alumnos')->insert([
+        	'matricula' => 'A01270395',
+            'nombre' => 'Nydia Ingrid',
+            'apellido_paterno' => 'Islas ',
+            'apellido_materno'=> 'Vazquez',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 36,
     	]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01322299',
+            'nombre' => 'Jesús Daniel',
+            'apellido_paterno' => 'Hernández',
+            'apellido_materno'=> 'Hernández',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 37,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01325073',
+            'nombre' => 'Juan Francisco',
+            'apellido_paterno' => 'Martínez',
+            'apellido_materno'=> 'Molina',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 38,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01328327',
+            'nombre' => 'Karina',
+            'apellido_paterno' => 'Carmona',
+            'apellido_materno'=> 'Núñez',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 39,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01328828',
+            'nombre' => 'Omar',
+            'apellido_paterno' => 'Dorantes ',
+            'apellido_materno'=> 'Herrera',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 40,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01329057',
+            'nombre' => 'Lilian Mariel',
+            'apellido_paterno' => 'Acevedo  ',
+            'apellido_materno'=> 'Bernal',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 41,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01329388',
+            'nombre' => 'Victor Alejandro',
+            'apellido_paterno' => 'Ruiz  ',
+            'apellido_materno'=> 'Martell',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 42,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01329410',
+            'nombre' => 'Rodolfo Isaí ',
+            'apellido_paterno' => 'Ramos  ',
+            'apellido_materno'=> 'Moreno',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 43,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01329822',
+            'nombre' => 'Elisa Paulina',
+            'apellido_paterno' => 'Lara  ',
+            'apellido_materno'=> 'Ramírez',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 44,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01329862',
+            'nombre' => 'Boris Igor',
+            'apellido_paterno' => 'Hernández',
+            'apellido_materno'=> 'Almendra',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 45,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01329872',
+            'nombre' => 'Manuel Alejandro',
+            'apellido_paterno' => 'Neri',
+            'apellido_materno'=> 'Reyes',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 46,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01550174',
+            'nombre' => 'José Gustavo',
+            'apellido_paterno' => 'Lara ',
+            'apellido_materno'=> 'Ortega',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 47,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01551482',
+            'nombre' => 'Dana Marlem',
+            'apellido_paterno' => 'Dinorín ',
+            'apellido_materno'=> 'Santiago',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 48,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01730943',
+            'nombre' => 'Elia Ivonn',
+            'apellido_paterno' => 'González ',
+            'apellido_materno'=> 'Guevara',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 49,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01730946',
+            'nombre' => 'Eduardo ',
+            'apellido_paterno' => 'Cortés ',
+            'apellido_materno'=> 'Calderón',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 50,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01731161',
+            'nombre' => 'Javier Alonso',
+            'apellido_paterno' => 'Dzib ',
+            'apellido_materno'=> 'Rodríguez',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 51,
+        ]);
+
+        DB::table('alumnos')->insert([
+            'matricula' => 'A01731215',
+            'nombre' => 'Cecilia ',
+            'apellido_paterno' => 'Sánchez  ',
+            'apellido_materno'=> 'Buendía',
+            'prom_anterior' => 95.20,
+            'campus_id' => 1,
+            'plan_id' => 1,
+            'genero' => 2,
+            'user_id' => 52,
+        ]);
+
 
     }
 }

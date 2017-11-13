@@ -63,35 +63,8 @@ class ActividadController extends Controller
                 return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
             else
                 return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
-<<<<<<< HEAD
+
         }
-    }
-
-    public function showEvaluation($actividad_id, $alumno_id){
-        $logged = Auth::user()->profesor[0];
-        $actividad = $logged->actividades->find($actividad_id);
-        $competencias = $actividad->competencias;
-        $alumno = Alumno::find($alumno_id);
-
-        return view('profesor.actividades.show_student', compact('actividad', 'competencias', 'alumno'));
-    }
-
-    public function evaluateStudent(Request $request, $actividad_id, $alumno_id){
-        $logged = Auth::user()->profesor[0];
-
-        $logged->evaluar($request, $actividad_id, $alumno_id);
-
-        $actividad = $logged->actividades->find($actividad_id);
-        $cuenta_alumnos = $actividad->alumnos->count();
-        $cuenta_respuestas = ProfesorRespuesta::all()->where('actividad_id', $actividad_id)->groupBy('evaluado_id')->count();
-        
-        if($cuenta_alumnos == $cuenta_respuestas){
-            $actividad->pivot->completada = 1;
-            $actividad->pivot->save();
-=======
->>>>>>> 1e17f0f591b01197a913460ea6dcd018a25150c2
-        }
-        return redirect('/actividades/editar/'.$actividad_id);
     }
 
     public function showEvaluation($actividad_id, $alumno_id){

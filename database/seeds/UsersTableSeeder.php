@@ -225,8 +225,123 @@ class UsersTableSeeder extends Seeder
         $user->assignRole('student');
 
         $user = User::create([
+            'email' => 'A01270395@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01322299@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01325073@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01328327@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01328828@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01329057@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01329388@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01731255@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01329410@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01329822@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01329862@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01329872@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+
+        $user = User::create([
+            'email' => 'A01550174@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01551482@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01730943@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01730946@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01731161@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
+            'email' => 'A01731215@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('student');
+
+        $user = User::create([
         	'email' => 'gmc@itesm.mx',
         	'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('professor');
+
+        $user = User::create([
+            'email' => 'aamozurrutia@itesm.mx',
+            'password' => bcrypt('secret'),
         ]);
         $user->assignRole('professor');
         

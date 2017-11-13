@@ -17,7 +17,16 @@ class ProfesorsTableSeeder extends Seeder
             'nombre' => 'Graciela',
             'apellido' => 'Maldonado',
             'correo' => 'gmc@itesm.mx',
-            'user_id' => 36,
+            'user_id' => 53,
     	]);
+    
+        
+        DB::table('profesors')->insert([
+            'nomina' => 'L012345678',
+            'nombre' => 'Adriana',
+            'apellido' => 'Amozurrutia Elizalde',
+            'correo' => 'aamozurrutia@itesm.mx',
+            'user_id' => 54,
+        ]);
     }
 }
