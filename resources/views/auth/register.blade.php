@@ -10,15 +10,15 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
-                            <label for="nombre" class="col-md-4 control-label">Nombre</label>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
-                                <input id="nombre" type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('nombre'))
+                                @if ($errors->has('name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('nombre') }}</strong>
+                                        <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -56,7 +56,7 @@
                             <label for="email" class="col-md-4 control-label">Matrícula</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -103,8 +103,8 @@
                             <label for="campus_id" class="col-md-4 control-label">Campus</label>
 
                             <div class="col-md-6">
-                                <select>
-                                    <option value="1">Puebla
+                                <select name="campus_id">
+                                    <option value="1">Puebla</option>
                                 </select>
 
                                 @if ($errors->has('campus_id'))
@@ -117,12 +117,11 @@
 
                         <div class="form-group{{ $errors->has('plan_id') ? ' has-error' : '' }}">
                             <label for="plan_id" class="col-md-4 control-label">Plan</label>
-
                             <div class="col-md-6">
-                                <select>
-                                    <option value="1">ITC11
-                                    <option value="2">ISD11
-                                    <option value="3">LAD11
+                                <select name="plan_id">
+                                    <option value="1">ITC11</option>
+                                    <option value="2">ISD11</option>
+                                    <option value="3">LAD11</option>
                                 </select>
 
                                 @if ($errors->has('plan_id'))
