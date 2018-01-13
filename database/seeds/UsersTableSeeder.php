@@ -266,11 +266,6 @@ class UsersTableSeeder extends Seeder
         ]);
         $user->assignRole('student');
 
-        $user = User::create([
-            'email' => 'A01731255@itesm.mx',
-            'password' => bcrypt('secret'),
-        ]);
-        $user->assignRole('student');
 
         $user = User::create([
             'email' => 'A01329410@itesm.mx',

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Alumno;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -49,7 +50,6 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -62,10 +62,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+        $user = User::create([
+            'email' => $data['email'].'@itesm.mx',
             'password' => bcrypt($data['password']),
         ]);
+
+        $user->assignRole('student');
+
+        $alumno = Alumno::create([
+            'nombre' => $data['name'],
+            'apellido_paterno' => $data['apellido_paterno'],
+            'apellido_materno' => $data['apellido_materno'],
+            'genero' => $data['genero'],
+            'plan_id' => $data['plan_id'],
+            'campus_id' => $data['campus_id'],
+            'user_id' => $user->id
+        ]);
+
+        return $user;
+
     }
 }
