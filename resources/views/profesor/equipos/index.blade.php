@@ -3,7 +3,7 @@
         <div class="col-md-4">
 	            <div class="card">
 	                <div class="card-header" data-background-color="blue">
-	                    <h4 class="title">Equipo {{ $equipo->numero_equipo }}</h4>
+	                    <h4 class="title"><a href="/actividades/{{$actividad->id}}/equipos/{{$equipo->id}}">Equipo {{ $equipo->numero_equipo }}</a></h4>
 	                     <p class="category">Contraseña: {{$equipo->contrasena}}</p>
 	                </div>
 	                <div class="card-content table-responsive">

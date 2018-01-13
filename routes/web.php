@@ -35,6 +35,10 @@ Route::group(['middleware'=>'auth'], function() {
          Route::post('/actividades/actualizar/{actividad}', 'ActividadController@update');
          Route::get('/actividades/{actividad}/alumnos/{alumno}', 'ActividadController@showEvaluation');
          Route::post('/actividades/{actividad}/alumnos/{alumno}', 'ActividadController@evaluateStudent');
+         Route::get('/actividades/{actividad}/equipos/{equipo}', 'EquipoController@edit');
+
+         Route::get('/actividades/equipos/{equipo}/agregarAlumno', 'EquipoController@addStudent');
+         Route::get('/actividades/equipos/{equipo}/eliminarAlumno', 'EquipoController@deleteStudent');
          
          Route::get('/crear/actividad', 'ActividadController@create');
          Route::post('/crear/actividad', 'ActividadController@newActivity');
@@ -45,7 +49,6 @@ Route::group(['middleware'=>'auth'], function() {
 
          Route::get('/eliminarAlumno', 'CrnController@deleteStudent');
          Route::get('/agregarAlumno', 'CrnController@addStudent');
-         Route::get('/grupos/agregarAlumno/{actividad_id}', 'CrnController@deleteStudent');
     });
 
     Route::group([

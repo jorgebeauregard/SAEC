@@ -84,7 +84,7 @@
 			</div>
 		</div><!--end row -->
 
-		@include('profesor.equipos.lista')
+		@include('profesor.equipos.index')
 
 		<div class="row">
 			<div class="col-md-12">
@@ -95,8 +95,4 @@
 		</form>
     </div><!--end container-fluid -->
 </div><!--end content -->
-
-
-
-
 @endsection
