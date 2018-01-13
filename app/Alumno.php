@@ -18,6 +18,15 @@ use Illuminate\Support\Facades\DB;
 
 class Alumno extends Model
 {
+	/**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'matricula', 'nombre', 'apellido_materno', 'apellido_paterno', 'prom_anterior', 'genero', 'campus_id', 'plan_id', 'user_id',
+	];
+	
     public function campus(){
 		return $this->belongsTo(Campus::class);
 	}
