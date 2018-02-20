@@ -39,7 +39,7 @@
 					"type":"hbar",
 					"font-family":"Arial",
 					"title":{
-						"text":"Customer Survey Response",
+						"text":"",
 						"font-family":"Arial",
 						"background-color":"none",
 						"font-color":"#A4A4A4",
@@ -47,126 +47,23 @@
 					},
 					"labels":[
 						{
-							"text":"DAYS",
+							"text":"Competencia",
 							"font-size":"12px",
 							"font-color":"#9d9d9d",
-							"x":"11.5%",
+							"x":"13%",
 							"y":"10%"
 						},
 						{
-							"text":"CUSTOMERS",
+							"text":"Calificación",
 							"font-size":"12px",
 							"font-color":"#9d9d9d",
-							"x":"20%",
+							"x":"30%",
 							"y":"10%"
 						},
-						{
-							"text":"GOAL",
-							"font-size":"12px",
-							"font-color":"#9d9d9d",
-							"x":"4%",
-							"y":"10%"
-						}
 					],
 					"arrows":[
-					{
-						"backgroundColor":"#CCCCCC",
-						"direction":"bottom",
-						"borderWidth": 0,
-						"to":{
-						"x": "6%",
-						"y": "27%"
-						},
-						"from":{
-						"x": "6%",
-						"y": "79%"
-						}
-					}
 					],
-					"shapes":[
-					{
-						"type":"circle",
-						"x": 45,
-						"y": 99,
-						"backgroundColor": "white",
-						"borderColor":"#6FA6DF",
-						"borderWidth":3,
-						"size": 14
-					},
-					{
-						"type":"circle",
-						"x": 40,
-						"y": 95,
-						"backgroundColor": "#6FA6DF",
-						"size": 2
-					},
-					{
-						"type":"circle",
-						"x": 50,
-						"y": 95,
-						"backgroundColor": "#6FA6DF",
-						"size": 2
-					},
-					{
-						"type":"pie",
-						"background-color":"#5297b6",
-						"size":8,
-						"x":45,
-						"y":100,
-						"angle-start":0,
-						"angle-end":180,
-					},
-					{
-						"type":"pie",
-						"background-color":"#fff",
-						"size":6,
-						"x":45,
-						"y":100,
-						"angle-start":0,
-						"angle-end":180,
-					},
-					{
-						"type":"circle",
-						"x": 45,
-						"y": 433,
-						"backgroundColor": "white",
-						"borderColor":"#FA8452",
-						"borderWidth":3,
-						"size": 14
-					},
-					{
-						"type":"circle",
-						"x": 40,
-						"y": 429,
-						"backgroundColor": "#FA8452",
-						"size": 2
-					},
-					{
-						"type":"circle",
-						"x": 50,
-						"y": 429,
-						"backgroundColor": "#FA8452",
-						"size": 2
-					},
-					{
-						"type":"pie",
-						"background-color":"#FA8452",
-						"size":8,
-						"x":45,
-						"y":439,
-						"angle-start":170,
-						"angle-end":10,
-					},
-					{
-						"type":"pie",
-						"background-color":"#fff",
-						"size":5,
-						"x":45,
-						"y":440,
-						"angle-start":170,
-						"angle-end":10,
-					}
-					],
+					
 					"plot":{
 						"bars-overlap":"100%",
 						"borderRadius":8,
@@ -182,7 +79,7 @@
 						}
 					},
 					"plotarea":{
-						"margin":"60px 20px 20px 140px"
+						"margin":"60px 20px 20px 200px"
 					},
 					"scale-x":{
 						"line-color":"none",
