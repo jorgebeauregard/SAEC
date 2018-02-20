@@ -10,125 +10,279 @@
 @section('description', 'Esta es la pagina de compras')
 @section('content')
 	<div class="content">
-
-		<div class = "chart">
-				<!-- Styles -->
-				<style>
-				#chartdiv {
-					width	: 100%;
-					height	: 500px;
-				}									
-				</style>
-
-				<!-- Resources -->
-				<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-				<script src="https://www.amcharts.com/lib/3/xy.js"></script>
-				<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-				<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-				<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-
-				<!-- Chart code -->
-				<script>
-				var chart = AmCharts.makeChart( "chartdiv", {
-				"type": "xy",
-				"theme": "light",
-				"balloon":{
-				"fixedPosition":true,
-				},
-				"dataProvider": [ {
-					"y": 10,
-					"x": 14,
-					"value": 59,
-					"y2": -5,
-					"x2": -3,
-					"value2": 44
-				}, {
-					"y": 5,
-					"x": 3,
-					"value": 50,
-					"y2": -15,
-					"x2": -8,
-					"value2": 12
-				}, {
-					"y": -10,
-					"x": 8,
-					"value": 19,
-					"y2": -4,
-					"x2": 6,
-					"value2": 35
-				}, {
-					"y": -6,
-					"x": 5,
-					"value": 65,
-					"y2": -5,
-					"x2": -6,
-					"value2": 168
-				}, {
-					"y": 15,
-					"x": -4,
-					"value": 92,
-					"y2": -10,
-					"x2": -8,
-					"value2": 102
-				}, {
-					"y": 13,
-					"x": 1,
-					"value": 8,
-					"y2": -2,
-					"x2": 0,
-					"value2": 41
-				}, {
-					"y": 1,
-					"x": 6,
-					"value": 35,
-					"y2": 0,
-					"x2": -3,
-					"value2": 16
-				} ],
-				"valueAxes": [ {
-					"position": "bottom",
-					"axisAlpha": 0
-				}, {
-					"minMaxMultiplier": 1.2,
-					"axisAlpha": 0,
-					"position": "left"
-				} ],
-				"startDuration": 1.5,
-				"graphs": [ {
-					"balloonText": "x:<b>[[x]]</b> y:<b>[[y]]</b><br>value:<b>[[value]]</b>",
-					"bullet": "circle",
-					"bulletBorderAlpha": 0.2,
-					"bulletAlpha": 0.8,
-					"lineAlpha": 0,
-					"fillAlphas": 0,
-					"valueField": "value",
-					"xField": "x",
-					"yField": "y",
-					"maxBulletSize": 100
-				}, {
-					"balloonText": "x:<b>[[x]]</b> y:<b>[[y]]</b><br>value:<b>[[value]]</b>",
-					"bullet": "diamond",
-					"bulletBorderAlpha": 0.2,
-					"bulletAlpha": 0.8,
-					"lineAlpha": 0,
-					"fillAlphas": 0,
-					"valueField": "value2",
-					"xField": "x2",
-					"yField": "y2",
-					"maxBulletSize": 100
-				} ],
-				"marginLeft": 46,
-				"marginBottom": 35,
-				"export": {
-					"enabled": true
-				}
-				} );
-				</script>
-
-				<!-- HTML -->
-				<div id="chartdiv"></div>
-
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+				<!-- Chart -->
+					<div class="card">
+						<div class="card-header" data-background-color="blue">
+							<h4 class="title">Desempeño</h4>
+							<p class="category">Aquí se muestra el estado del desempeño del alumno</p>
+						</div>
+				
+					<hr>
+						<div id='myChart'></div>
+					</div>
+				</div>
 			</div>
-
 		</div>
+	</div>
+@endsection
+
+@section('scripts')
+
+	<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+		<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+		ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
+	<script type="text/javascript">
+		var myConfig =         {
+					"type":"hbar",
+					"font-family":"Arial",
+					"title":{
+						"text":"Customer Survey Response",
+						"font-family":"Arial",
+						"background-color":"none",
+						"font-color":"#A4A4A4",
+						"font-size":"18px"
+					},
+					"labels":[
+						{
+							"text":"DAYS",
+							"font-size":"12px",
+							"font-color":"#9d9d9d",
+							"x":"11.5%",
+							"y":"10%"
+						},
+						{
+							"text":"CUSTOMERS",
+							"font-size":"12px",
+							"font-color":"#9d9d9d",
+							"x":"20%",
+							"y":"10%"
+						},
+						{
+							"text":"GOAL",
+							"font-size":"12px",
+							"font-color":"#9d9d9d",
+							"x":"4%",
+							"y":"10%"
+						}
+					],
+					"arrows":[
+					{
+						"backgroundColor":"#CCCCCC",
+						"direction":"bottom",
+						"borderWidth": 0,
+						"to":{
+						"x": "6%",
+						"y": "27%"
+						},
+						"from":{
+						"x": "6%",
+						"y": "79%"
+						}
+					}
+					],
+					"shapes":[
+					{
+						"type":"circle",
+						"x": 45,
+						"y": 99,
+						"backgroundColor": "white",
+						"borderColor":"#6FA6DF",
+						"borderWidth":3,
+						"size": 14
+					},
+					{
+						"type":"circle",
+						"x": 40,
+						"y": 95,
+						"backgroundColor": "#6FA6DF",
+						"size": 2
+					},
+					{
+						"type":"circle",
+						"x": 50,
+						"y": 95,
+						"backgroundColor": "#6FA6DF",
+						"size": 2
+					},
+					{
+						"type":"pie",
+						"background-color":"#5297b6",
+						"size":8,
+						"x":45,
+						"y":100,
+						"angle-start":0,
+						"angle-end":180,
+					},
+					{
+						"type":"pie",
+						"background-color":"#fff",
+						"size":6,
+						"x":45,
+						"y":100,
+						"angle-start":0,
+						"angle-end":180,
+					},
+					{
+						"type":"circle",
+						"x": 45,
+						"y": 433,
+						"backgroundColor": "white",
+						"borderColor":"#FA8452",
+						"borderWidth":3,
+						"size": 14
+					},
+					{
+						"type":"circle",
+						"x": 40,
+						"y": 429,
+						"backgroundColor": "#FA8452",
+						"size": 2
+					},
+					{
+						"type":"circle",
+						"x": 50,
+						"y": 429,
+						"backgroundColor": "#FA8452",
+						"size": 2
+					},
+					{
+						"type":"pie",
+						"background-color":"#FA8452",
+						"size":8,
+						"x":45,
+						"y":439,
+						"angle-start":170,
+						"angle-end":10,
+					},
+					{
+						"type":"pie",
+						"background-color":"#fff",
+						"size":5,
+						"x":45,
+						"y":440,
+						"angle-start":170,
+						"angle-end":10,
+					}
+					],
+					"plot":{
+						"bars-overlap":"100%",
+						"borderRadius":8,
+						"hover-state":{
+							"visible":false
+						},
+						"animation": {
+							"delay": 300,
+							"effect": 3,
+							"speed": "500",
+							"method": "0",
+							"sequence": "3"
+						}
+					},
+					"plotarea":{
+						"margin":"60px 20px 20px 140px"
+					},
+					"scale-x":{
+						"line-color":"none",
+						"values":["120+","90-120","60-90","30-60","0-30"],
+						"tick":{
+							"visible":false
+						},
+						"guide":{
+							"visible":false
+						},
+						"item":{
+							"font-size":"14px",
+							"padding-right":"20px",
+							"auto-align":true,
+							"rules":[
+								{
+									"rule":"%i==0",
+									"font-color":"#FA8452"
+								},
+								{
+									"rule":"%i==1",
+									"font-color":"#FCAE48"
+								},
+								{
+									"rule":"%i==2",
+									"font-color":"#FCCC65"
+								},
+								{
+									"rule":"%i==3",
+									"font-color":"#A0BE4A"
+								},
+								{
+									"rule":"%i==4",
+									"font-color":"#6FA6DF"
+								}
+							]
+						}
+					},
+					"scale-y":{
+						"visible":false,
+						"guide":{
+							"visible":false
+						}
+					},
+					"series":[
+						{
+							"values":[100,100,100,100,100],
+							"bar-width":"40px",
+							"background-color":"#f2f2f2",
+							"border-color": "#e8e3e3",
+							"border-width":2,
+							"fill-angle":90,
+							"tooltip":{
+								"visible":false
+							}
+						},
+						{
+							"values":[42,56,77,44,81],
+							"bar-width":"32px",
+							"max-trackers":0,
+							"value-box":{
+								"placement":"top-out",
+								"text":"%v",
+								"decimals":0,
+								"font-color":"#A4A4A4",
+								"font-size":"14px",
+								"alpha":0.6
+							},
+							"rules":[
+								{
+									"rule":"%i==0",
+									"background-color":"#FA8452"
+								},
+								{
+									"rule":"%i==1",
+									"background-color":"#FCAE48"
+								},
+								{
+									"rule":"%i==2",
+									"background-color":"#FCCC65"
+								},
+								{
+									"rule":"%i==3",
+									"background-color":"#A0BE4A"
+								},
+								{
+									"rule":"%i==4",
+									"background-color":"#6FA6DF"
+								}
+							]
+						}
+					]
+				};
+     
+		zingchart.render({ 
+			id : 'myChart', 
+			data : myConfig, 
+			height: 500, 
+			width: 725 
+		});
+	</script>
+	
 @endsection
