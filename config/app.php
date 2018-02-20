@@ -182,6 +182,7 @@ return [
 
         Laravel\Socialite\SocialiteServiceProvider::class,
         Kodeine\Acl\AclServiceProvider::class,
+        'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider',
 
     ],
 

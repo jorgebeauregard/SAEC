@@ -18,6 +18,7 @@ class CreateComportamientosTable extends Migration
             $table->string('pregunta', 250);
             $table->string('descripcion', 250);
             $table->integer('competencia_id')->unsigned();
+            $table->integer('peso')->unsigned()->default(100);
             $table->timestamps();
 
             $table->foreign('competencia_id')->references('id')->on('competencias')->onUpdate('cascade')->onDelete('cascade');

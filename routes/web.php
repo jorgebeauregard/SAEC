@@ -19,7 +19,7 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('/', function () {
         return view('/home');
     });
-
+    Route::get('/calificaciones', 'AlumnoController@grades');
     Route::resource('/actividades', 'ActividadController');
     Route::get('/actividades/{actividad}', 'ActividadController@show');
     Route::get('/actividades/{actividad}/alumno/{alumno}', 'ActividadController@showProfessor');
