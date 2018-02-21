@@ -186,7 +186,7 @@
 					},
 					"scale-x":{
 						"line-color":"none",
-						"values":["120+","90-120","60-90","30-60","0-30"],
+						"values":data.names,
 						"tick":{
 							"visible":false
 						},
@@ -240,7 +240,7 @@
 							}
 						},
 						{
-							"values":[42,56,77,44,81],
+							"values": data.grades,
 							"bar-width":"32px",
 							"max-trackers":0,
 							"value-box":{

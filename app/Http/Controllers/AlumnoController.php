@@ -4,25 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comportamiento;
-use App\Cmpetencia;
+use App\Competencia;
 use App\ProfesorRespuesta;
+use App\AlumnoRespuesta;
+use Illuminate\Support\Facades\Auth;
 use JavaScript;
 
 class AlumnoController extends Controller
 {
     public function grades(){
         $logged = Auth::user()->alumno[0];
-        $competences = Comepetencia::all();
+        $competences = Competencia::all();
         $data = array();
+        $data['names'] = array();
+        $data['grades'] = array();
 
         foreach($competences as $competence){
             $comportamientos = Comportamiento::all()->where('competencia_id', $competence->id);
+            $suma = 0;
+            $sumaPesos = 0;
             foreach($comportamientos as $comportamiento){
-                $suma = 0;
-                $sumaPesos = 0;
-
-                $respuestasP = ProfesorRespuesta::all()->where('evaluado_id', $logged->id)->where('comportamiento_id', $comportamiento_id);
-                $respuestasA = AlumnoRespuesta::all()->where('evaluado_id', $logged->id)->where('comportamiento_id', $comportamiento_id);
+                $respuestasP = ProfesorRespuesta::all()->where('evaluado_id', $logged->id)->where('comportamiento_id', $comportamiento->id);
+                $respuestasA = AlumnoRespuesta::all()->where('evaluado_id', $logged->id)->where('comportamiento_id', $comportamiento->id);
                 
                 foreach($respuestasP as $respuesta){
                     if($respuesta->nota > 0){
@@ -37,8 +40,15 @@ class AlumnoController extends Controller
                         $suma += $respuesta->nota * $respuesta->competencia->peso/100;
                     }
                 }
+            }
+            
+            array_push($data['names'], $competence->nombre);
+            if($sumaPesos > 0){
                 $calificacion = $suma / $sumaPesos;
-                array_push($data, array('comportamiento' => $comportamiento->name, 'calificacion' => $calificacion));
+                array_push($data['grades'], $calificacion*100);
+            }
+            else{
+                array_push($data['grades'], 0);
             }
         }
 

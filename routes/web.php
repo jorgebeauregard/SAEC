@@ -56,7 +56,6 @@ Route::group(['middleware'=>'auth'], function() {
         'is' => 'student'
     ], function() {
         Route::post('/actividades/unirse/{actividad}', 'ActividadController@joinTeam');
-        Route::resource('/calificaciones', 'CalificacionesController');
     });
 
     
