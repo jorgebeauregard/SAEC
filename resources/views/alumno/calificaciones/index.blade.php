@@ -79,7 +79,7 @@
 						}
 					},
 					"plotarea":{
-						"margin":"60px 20px 20px 200px"
+						"margin":"60px 50px 50px 200px"
 					},
 					"scale-x":{
 						"line-color":"none",
@@ -145,8 +145,8 @@
 								"text":"%v",
 								"decimals":0,
 								"font-color":"#A4A4A4",
-								"font-size":"14px",
-								"alpha":0.6
+								"font-size":"18px",
+								"alpha":0.8
 							},
 							"rules":[
 								{

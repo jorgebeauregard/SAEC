@@ -29,15 +29,15 @@ class AlumnoController extends Controller
                 
                 foreach($respuestasP as $respuesta){
                     if($respuesta->nota > 0){
-                        $sumPesos += $respuesta->competencia->peso/100;
-                        $suma += $respuesta->nota * $respuesta->competencia->peso/100;
+                        $sumaPesos += $respuesta->comportamiento->peso/100;
+                        $suma += ($respuesta->nota-1)/3 * $respuesta->comportamiento->peso/100;
                     }
                 }
 
                 foreach($respuestasA as $respuesta){
                     if($respuesta->nota > 0){
-                        $sumPesos += $respuesta->competencia->peso/100;
-                        $suma += $respuesta->nota * $respuesta->competencia->peso/100;
+                        $sumaPesos += $respuesta->comportamiento->peso/100;
+                        $suma += ($respuesta->nota-1)/3 * $respuesta->comportamiento->peso/100;
                     }
                 }
             }
