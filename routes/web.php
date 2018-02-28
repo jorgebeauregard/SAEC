@@ -19,11 +19,14 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('/', function () {
         return view('/home');
     });
-    Route::get('/calificaciones', 'AlumnoController@grades');
+
     Route::resource('/actividades', 'ActividadController');
     Route::get('/actividades/{actividad}', 'ActividadController@show');
     Route::get('/actividades/{actividad}/alumno/{alumno}', 'ActividadController@showProfessor');
     Route::post('/actividades/{actividad}', 'ActividadController@store');
+    
+    Route::get('/calificaciones/alumnos/{alumno}', 'AlumnoController@grades');
+    Route::get('/calificaciones/alumnos/{alumno}/competencias/{competencia}', 'AlumnoController@competence');
 
     Route::resource('perfil', 'PerfilController');
     
