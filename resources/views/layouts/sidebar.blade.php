@@ -52,12 +52,12 @@
 	                        <p>Actividades</p>
 	                    </a>
 	                </li>
-					{{--<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
-	                    <a href="{{ route('calificaciones.index') }}">
+					<li class= "{{strpos(Request::url(), 'calificaciones') ? 'active' : 'inactive' }}">
+	                    <a href="/calificaciones/alumnos/{{Auth::user()->id}}">
 	                        <i class="material-icons">content_paste</i>
 	                        <p>Desempeño</p>
 	                    </a>
-	                </li>--}}
+	                </li>
 	                <li class= "{{strpos(Request::url(), 'perfil') ? 'active' : 'inactive' }}">
 	                    <a href="{{ route('perfil.index') }}">
 	                        <i class="material-icons">person</i>
@@ -80,6 +80,7 @@
 	                        <p>Grupos</p>
 	                    </a>
 	                </li>
+
 					@endrole
 
 	            </ul>

@@ -11,22 +11,69 @@
 @section('content')
 	<div class="content">
 		<div class="container-fluid">
+
 			<div class="row">
-				<div class="col-md-12">
-				<!-- Chart -->
-					<div class="card">
+					<div class="card card-nav-tabs">
 						<div class="card-header" data-background-color="blue">
-							<h4 class="title">Desempeño</h4>
-							<p class="category">Aquí se muestra el estado del desempeño del alumno</p>
+							<div class="nav-tabs-navigation">
+								<div class="nav-tabs-wrapper">
+									<span class="nav-tabs-title">Competencias:</span>
+									<ul class="nav nav-tabs" data-tabs="tabs">
+										<li>
+											<a href="1">
+												<i class="material-icons">bug_report</i> {{$competencias[0]->nombre}}
+												<div class="ripple-container"></div>
+											</a>
+										</li>
+										<li>
+											<a href="2">
+												<i class="material-icons">bug_report</i> {{$competencias[1]->nombre}}
+												<div class="ripple-container"></div>
+											</a>
+										</li>
+										<li>
+											<a href="3">
+												<i class="material-icons">bug_report</i> {{$competencias[2]->nombre}}
+												<div class="ripple-container"></div>
+											</a>
+										</li>
+										<li>
+											<a href="4">
+												<i class="material-icons">bug_report</i> {{$competencias[3]->nombre}}
+												<div class="ripple-container"></div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
-				
-					<hr>
-						<div id='myChart'></div>
+						<div class="card-content">
+							<div class="tab-content">
+								<div class="tab-pane active" id="profile">
+									<table class="table">
+										<tbody>
+											<h4 class="title">{{$competencia->nombre}}</h4>
+											<p class="category">{{$competencia->descripcion}}</p>
+											<hr>
+											<div id='myChart'></div>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+			
+			
+			
 			</div>
+
 		</div>
 	</div>
+
+
+	
+
 @endsection
 
 @section('scripts')
@@ -47,7 +94,7 @@
 					},
 					"labels":[
 						{
-							"text":"Competencia",
+							"text":"Evaluador",
 							"font-size":"12px",
 							"font-color":"#9d9d9d",
 							"x":"13%",

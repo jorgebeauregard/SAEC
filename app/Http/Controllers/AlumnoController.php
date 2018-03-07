@@ -14,10 +14,11 @@ use JavaScript;
 class AlumnoController extends Controller
 {
     public function grades(Alumno $alumno){
-        return view('alumno.calificaciones.index', compact('alumno'));
+        return redirect('/calificaciones/alumnos/'.$alumno->id.'/competencias/1');
     }
 
     public function competence(Alumno $alumno, Competencia $competencia){
+        $competencias = Competencia::all();
         $data = array();
         $data['names'] = ["Autoevaluación", "Profesores", "Compañeros"];
         $data['grades'] = array();
@@ -65,6 +66,6 @@ class AlumnoController extends Controller
             'data' => $data
         ]);
 
-        return view('alumno.calificaciones.competencia', compact('alumno', 'competencia'));
+        return view('alumno.calificaciones.competencia', compact('alumno', 'competencia', 'competencias'));
     }
 }

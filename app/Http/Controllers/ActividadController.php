@@ -32,7 +32,7 @@ class ActividadController extends Controller
             $equipos = Equipo::where('profesor_id', $logged->id)->get();
             $actividades_inv = [];
             foreach($equipos as $equipo){
-                if(in_array($equipo->actividad, $actividades_inv)){
+                if(!in_array($equipo->actividad, $actividades_inv)){
                     array_push($actividades_inv, $equipo->actividad);
                 }
             }
@@ -188,8 +188,9 @@ class ActividadController extends Controller
     public function edit($actividad_id)
     {
         $actividad = Actividad::find($actividad_id);
+        $profesores = Profesor::all();
         
-        return view('profesor.actividades.edit', compact('actividad'));
+        return view('profesor.actividades.edit', compact('actividad', 'profesores'));
     }
 
     public function guest(Actividad $actividad){

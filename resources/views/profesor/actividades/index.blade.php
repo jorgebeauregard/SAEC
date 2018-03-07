@@ -88,6 +88,46 @@
 			</div>
 		</div> <!--end row -->
 
+		<div class="row">
+			<div class="col-md-12">
+	            <div class="card">
+	                <div class="card-header" data-background-color="blue">
+	                    <h4 class="title">Invitaciones</h4>
+	                     <p class="category">Aquí se muestran las actividades a las que fue invitado para calificar</p>
+	                </div>
+	                <div class="card-content table-responsive">
+	                    <table class="table">
+	                        <thead class="text-primary">
+	                            <th>Actividad</th>
+	                            <th>Finalizada</th>
+								<th>Profesor</th>
+								<th>Ver Detalles</th>
+	                        </thead>
+	                        <tbody>
+	                        @foreach($actividades_inv as $actividad)
+	                            <tr>
+	                            	<td>{{$actividad->nombre}}</td>
+	                            	@if($actividad->fecha_limite->isPast())
+		                                <td style = "color:red;">
+		                                {{$actividad->fecha_limite->toDayDateTimeString()}}</td>
+		                               	</td>
+		                            @else
+		                                <td style = "color:green;">
+		                                {{$actividad->fecha_limite->toDayDateTimeString()}}</td>
+		                               	</td>		                            
+	                               	@endif
+									<td>{{$actividad->crn->profesor->nombre}} {{$actividad->crn->profesor->apellido}}</td>
+									<td><a href="/actividades/invitado/{{$actividad->id}}" type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+	                            </tr>
+	                        @endforeach
+	                        </tbody>
+	                    </table>
+
+	                </div>
+	            </div>
+			</div>
+		</div> <!--end row -->
+
 	</div><!--end contaner fluid -->
 </div><!--end content-->
 

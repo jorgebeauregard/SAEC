@@ -5,6 +5,20 @@
 	                <div class="card-header" data-background-color="blue">
 	                    <h4 class="title"><a href="/actividades/{{$actividad->id}}/equipos/{{$equipo->id}}">Equipo {{ $equipo->numero_equipo }}</a></h4>
 	                     <p class="category">Contraseña: {{$equipo->contrasena}}</p>
+						 <select class="form-control" name="equipo{{$equipo->id}}">
+								@if($equipo->profesor_id == NULL || $equipo->profesor_id == 0)
+									<option value="0" selected>Sin asignar</option>
+								@else
+									<option value="0">Sin asignar</option>
+								@endif
+						 	@foreach($profesores as $profesor)
+								@if($profesor->id == $equipo->profesor_id)
+									<option style='color: #ffffff' value="{{$profesor->id}}" selected>{{$profesor->nombre}} {{$profesor->apellido}}</option>
+								@else
+									<option style='color: #ffffff' value="{{$profesor->id}}">{{$profesor->nombre}} {{$profesor->apellido}}</option>
+								@endif
+							@endforeach
+						</select>
 	                </div>
 	                <div class="card-content table-responsive">
 					@if(count($equipo->alumnos) > 0)
