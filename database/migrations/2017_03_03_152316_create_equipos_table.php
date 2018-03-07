@@ -18,6 +18,7 @@ class CreateEquiposTable extends Migration
             $table->integer('numero_equipo')->unsigned();
             $table->integer('actividad_id')->unsigned();
             $table->string('contrasena', 4)->default('123');
+            $table->integer('profesor_id')->usigned()->nullable()->dafault(NULL);
             $table->timestamps();
 
             $table->foreign('actividad_id')->references('id')->on('actividads')->onUpdate('cascade')->onDelete('cascade');

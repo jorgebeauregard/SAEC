@@ -63,7 +63,6 @@ class ActividadController extends Controller
                 return view('alumno.actividades.show_competence', compact('actividad','competencias', 'alumnos'));
             else
                 return view('alumno.actividades.show_student', compact('actividad','competencias', 'alumnos'));
-
         }
     }
 
@@ -219,6 +218,15 @@ class ActividadController extends Controller
                     'actividad_id' => $actividad->id,
                     'contrasena' => str_random(3),
                 ]);
+            }
+        }
+        else{
+            foreach ($actividad->equipos as $equipo){
+                if( !empty(request('equipo'.$equipo->id))){
+                    $equipo->profesor_id = request('equipo'.$equipo->id);
+                }
+
+                $equipo->save();
             }
         }
         
