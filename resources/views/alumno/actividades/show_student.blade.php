@@ -24,10 +24,10 @@
                         <table class="table table-hover">
                             <thead class="text-warning">
                                 <th>Pregunta</th>
-                                <th>Lo lograste</th>
-                                <th>Vas bien</th>
-                                <th>Échale ganas</th>
-                                <th>En el hoyo</th>
+                                <th>Muy Bien</th>
+                                <th>Bien</th>
+                                <th>Regular</th>
+                                <th>Necesita desarrollo</th>
                                 <th>No puedo responder</th>
                             </thead>
                             <tbody>
