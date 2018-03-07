@@ -27,19 +27,30 @@ class ActividadController extends Controller
     {
         if(Auth::user()->roles[0]->id == 3)
             $logged = Auth::user()->alumno[0];
-        else
+        else{
             $logged = Auth::user()->profesor[0];
+            $equipos = Equipo::where('profesor_id', $logged->id)->get();
+            $actividades_inv = [];
+            foreach($equipos as $equipo){
+                if(in_array($equipo->actividad, $actividades_inv)){
+                    array_push($actividades_inv, $equipo->actividad);
+                }
+            }
+        }
         
         $actividades = $logged->actividades->where('periodo_id', Periodo::all()->last()->id)->sortBy('fecha_limite');
         $actividades2 = $actividades->chunk(4)->toArray();
         $actividades = $actividades->all();
+
+
+
         if(sizeof($actividades)>0)
             $actividades2 = $actividades2[0];
 
         if(Auth::user()->roles[0]->id == 3)
             return view('alumno.actividades.index', compact('logged', 'actividades', 'actividades2'));
         else
-            return view('profesor.actividades.index', compact('logged', 'actividades', 'actividades2'));
+            return view('profesor.actividades.index', compact('logged', 'actividades', 'actividades2', 'actividades_inv'));
     }
 
     public function show($actividad_id)
@@ -179,6 +190,12 @@ class ActividadController extends Controller
         $actividad = Actividad::find($actividad_id);
         
         return view('profesor.actividades.edit', compact('actividad'));
+    }
+
+    public function guest(Actividad $actividad){
+        $actividad = Actividad::find($actividad->id);
+        
+        return view('profesor.actividades.guest', compact('actividad'));
     }
 
     /**

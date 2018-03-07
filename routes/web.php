@@ -35,6 +35,7 @@ Route::group(['middleware'=>'auth'], function() {
         'is' => 'professor'
     ], function() {
          Route::get('/actividades/editar/{actividad}', 'ActividadController@edit');
+         Route::get('/actividades/invitado/{actividad}', 'ActividadController@guest');
          Route::post('/actividades/actualizar/{actividad}', 'ActividadController@update');
          Route::get('/actividades/{actividad}/alumnos/{alumno}', 'ActividadController@showEvaluation');
          Route::post('/actividades/{actividad}/alumnos/{alumno}', 'ActividadController@evaluateStudent');
