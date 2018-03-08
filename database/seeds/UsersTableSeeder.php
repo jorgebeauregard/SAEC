@@ -339,6 +339,24 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('secret'),
         ]);
         $user->assignRole('professor');
+
+        $user = User::create([
+            'email' => 'gsayeg@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('professor');
+
+        $user = User::create([
+            'email' => 'aoliart@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('professor');
+
+        $user = User::create([
+            'email' => 'afloresam@itesm.mx',
+            'password' => bcrypt('secret'),
+        ]);
+        $user->assignRole('professor');
         
     }
 }

@@ -34,7 +34,7 @@
                                 @foreach($competencias as $competencia)
                                     @foreach($competencia->comportamientos as $comportamiento)
                                     <tr>
-                                        <td>{{$comportamiento->pregunta}}</td>
+                                        <td data-toggle="tooltip" title="{{$comportamiento->descripcion}}">{{$comportamiento->pregunta}}</td>
                                             <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=4 required></td>
                                             <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=3 required></td>
                                             <td><input type="radio" name="{{$comportamiento->id}}_{{$alumno->id}}" value=2 required></td>

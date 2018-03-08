@@ -31,18 +31,6 @@
 												<div class="ripple-container"></div>
 											</a>
 										</li>
-										<li>
-											<a href="3">
-												<i class="material-icons">bug_report</i> {{$competencias[2]->nombre}}
-												<div class="ripple-container"></div>
-											</a>
-										</li>
-										<li>
-											<a href="4">
-												<i class="material-icons">bug_report</i> {{$competencias[3]->nombre}}
-												<div class="ripple-container"></div>
-											</a>
-										</li>
 									</ul>
 								</div>
 							</div>
