@@ -58,7 +58,7 @@
 											@endforeach
 										</select>
 										@else
-											<h5>Primero <a href="/crear/grupo">crea</a> un grupo.</h5>
+											<h5>Primero <a href="/grupos">crea</a> un grupo.</h5>
 										@endif
 									</div>
 								</div>
