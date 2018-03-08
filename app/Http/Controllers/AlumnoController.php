@@ -33,12 +33,12 @@ class AlumnoController extends Controller
         foreach($comportamientos as $comportamiento){
             $respuestasProf = ProfesorRespuesta::all()->where('evaluado_id', $alumno->id)->where('comportamiento_id', $comportamiento->id);
             $respuestasAlum = AlumnoRespuesta::all()->where('evaluado_id', $alumno->id)->where('comportamiento_id', $comportamiento->id);
-            
+
             foreach($respuestasAlum as $respuesta){
                 if($respuesta->nota > 0){
                     if($respuesta->alumno_id != $alumno->id){ // alumnos
-                        $pesos[1] += $respuesta->comportamiento->peso/100;
-                        $data['grades'][1] += ($respuesta->nota-1)/3 * $respuesta->comportamiento->peso/100;
+                        $pesos[2] += $respuesta->comportamiento->peso/100;
+                        $data['grades'][2] += ($respuesta->nota-1)/3 * $respuesta->comportamiento->peso/100;
                     }
                     else{ // autoevaluacion
                         $pesos[0] += $respuesta->comportamiento->peso/100;
@@ -49,8 +49,8 @@ class AlumnoController extends Controller
 
             foreach($respuestasProf as $respuesta){ //profesores
                 if($respuesta->nota > 0){
-                    $pesos[2] += $respuesta->comportamiento->peso/100;
-                    $data['grades'][2] += ($respuesta->nota-1)/3 * $respuesta->comportamiento->peso/100;
+                    $pesos[1] += $respuesta->comportamiento->peso/100;
+                    $data['grades'][1] += ($respuesta->nota-1)/3 * $respuesta->comportamiento->peso/100;
                 }
             }
         }

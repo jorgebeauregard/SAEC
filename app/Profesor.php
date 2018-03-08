@@ -28,7 +28,7 @@ class Profesor extends Model
 	}
 
 	public function evaluar(Request $request, $actividad_id, $alumno_id){
-		$actividad = $this->actividades->find($actividad_id);
+		$actividad = Actividad::find($actividad_id);
 		
 		foreach($actividad->competencias as $competencia){
             foreach($competencia->comportamientos as $comportamiento){

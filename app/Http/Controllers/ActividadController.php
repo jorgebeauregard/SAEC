@@ -79,7 +79,7 @@ class ActividadController extends Controller
 
     public function showEvaluation($actividad_id, $alumno_id){
         $logged = Auth::user()->profesor[0];
-        $actividad = $logged->actividades->find($actividad_id);
+        $actividad = Actividad::find($actividad_id);
         $competencias = $actividad->competencias;
         $alumno = Alumno::find($alumno_id);
 
@@ -91,7 +91,7 @@ class ActividadController extends Controller
 
         $logged->evaluar($request, $actividad_id, $alumno_id);
 
-        $actividad = $logged->actividades->find($actividad_id);
+        $actividad = Actividad::find($actividad_id);
         $cuenta_alumnos = $actividad->alumnos->count();
         $cuenta_respuestas = ProfesorRespuesta::all()->where('actividad_id', $actividad_id)->groupBy('evaluado_id')->count();
         
