@@ -50,16 +50,23 @@ class CrnController extends Controller
         $grupo = Crn::find(request('grupo_id'));
         $alumno = Alumno::find(request('alumno_id'));
         $plan = $alumno->plan;
-        $grupo->alumnos()->attach($alumno);
+
+        if(!$grupo->alumnos->search($alumno)) {
+            $grupo->alumnos()->attach($alumno);
+        }
+        
 
         return $alumno;
      }
 
      public function deleteStudent(){
         $grupo = Crn::find(request('grupo_id'));
-        $grupo->alumnos()->detach(request('alumno_id'));
         $alumno = Alumno::find(request('alumno_id'));
         $plan = $alumno->plan;
+
+        if($grupo->alumnos->search($alumno)) {
+            $grupo->alumnos()->detach($alumno->id);
+        }
         
         return $alumno;
      }
