@@ -53,10 +53,10 @@ class CrnController extends Controller
 
         if(!$grupo->alumnos->search($alumno)) {
             $grupo->alumnos()->attach($alumno);
+            return $alumno;
         }
         
-
-        return $alumno;
+        return false;
      }
 
      public function deleteStudent(){
@@ -66,8 +66,9 @@ class CrnController extends Controller
 
         if($grupo->alumnos->search($alumno)) {
             $grupo->alumnos()->detach($alumno->id);
+            return $alumno;
         }
-        
-        return $alumno;
+
+        return false;
      }
 }

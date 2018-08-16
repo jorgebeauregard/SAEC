@@ -151,8 +151,10 @@
 	function deleteStudent(alumno_id, grupo_id){
 		$.get( ("/eliminarAlumno?" + "alumno_id=" + alumno_id + "&grupo_id=" + grupo_id),
 			function(data, status){
-				$('#group_' + alumno_id).remove();
-				$('#delete-table').append('<tr id=\"pool_' + alumno_id + '\"><td>' + data.apellido_paterno + '</td><td>' + data.nombre + '</td><td>' + data.matricula + '</td><td>' + data.plan.nombre + '</td><td><a type=\"button\" class=\"btn btn-success\" onclick=\"addStudent(' + alumno_id + ',' + grupo_id + ')\"><i class=\"fa fa-check\"></i></a></td></tr>');
+				if(data != false) {
+					$('#group_' + alumno_id).remove();
+					$('#delete-table').append('<tr id=\"pool_' + alumno_id + '\"><td>' + data.apellido_paterno + '</td><td>' + data.nombre + '</td><td>' + data.matricula + '</td><td>' + data.plan.nombre + '</td><td><a type=\"button\" class=\"btn btn-success\" onclick=\"addStudent(' + alumno_id + ',' + grupo_id + ')\"><i class=\"fa fa-check\"></i></a></td></tr>');
+				}
 			}
 		);
 	}
@@ -160,8 +162,10 @@
 	function addStudent(alumno_id, grupo_id){
 		$.get( ("/agregarAlumno?" + "alumno_id=" + alumno_id + "&grupo_id=" + grupo_id),
 			function(data, status){
-				$('#pool_' + alumno_id).remove();
-				$('#add-table').append('<tr id=\"pool_' + alumno_id + '\"><td>' + data.apellido_paterno + '</td><td>' + data.nombre + '</td><td>' + data.matricula + '</td><td>' + data.plan.nombre + '</td><td><a type=\"button\" class=\"btn btn-danger\" onclick=\"deleteStudent('+ alumno_id + ',' + grupo_id + ')\"><i class=\"fa fa-times\"></i></a></td></tr>');
+				if(data != false) {
+					$('#pool_' + alumno_id).remove();
+					$('#add-table').append('<tr id=\"pool_' + alumno_id + '\"><td>' + data.apellido_paterno + '</td><td>' + data.nombre + '</td><td>' + data.matricula + '</td><td>' + data.plan.nombre + '</td><td><a type=\"button\" class=\"btn btn-danger\" onclick=\"deleteStudent('+ alumno_id + ',' + grupo_id + ')\"><i class=\"fa fa-times\"></i></a></td></tr>');
+				}
 			}
 		);
 	}
