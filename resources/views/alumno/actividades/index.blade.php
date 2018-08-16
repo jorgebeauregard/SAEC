@@ -23,14 +23,15 @@
 						</div>
 						<div class="card-content">
 							<p class="category">Actividad</p>
+							<p class="category">{{$actividad->crn->nombre}}</p>
 							<br>
 							<br>
-							<h3 class="title"> {{$actividad['nombre']}} </h3>
+							<h3 class="title"> {{$actividad->nombre}} </h3>
 						</div>
 						<div class="card-footer">
 							<div class="stats">
-							@if( $logged->actividades->find($actividad['id'])->pivot->completada == 0)
-								<i class="material-icons text-danger">warning</i> <a href="/actividades/{{$actividad['id']}}">Coevaluaci&oacuten pendiente</a>
+							@if( $logged->actividades->find($actividad->id)->pivot->completada == 0)
+								<i class="material-icons text-danger">warning</i> <a href="/actividades/{{$actividad->id}}">Coevaluaci&oacuten pendiente</a>
 							@else
 								<i class="material-icons text-success">check_circle</i> Coevaluaciones completas
 							@endif

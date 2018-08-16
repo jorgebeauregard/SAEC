@@ -39,13 +39,8 @@ class ActividadController extends Controller
         }
         
         $actividades = $logged->actividades->where('periodo_id', Periodo::all()->last()->id)->sortBy('fecha_limite');
-        $actividades2 = $actividades->chunk(4)->toArray();
+        $actividades2 = $actividades->take(4);
         $actividades = $actividades->all();
-
-
-
-        if(sizeof($actividades)>0)
-            $actividades2 = $actividades2[0];
 
         if(Auth::user()->roles[0]->id == 3)
             return view('alumno.actividades.index', compact('logged', 'actividades', 'actividades2'));

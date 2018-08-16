@@ -21,24 +21,25 @@
 		@endif
 
 		<div class="row">
-			<div class="col-md-12">
+			@foreach($actividad->equipos as $equipo)
+			<div class="col-md-3">
 				<div class = "card">
+					<div class="card-header" data-background-color="blue">
+						<h4 class="title">Equipo {{$equipo->numero_equipo}}</h4>
+					</div>
 					<div class = "card-content">
-						<form method="POST" action="/actividades/unirse/{{$actividad->id}}">
+						<h3>Integrantes:</h3>
+						@foreach($equipo->alumnos as $alumno)
+							<p>{{$alumno->nombre}} {{$alumno->apellido_paterno}}</p>
+						@endforeach
+						<form method="POST" action="/actividades/unirse/{{$actividad->id}}/{{$equipo->id}}">
 						{{ csrf_field() }}
-							<div class="col-md-6">
-								<div class="form-group label-floating">
-									<label class="control-label">Clave del equipo</label>
-									<input type="text" class="form-control" name="clave" required>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<button type="submit" class="btn btn-success">Unirse al equipo</button>
-							</div>
+							<button type="submit" class="btn btn-success">Unirse al equipo</button>
 						</form>
 					</div>
 				</div>
 			</div>
+			@endforeach
 		</div>
 	</div>
 </div>
