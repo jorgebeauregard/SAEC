@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use App\AlumnoCrn;
 use App\Materia;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CrnController extends Controller
 {
@@ -51,12 +52,14 @@ class CrnController extends Controller
         $alumno = Alumno::find(request('alumno_id'));
         $plan = $alumno->plan;
 
-        if(!$grupo->alumnos->search($alumno)) {
-            $grupo->alumnos()->attach($alumno);
-            return $alumno;
-        }
+        DB::transaction(function() use ($grupo, $alumno) {
+            if(!$grupo->alumnos()->find($alumno->id)) {
+                $grupo->alumnos()->attach($alumno);
+                $alumno->done = true;
+            }
+        });
         
-        return false;
+        return $alumno;
      }
 
      public function deleteStudent(){
@@ -64,11 +67,7 @@ class CrnController extends Controller
         $alumno = Alumno::find(request('alumno_id'));
         $plan = $alumno->plan;
 
-        if($grupo->alumnos->search($alumno)) {
-            $grupo->alumnos()->detach($alumno->id);
-            return $alumno;
-        }
-
-        return false;
+        $grupo->alumnos()->detach($alumno->id);
+        return $alumno;
      }
 }
