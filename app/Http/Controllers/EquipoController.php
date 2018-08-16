@@ -23,6 +23,37 @@ class EquipoController extends Controller
         return view('profesor.equipos.edit', compact('equipo', 'alumnos', 'actividad', 'todos'));
     }
 
+    public function generate(Actividad $actividad) {
+        $alumnos = $actividad->alumnos->shuffle();
+        $equipos = $actividad->equipos;
+
+        if($alumnos->count() > 0) {
+            $count = $equipos->count();
+            foreach($equipos as $equipo) {
+                $alumnosEquipos = collect();
+                $condition = floor($alumnos->count() / $count);
+
+                for($i = 0; $i<$condition; $i++) {
+                    $alumnosEquipos->push($alumnos->shift());
+                }
+
+                $count = $count-1;
+
+                $equipo->alumnos()->detach(); // quitar alumnos si tenía antes
+
+                foreach($alumnosEquipos->all() as $alumno) {
+                    $equipo->alumnos()->attach($alumno);
+                    $alumno->pivot->equipo_id = $equipo->id;
+                    $alumno->pivot->save();
+                }
+
+                $equipo->save();
+            }
+        }
+
+        return redirect('actividades/editar/'.$actividad->id);
+    }
+
     public function addStudent(){
         $equipo = Equipo::find(request('equipo_id'));
         $alumno = Alumno::find(request('alumno_id'));

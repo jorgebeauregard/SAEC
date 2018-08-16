@@ -223,7 +223,8 @@ class ActividadController extends Controller
         if((int)request('num_equipos') != count($actividad->equipos)){
             
             foreach($actividad->alumnos as $alumno){
-                $alumno->equipo_id = NULL;
+                $alumno->pivot->equipo_id = NULL;
+                $alumno->pivot->save();
             }
 
             foreach($actividad->equipos as $equipo){
@@ -253,23 +254,20 @@ class ActividadController extends Controller
         return redirect('/actividades/editar/'.$actividad->id);
     }
 
-    public function joinTeam(Request $request, Actividad $actividad){
+    public function joinTeam(Actividad $actividad, Equipo $equipo){
         $alumno = Auth::user()->alumno[0];
         $actividad = $alumno->actividades->find($actividad->id);
-        $key = request('clave');
-        $equipo = $actividad->equipos->where('contrasena', $key)->first();
-
-        if(count($equipo)){
-            $alumno->equipos()->attach($equipo);
-            $alumno->save();
-            $actividad->pivot->equipo_id = $equipo->id;
-            $actividad->pivot->save();
-            return redirect('/actividades');
-        }
-        else{
-            session()->flash('message', 'No se ha encontrado un equipo con esa clave.');
+        
+        if($actividad->equipos->find($equipo->id) == null) {
+            session()->flash('message', 'No se ha encontrado el equipo en la actividad.');
             return redirect()->back();
         }
+        
+        $alumno->equipos()->attach($equipo);
+        $alumno->save();
+        $actividad->pivot->equipo_id = $equipo->id;
+        $actividad->pivot->save();
+        return redirect('/actividades');
     }
 
     /**

@@ -30,36 +30,35 @@ Route::group(['middleware'=>'auth'], function() {
 
     Route::resource('perfil', 'PerfilController');
     
-    Route::group([
-        'middleware' => ['auth', 'acl'],
-        'is' => 'professor'
-    ], function() {
-         Route::get('/actividades/editar/{actividad}', 'ActividadController@edit');
-         Route::get('/actividades/invitado/{actividad}', 'ActividadController@guest');
-         Route::post('/actividades/actualizar/{actividad}', 'ActividadController@update');
-         Route::get('/actividades/{actividad}/alumnos/{alumno}', 'ActividadController@showEvaluation');
-         Route::post('/actividades/{actividad}/alumnos/{alumno}', 'ActividadController@evaluateStudent');
-         Route::get('/actividades/{actividad}/equipos/{equipo}', 'EquipoController@edit');
+    Route::group(['middleware' => ['auth', 'acl'], 'is' => 'professor'], function() {
 
-         Route::get('/actividades/equipos/{equipo}/agregarAlumno', 'EquipoController@addStudent');
-         Route::get('/actividades/equipos/{equipo}/eliminarAlumno', 'EquipoController@deleteStudent');
-         
-         Route::get('/crear/actividad', 'ActividadController@create');
-         Route::post('/crear/actividad', 'ActividadController@newActivity');
+        Route::get('/actividades/editar/{actividad}', 'ActividadController@edit');
+        Route::get('/actividades/invitado/{actividad}', 'ActividadController@guest');
+        Route::post('/actividades/actualizar/{actividad}', 'ActividadController@update');
+        Route::get('/actividades/{actividad}/alumnos/{alumno}', 'ActividadController@showEvaluation');
+        Route::post('/actividades/{actividad}/alumnos/{alumno}', 'ActividadController@evaluateStudent');
+        Route::get('/actividades/{actividad}/equipos/aleatorio', 'EquipoController@generate')->name('teams.generate');
+        Route::get('/actividades/{actividad}/equipos/{equipo}', 'EquipoController@edit');
 
-         Route::get('/grupos', 'CrnController@index');
-         Route::get('/grupos/{grupo}', 'CrnController@show');
-         Route::post('/crear/grupo', 'CrnController@store');
+        Route::get('/actividades/equipos/{equipo}/agregarAlumno', 'EquipoController@addStudent');
+        Route::get('/actividades/equipos/{equipo}/eliminarAlumno', 'EquipoController@deleteStudent');
+        
+        Route::get('/crear/actividad', 'ActividadController@create');
+        Route::post('/crear/actividad', 'ActividadController@newActivity');
 
-         Route::get('/eliminarAlumno', 'CrnController@deleteStudent');
-         Route::get('/agregarAlumno', 'CrnController@addStudent');
+        Route::get('/grupos', 'CrnController@index');
+        Route::get('/grupos/{grupo}', 'CrnController@show');
+        Route::post('/crear/grupo', 'CrnController@store');
+
+        Route::get('/eliminarAlumno', 'CrnController@deleteStudent');
+        Route::get('/agregarAlumno', 'CrnController@addStudent');
     });
 
     Route::group([
         'middleware' => ['auth', 'acl'],
         'is' => 'student'
     ], function() {
-        Route::post('/actividades/unirse/{actividad}', 'ActividadController@joinTeam');
+        Route::post('/actividades/unirse/{actividad}/{equipo}', 'ActividadController@joinTeam');
     });
 
     

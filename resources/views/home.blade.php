@@ -1,4 +1,4 @@
-@extends('layouts.sideBar')
+@extends('layouts.sidebar')
 
 @section('title')
     <div>

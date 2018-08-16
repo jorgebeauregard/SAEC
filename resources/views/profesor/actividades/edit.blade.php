@@ -88,8 +88,8 @@
 
 		<div class="row">
 			<div class="col-md-12">
+				<a href="{{ route('teams.generate', $actividad->id) }}" class="btn btn-info">Llenar equipos de forma aleatoria</a>
 				<button type="submit" class="btn btn-primary">Actualizar actividad</button>
-				</form>
 			</div>
 		</div>
 		</form>
