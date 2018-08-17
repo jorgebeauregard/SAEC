@@ -18,6 +18,8 @@ class CreateEquiposTable extends Migration
             $table->integer('numero_equipo')->unsigned();
             $table->integer('actividad_id')->unsigned();
             $table->string('contrasena', 4)->default('123');
+            $table->string('file_path')->nullable()->default(NULL);
+            $table->string('file_url')->nullable()->default(NULL);
             $table->integer('profesor_id')->usigned()->nullable()->dafault(NULL);
             $table->timestamps();
 

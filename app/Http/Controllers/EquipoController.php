@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Http\Request;
 use App\Equipo;
 use App\Actividad;
@@ -80,5 +83,26 @@ class EquipoController extends Controller
         $actividad->pivot->equipo_id = null;
         $actividad->pivot->save();
         return $alumno;
+    }
+
+    public function storeFile(Equipo $equipo) {
+        $logged = Auth::user()->profesor[0];
+        $validator = Image::validate($request->all(), [
+            'file' => 'required|file|mimes:pdf'
+        ]);
+
+        if($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors())->withInput($request->all());
+        }
+
+        $path = $request->image->store('public/files');
+
+
+        $equipo->file_path = $path;
+        $equipo->file_url = Storage::url($path);
+        $equipo->save();
+
+        session()->flash('success', 'Imagen guardada.');
+        return redirect()->back();
     }
 }

@@ -39,6 +39,8 @@ Route::group(['middleware'=>'auth'], function() {
         Route::post('/actividades/{actividad}/alumnos/{alumno}', 'ActividadController@evaluateStudent');
         Route::get('/actividades/{actividad}/equipos/aleatorio', 'EquipoController@generate')->name('teams.generate');
         Route::get('/actividades/{actividad}/equipos/{equipo}', 'EquipoController@edit');
+        
+        Route::post('/equipos/{equipo}/upload', 'EquipoController@storeFile')->name('teams.upload');
 
         Route::get('/actividades/equipos/{equipo}/agregarAlumno', 'EquipoController@addStudent');
         Route::get('/actividades/equipos/{equipo}/eliminarAlumno', 'EquipoController@deleteStudent');
